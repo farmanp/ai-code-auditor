@@ -1,0 +1,350 @@
+patterns:
+  # Creational Patterns
+  - name: "Singleton"
+    category: "creational"
+    hints:
+      - "private constructor"
+      - "static instance"
+      - "getInstance()"
+      - "synchronized"
+      - "volatile"
+    report_fields:
+      - "thread_safety"
+      - "lazy_initialization"
+      - "enum_implementation"
+
+  - name: "Factory Method"
+    category: "creational"
+    hints:
+      - "createProduct()"
+      - "abstract factory"
+      - "product interface"
+      - "concrete creator"
+    report_fields:
+      - "product_types"
+      - "creator_hierarchy"
+      - "parameter_handling"
+
+  - name: "Abstract Factory"
+    category: "creational"
+    hints:
+      - "family of products"
+      - "createProductA()"
+      - "createProductB()"
+      - "concrete factory"
+    report_fields:
+      - "product_families"
+      - "factory_interface"
+      - "extensibility"
+
+  - name: "Builder"
+    category: "creational"
+    hints:
+      - "build()"
+      - "fluent interface"
+      - "method chaining"
+      - "director class"
+      - "step-by-step construction"
+    report_fields:
+      - "fluent_api"
+      - "validation_strategy"
+      - "immutability"
+
+  - name: "Prototype"
+    category: "creational"
+    hints:
+      - "clone()"
+      - "Cloneable"
+      - "deep copy"
+      - "shallow copy"
+      - "registry"
+    report_fields:
+      - "cloning_strategy"
+      - "serialization_approach"
+      - "registry_usage"
+
+  # Structural Patterns
+  - name: "Adapter"
+    category: "structural"
+    hints:
+      - "adaptee"
+      - "target interface"
+      - "wrapper"
+      - "legacy code"
+      - "incompatible interface"
+    report_fields:
+      - "adaptation_strategy"
+      - "two_way_adapter"
+      - "class_vs_object_adapter"
+
+  - name: "Bridge"
+    category: "structural"
+    hints:
+      - "abstraction"
+      - "implementor"
+      - "refined abstraction"
+      - "concrete implementor"
+      - "handle/body"
+    report_fields:
+      - "abstraction_levels"
+      - "platform_independence"
+      - "runtime_binding"
+
+  - name: "Composite"
+    category: "structural"
+    hints:
+      - "tree structure"
+      - "leaf"
+      - "composite"
+      - "component interface"
+      - "add()/remove()"
+    report_fields:
+      - "tree_operations"
+      - "transparency_vs_safety"
+      - "child_management"
+
+  - name: "Decorator"
+    category: "structural"
+    hints:
+      - "wrap"
+      - "enhance"
+      - "component interface"
+      - "concrete decorator"
+      - "dynamic behavior"
+    report_fields:
+      - "decoration_strategy"
+      - "multiple_decorators"
+      - "interface_consistency"
+
+  - name: "Facade"
+    category: "structural"
+    hints:
+      - "simplified interface"
+      - "subsystem"
+      - "unified interface"
+      - "complexity hiding"
+    report_fields:
+      - "subsystem_complexity"
+      - "interface_design"
+      - "coupling_reduction"
+
+  - name: "Flyweight"
+    category: "structural"
+    hints:
+      - "intrinsic state"
+      - "extrinsic state"
+      - "shared objects"
+      - "factory"
+      - "memory optimization"
+    report_fields:
+      - "state_separation"
+      - "sharing_strategy"
+      - "memory_savings"
+
+  - name: "Proxy"
+    category: "structural"
+    hints:
+      - "surrogate"
+      - "placeholder"
+      - "subject interface"
+      - "real subject"
+      - "access control"
+    report_fields:
+      - "proxy_type"
+      - "lazy_loading"
+      - "access_control_logic"
+
+  # Behavioral Patterns
+  - name: "Observer"
+    category: "behavioral"
+    hints:
+      - "subject"
+      - "observer"
+      - "notify()"
+      - "update()"
+      - "subscribe/unsubscribe"
+    report_fields:
+      - "notification_strategy"
+      - "observer_management"
+      - "push_vs_pull"
+
+  - name: "Strategy"
+    category: "behavioral"
+    hints:
+      - "algorithm family"
+      - "context"
+      - "strategy interface"
+      - "concrete strategy"
+      - "runtime selection"
+    report_fields:
+      - "algorithm_variants"
+      - "selection_mechanism"
+      - "context_coupling"
+
+  - name: "Command"
+    category: "behavioral"
+    hints:
+      - "execute()"
+      - "undo()"
+      - "receiver"
+      - "invoker"
+      - "macro command"
+    report_fields:
+      - "undo_support"
+      - "command_queuing"
+      - "macro_commands"
+
+  - name: "State"
+    category: "behavioral"
+    hints:
+      - "state machine"
+      - "context"
+      - "state interface"
+      - "concrete state"
+      - "state transition"
+    report_fields:
+      - "state_transitions"
+      - "state_data"
+      - "transition_logic"
+
+  - name: "Template Method"
+    category: "behavioral"
+    hints:
+      - "algorithm skeleton"
+      - "abstract class"
+      - "hook methods"
+      - "primitive operations"
+      - "Hollywood principle"
+    report_fields:
+      - "template_structure"
+      - "hook_usage"
+      - "customization_points"
+
+  - name: "Chain of Responsibility"
+    category: "behavioral"
+    hints:
+      - "handler chain"
+      - "successor"
+      - "handleRequest()"
+      - "request passing"
+      - "decoupling"
+    report_fields:
+      - "chain_structure"
+      - "request_handling"
+      - "termination_conditions"
+
+  - name: "Mediator"
+    category: "behavioral"
+    hints:
+      - "mediator interface"
+      - "concrete mediator"
+      - "colleague"
+      - "loose coupling"
+      - "centralized control"
+    report_fields:
+      - "mediation_logic"
+      - "colleague_interaction"
+      - "coupling_reduction"
+
+  - name: "Memento"
+    category: "behavioral"
+    hints:
+      - "originator"
+      - "memento"
+      - "caretaker"
+      - "snapshot"
+      - "state restoration"
+    report_fields:
+      - "state_capture"
+      - "encapsulation_preservation"
+      - "storage_strategy"
+
+  - name: "Iterator"
+    category: "behavioral"
+    hints:
+      - "hasNext()"
+      - "next()"
+      - "aggregate"
+      - "concrete iterator"
+      - "traversal"
+    report_fields:
+      - "traversal_strategy"
+      - "multiple_iterators"
+      - "modification_handling"
+
+  - name: "Visitor"
+    category: "behavioral"
+    hints:
+      - "accept()"
+      - "visit()"
+      - "visitor interface"
+      - "concrete visitor"
+      - "double dispatch"
+    report_fields:
+      - "operation_externalization"
+      - "element_hierarchy"
+      - "visitor_extensibility"
+
+  # Architectural Patterns
+  - name: "Model-View-Controller (MVC)"
+    category: "architectural"
+    hints:
+      - "model"
+      - "view"
+      - "controller"
+      - "separation of concerns"
+      - "user interface"
+    report_fields:
+      - "mvc_variant"
+      - "data_binding"
+      - "view_synchronization"
+
+  - name: "Model-View-Presenter (MVP)"
+    category: "architectural"
+    hints:
+      - "presenter"
+      - "passive view"
+      - "supervising controller"
+      - "view interface"
+    report_fields:
+      - "mvp_variant"
+      - "view_abstraction"
+      - "presenter_logic"
+
+  - name: "Model-View-ViewModel (MVVM)"
+    category: "architectural"
+    hints:
+      - "view model"
+      - "data binding"
+      - "command binding"
+      - "property change notification"
+    report_fields:
+      - "binding_strategy"
+      - "viewmodel_logic"
+      - "two_way_binding"
+
+  - name: "Repository"
+    category: "architectural"
+    hints:
+      - "data access"
+      - "domain objects"
+      - "query interface"
+      - "in-memory collection"
+      - "persistence abstraction"
+    report_fields:
+      - "query_capabilities"
+      - "caching_strategy"
+      - "unit_of_work_integration"
+
+  - name: "Dependency Injection"
+    category: "architectural"
+    hints:
+      - "IoC container"
+      - "constructor injection"
+      - "setter injection"
+      - "interface injection"
+      - "inversion of control"
+    report_fields:
+      - "injection_type"
+      - "lifecycle_management"
+      - "container_usage"

@@ -1,0 +1,363 @@
+datahub_entities:
+  # Core Platform Entities
+  - name: "Dataset"
+    urn_pattern: "urn:li:dataset:*"
+    aspect_name: "datasetProperties"
+    report_fields:
+      - "platform"
+      - "name"
+      - "qualifiedName"
+      - "description"
+      - "tags"
+      - "glossaryTerms"
+      - "customProperties"
+
+  - name: "DataJob"
+    urn_pattern: "urn:li:dataJob:*"
+    aspect_name: "dataJobInfo"
+    report_fields:
+      - "name"
+      - "description"
+      - "type"
+      - "flowUrn"
+      - "customProperties"
+      - "externalUrl"
+
+  - name: "DataFlow"
+    urn_pattern: "urn:li:dataFlow:*"
+    aspect_name: "dataFlowInfo"
+    report_fields:
+      - "name"
+      - "description"
+      - "project"
+      - "externalUrl"
+      - "customProperties"
+
+  - name: "Chart"
+    urn_pattern: "urn:li:chart:*"
+    aspect_name: "chartInfo"
+    report_fields:
+      - "title"
+      - "description"
+      - "type"
+      - "access"
+      - "lastRefreshed"
+      - "chartUrl"
+      - "customProperties"
+
+  - name: "Dashboard"
+    urn_pattern: "urn:li:dashboard:*"
+    aspect_name: "dashboardInfo"
+    report_fields:
+      - "title"
+      - "description"
+      - "charts"
+      - "datasets"
+      - "lastRefreshed"
+      - "dashboardUrl"
+      - "customProperties"
+
+  - name: "Container"
+    urn_pattern: "urn:li:container:*"
+    aspect_name: "containerProperties"
+    report_fields:
+      - "name"
+      - "qualifiedName"
+      - "description"
+      - "platform"
+      - "env"
+      - "customProperties"
+
+  # ML Platform Entities
+  - name: "MLFeatureTable"
+    urn_pattern: "urn:li:mlFeatureTable:*"
+    aspect_name: "mlFeatureTableProperties"
+    report_fields:
+      - "name"
+      - "description"
+      - "mlFeatures"
+      - "mlPrimaryKeys"
+      - "customProperties"
+      - "featureNamespace"
+
+  - name: "MLFeature"
+    urn_pattern: "urn:li:mlFeature:*"
+    aspect_name: "mlFeatureProperties"
+    report_fields:
+      - "name"
+      - "description"
+      - "dataType"
+      - "version"
+      - "featureNamespace"
+      - "customProperties"
+
+  - name: "MLModel"
+    urn_pattern: "urn:li:mlModel:*"
+    aspect_name: "mlModelProperties"
+    report_fields:
+      - "name"
+      - "description"
+      - "type"
+      - "version"
+      - "groups"
+      - "customProperties"
+
+  - name: "MLModelGroup"
+    urn_pattern: "urn:li:mlModelGroup:*"
+    aspect_name: "mlModelGroupProperties"
+    report_fields:
+      - "name"
+      - "description"
+      - "platform"
+      - "customProperties"
+
+  # Data Product Entities
+  - name: "DataProduct"
+    urn_pattern: "urn:li:dataProduct:*"
+    aspect_name: "dataProductProperties"
+    report_fields:
+      - "name"
+      - "description"
+      - "assets"
+      - "domain"
+      - "customProperties"
+
+  # Glossary Entities
+  - name: "GlossaryTerm"
+    urn_pattern: "urn:li:glossaryTerm:*"
+    aspect_name: "glossaryTermInfo"
+    report_fields:
+      - "name"
+      - "definition"
+      - "termSource"
+      - "sourceRef"
+      - "sourceUrl"
+      - "customProperties"
+
+  - name: "GlossaryNode"
+    urn_pattern: "urn:li:glossaryNode:*"
+    aspect_name: "glossaryNodeInfo"
+    report_fields:
+      - "name"
+      - "definition"
+      - "parentNode"
+      - "customProperties"
+
+  # Domain and Tag Entities
+  - name: "Domain"
+    urn_pattern: "urn:li:domain:*"
+    aspect_name: "domainProperties"
+    report_fields:
+      - "name"
+      - "description"
+      - "parentDomain"
+      - "customProperties"
+
+  - name: "Tag"
+    urn_pattern: "urn:li:tag:*"
+    aspect_name: "tagProperties"
+    report_fields:
+      - "name"
+      - "description"
+      - "colorHex"
+      - "customProperties"
+
+  # Schema and Data Quality
+  - name: "SchemaField"
+    urn_pattern: "urn:li:schemaField:*"
+    aspect_name: "schemaFieldInfo"
+    report_fields:
+      - "fieldPath"
+      - "type"
+      - "nativeDataType"
+      - "description"
+      - "nullable"
+      - "recursive"
+
+  # Test Entities
+  - name: "Test"
+    urn_pattern: "urn:li:test:*"
+    aspect_name: "testInfo"
+    report_fields:
+      - "name"
+      - "description"
+      - "type"
+      - "category"
+      - "definition"
+      - "customProperties"
+
+aspects:
+  # Ownership and Governance
+  - name: "ownership"
+    report_fields:
+      - "owners"
+      - "lastModified"
+
+  - name: "globalTags"
+    report_fields:
+      - "tags"
+
+  - name: "glossaryTerms"
+    report_fields:
+      - "terms"
+      - "auditStamp"
+
+  - name: "domains"
+    report_fields:
+      - "domains"
+
+  # Schema and Structure
+  - name: "schemaMetadata"
+    report_fields:
+      - "schemaName"
+      - "platform"
+      - "version"
+      - "fields"
+      - "primaryKeys"
+      - "foreignKeys"
+
+  - name: "editableSchemaMetadata"
+    report_fields:
+      - "editableSchemaFieldInfo"
+      - "created"
+      - "lastModified"
+
+  # Lineage and Relationships
+  - name: "upstreamLineage"
+    report_fields:
+      - "upstreams"
+      - "fineGrainedLineages"
+
+  - name: "downstreamLineage"
+    report_fields:
+      - "downstreams"
+
+  - name: "inputFields"
+    report_fields:
+      - "fields"
+      - "schemaFieldUrns"
+
+  - name: "outputFields"
+    report_fields:
+      - "fields"
+      - "schemaFieldUrns"
+
+  # Operation and Status
+  - name: "operation"
+    report_fields:
+      - "timestampMillis"
+      - "operationType"
+      - "lastUpdatedTimestamp"
+      - "actor"
+      - "customOperationType"
+
+  - name: "status"
+    report_fields:
+      - "removed"
+
+  - name: "deprecation"
+    report_fields:
+      - "deprecated"
+      - "decommissionTime"
+      - "note"
+      - "actor"
+
+  # Data Quality and Profiling
+  - name: "datasetProfile"
+    report_fields:
+      - "timestampMillis"
+      - "rowCount"
+      - "columnCount"
+      - "sizeInBytes"
+      - "fieldProfiles"
+
+  - name: "datasetUsageStatistics"
+    report_fields:
+      - "timestampMillis"
+      - "eventGranularity"
+      - "totalSqlQueries"
+      - "topSqlQueries"
+      - "userCounts"
+      - "fieldCounts"
+
+  - name: "testResults"
+    report_fields:
+      - "passing"
+      - "failing"
+      - "tests"
+
+  # ML Specific Aspects
+  - name: "mlModelProperties"
+    report_fields:
+      - "name"
+      - "description"
+      - "date"
+      - "version"
+      - "type"
+      - "hyperParameters"
+      - "trainingMetrics"
+      - "onlineFeatures"
+      - "mlFeatures"
+      - "groups"
+      - "customProperties"
+
+  - name: "mlFeatureTableProperties"
+    report_fields:
+      - "customProperties"
+      - "description"
+      - "mlFeatures"
+      - "mlPrimaryKeys"
+
+  - name: "mlFeatureProperties"
+    report_fields:
+      - "description"
+      - "dataType"
+      - "version"
+      - "sources"
+
+  # Browse and Discovery
+  - name: "browsePaths"
+    report_fields:
+      - "paths"
+
+  - name: "browsePathsV2"
+    report_fields:
+      - "path"
+
+  # Embed and Documentation
+  - name: "embed"
+    report_fields:
+      - "renderUrl"
+
+  - name: "editableDatasetProperties"
+    report_fields:
+      - "description"
+      - "created"
+      - "lastModified"
+
+  # Institutional Memory
+  - name: "institutionalMemory"
+    report_fields:
+      - "elements"
+
+  # Data Platform Instance
+  - name: "dataPlatformInstance"
+    report_fields:
+      - "platform"
+      - "instance"
+
+  # Sub Types
+  - name: "subTypes"
+    report_fields:
+      - "typeNames"
+
+  # Structured Properties
+  - name: "structuredProperties"
+    report_fields:
+      - "properties"
+
+  # Forms
+  - name: "forms"
+    report_fields:
+      - "incompleteForms"
+      - "completedForms"
