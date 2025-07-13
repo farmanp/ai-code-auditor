@@ -1,0 +1,638 @@
+etl_subsystems:
+  # Data Acquisition & Extraction (Subsystems 1-2)
+  - name: "Extract System"
+    id: 1
+    category: "data_acquisition"
+    hints:
+      - "source data adapter"
+      - "job scheduler"
+      - "push pull dribble"
+      - "data staging"
+      - "proprietary format conversion"
+      - "extract job"
+      - "source connector"
+      - "data ingestion"
+    report_fields:
+      - "source_systems"
+      - "scheduling_mechanism"
+      - "data_formats"
+      - "staging_strategy"
+      - "error_handling"
+
+  - name: "Change Data Capture System"
+    id: 2
+    category: "data_acquisition"
+    hints:
+      - "change data capture"
+      - "CDC"
+      - "log file reader"
+      - "sequence number filter"
+      - "CRC comparison"
+      - "delta detection"
+      - "incremental load"
+      - "log mining"
+    report_fields:
+      - "cdc_mechanism"
+      - "log_processing"
+      - "change_detection_method"
+      - "incremental_strategy"
+
+  # Data Quality & Profiling (Subsystems 3-8)
+  - name: "Data Profiling System"
+    id: 3
+    category: "data_quality"
+    hints:
+      - "data profiling"
+      - "column analysis"
+      - "inferred domains"
+      - "structure analysis"
+      - "foreign key discovery"
+      - "data rule analysis"
+      - "value analysis"
+      - "data discovery"
+    report_fields:
+      - "profiling_scope"
+      - "domain_inference"
+      - "relationship_discovery"
+      - "rule_validation"
+
+  - name: "Data Cleansing System"
+    id: 4
+    category: "data_quality"
+    hints:
+      - "data cleansing"
+      - "data cleaning"
+      - "dictionary driven"
+      - "name parsing"
+      - "address parsing"
+      - "deduplication"
+      - "fuzzy matching"
+      - "data merge"
+      - "surviving logic"
+      - "record linkage"
+    report_fields:
+      - "cleansing_rules"
+      - "deduplication_strategy"
+      - "fuzzy_logic_usage"
+      - "survivorship_rules"
+      - "reference_preservation"
+
+  - name: "Data Conformer"
+    id: 5
+    category: "data_quality"
+    hints:
+      - "conformed dimension"
+      - "data conformance"
+      - "dimension conforming"
+      - "fact conformance"
+      - "data integration"
+      - "standardization"
+      - "cross-source integration"
+    report_fields:
+      - "conformed_attributes"
+      - "integration_rules"
+      - "standardization_logic"
+      - "cross_source_mapping"
+
+  - name: "Audit Dimension Assembler"
+    id: 6
+    category: "data_quality"
+    hints:
+      - "audit dimension"
+      - "metadata context"
+      - "fact table load"
+      - "audit trail"
+      - "load metadata"
+      - "process tracking"
+    report_fields:
+      - "audit_attributes"
+      - "metadata_capture"
+      - "load_tracking"
+      - "context_assembly"
+
+  - name: "Quality Screen Handler"
+    id: 7
+    category: "data_quality"
+    hints:
+      - "quality screen"
+      - "data quality check"
+      - "inline validation"
+      - "quality rule"
+      - "data validation"
+      - "quality gate"
+      - "validation engine"
+    report_fields:
+      - "quality_rules"
+      - "validation_scope"
+      - "rule_engine"
+      - "quality_metrics"
+
+  - name: "Error Event Handler"
+    id: 8
+    category: "data_quality"
+    hints:
+      - "error event"
+      - "error handler"
+      - "error reporting"
+      - "error response"
+      - "error notification"
+      - "error workflow"
+      - "exception handling"
+      - "alert system"
+    report_fields:
+      - "error_classification"
+      - "response_logic"
+      - "notification_system"
+      - "error_tracking"
+
+  # Key Management & Dimensions (Subsystems 9-15)
+  - name: "Surrogate Key Creation System"
+    id: 9
+    category: "key_management"
+    hints:
+      - "surrogate key"
+      - "key generation"
+      - "key sequence"
+      - "key manager"
+      - "distributed key"
+      - "key service"
+      - "unique identifier"
+    report_fields:
+      - "key_generation_strategy"
+      - "distribution_mechanism"
+      - "key_uniqueness"
+      - "performance_characteristics"
+
+  - name: "Slowly Changing Dimension Processor"
+    id: 10
+    category: "dimension_management"
+    hints:
+      - "slowly changing dimension"
+      - "SCD"
+      - "type 1 overwrite"
+      - "type 2 versioning"
+      - "type 3 attribute"
+      - "dimension versioning"
+      - "historical tracking"
+    report_fields:
+      - "scd_types_supported"
+      - "versioning_strategy"
+      - "change_detection"
+      - "history_preservation"
+
+  - name: "Late Arriving Dimension Handler"
+    id: 11
+    category: "dimension_management"
+    hints:
+      - "late arriving"
+      - "delayed dimension"
+      - "out of order"
+      - "dimension update"
+      - "retroactive change"
+      - "backfill"
+    report_fields:
+      - "late_arrival_strategy"
+      - "update_mechanism"
+      - "impact_analysis"
+      - "dependency_handling"
+
+  - name: "Fixed Hierarchy Dimension Builder"
+    id: 12
+    category: "dimension_management"
+    hints:
+      - "fixed hierarchy"
+      - "dimension hierarchy"
+      - "parent child"
+      - "many to one"
+      - "hierarchical dimension"
+      - "level based"
+    report_fields:
+      - "hierarchy_structure"
+      - "validation_rules"
+      - "maintenance_strategy"
+      - "integrity_checks"
+
+  - name: "Variable Hierarchy Dimension Builder"
+    id: 13
+    category: "dimension_management"
+    hints:
+      - "variable hierarchy"
+      - "ragged hierarchy"
+      - "organization chart"
+      - "parts explosion"
+      - "uneven depth"
+      - "recursive hierarchy"
+    report_fields:
+      - "hierarchy_flexibility"
+      - "depth_handling"
+      - "structure_validation"
+      - "maintenance_complexity"
+
+  - name: "Multivalued Dimension Bridge Table Builder"
+    id: 14
+    category: "dimension_management"
+    hints:
+      - "bridge table"
+      - "many to many"
+      - "multivalued dimension"
+      - "associative table"
+      - "weighting factor"
+      - "allocation"
+      - "role description"
+    report_fields:
+      - "relationship_modeling"
+      - "weighting_strategy"
+      - "allocation_logic"
+      - "role_management"
+
+  - name: "Junk Dimension Builder"
+    id: 15
+    category: "dimension_management"
+    hints:
+      - "junk dimension"
+      - "miscellaneous flags"
+      - "low cardinality"
+      - "flag combination"
+      - "indicator dimension"
+      - "status flags"
+    report_fields:
+      - "flag_management"
+      - "combination_strategy"
+      - "cardinality_optimization"
+      - "flag_evolution"
+
+  # Fact Table Loading (Subsystems 16-20)
+  - name: "Transaction Grain Fact Table Loader"
+    id: 16
+    category: "fact_loading"
+    hints:
+      - "transaction grain"
+      - "fact table loader"
+      - "append mode"
+      - "transaction level"
+      - "detailed facts"
+      - "atomic grain"
+    report_fields:
+      - "grain_definition"
+      - "loading_strategy"
+      - "index_management"
+      - "partition_strategy"
+
+  - name: "Periodic Snapshot Grain Fact Table Loader"
+    id: 17
+    category: "fact_loading"
+    hints:
+      - "periodic snapshot"
+      - "snapshot grain"
+      - "periodic load"
+      - "balance snapshot"
+      - "regular intervals"
+      - "overwrite strategy"
+    report_fields:
+      - "snapshot_frequency"
+      - "incremental_updates"
+      - "overwrite_logic"
+      - "period_management"
+
+  - name: "Accumulating Snapshot Grain Fact Table Loader"
+    id: 18
+    category: "fact_loading"
+    hints:
+      - "accumulating snapshot"
+      - "milestone tracking"
+      - "process flow"
+      - "dimension updates"
+      - "accumulating measures"
+      - "workflow tracking"
+    report_fields:
+      - "milestone_definition"
+      - "accumulation_logic"
+      - "dimension_updates"
+      - "measure_aggregation"
+
+  - name: "Surrogate Key Pipeline"
+    id: 19
+    category: "fact_loading"
+    hints:
+      - "surrogate key pipeline"
+      - "key substitution"
+      - "natural key replacement"
+      - "pipelined processing"
+      - "multithreaded"
+      - "key lookup"
+    report_fields:
+      - "pipeline_architecture"
+      - "threading_model"
+      - "lookup_strategy"
+      - "performance_optimization"
+
+  - name: "Late Arriving Fact Handler"
+    id: 20
+    category: "fact_loading"
+    hints:
+      - "late arriving fact"
+      - "delayed facts"
+      - "out of order facts"
+      - "fact backfill"
+      - "retroactive facts"
+      - "fact correction"
+    report_fields:
+      - "late_arrival_detection"
+      - "insertion_strategy"
+      - "impact_assessment"
+      - "correction_handling"
+
+  # Performance & OLAP (Subsystems 21-23)
+  - name: "Aggregate Builder"
+    id: 21
+    category: "performance"
+    hints:
+      - "aggregate"
+      - "materialized view"
+      - "query rewrite"
+      - "summary table"
+      - "pre-aggregation"
+      - "performance optimization"
+    report_fields:
+      - "aggregation_strategy"
+      - "maintenance_schedule"
+      - "query_rewrite_capability"
+      - "storage_optimization"
+
+  - name: "Multidimensional Cube Builder"
+    id: 22
+    category: "performance"
+    hints:
+      - "OLAP cube"
+      - "multidimensional"
+      - "cube builder"
+      - "star schema preparation"
+      - "dimension hierarchy"
+      - "cube technology"
+    report_fields:
+      - "cube_structure"
+      - "hierarchy_preparation"
+      - "cube_technology"
+      - "refresh_strategy"
+
+  - name: "Real-time Partition Builder"
+    id: 23
+    category: "performance"
+    hints:
+      - "real-time partition"
+      - "hot partition"
+      - "in-memory"
+      - "streaming data"
+      - "real-time updates"
+      - "live partition"
+    report_fields:
+      - "partition_strategy"
+      - "memory_management"
+      - "real_time_capabilities"
+      - "merge_strategy"
+
+  # Administration & Coordination (Subsystems 24-25)
+  - name: "Dimension Manager System"
+    id: 24
+    category: "administration"
+    hints:
+      - "dimension manager"
+      - "conformed dimension distribution"
+      - "centralized dimension"
+      - "dimension replication"
+      - "dimension governance"
+    report_fields:
+      - "distribution_mechanism"
+      - "version_control"
+      - "governance_rules"
+      - "synchronization_strategy"
+
+  - name: "Fact Table Provider System"
+    id: 25
+    category: "administration"
+    hints:
+      - "fact table provider"
+      - "dimension subscription"
+      - "local key substitution"
+      - "version checking"
+      - "aggregate management"
+    report_fields:
+      - "subscription_mechanism"
+      - "version_management"
+      - "local_customization"
+      - "dependency_tracking"
+
+  # Workflow & Orchestration (Subsystems 26-30)
+  - name: "Job Scheduler"
+    id: 26
+    category: "workflow"
+    hints:
+      - "job scheduler"
+      - "ETL scheduler"
+      - "workflow orchestration"
+      - "job dependencies"
+      - "cron job"
+      - "task scheduler"
+      - "batch processing"
+    report_fields:
+      - "scheduling_capabilities"
+      - "dependency_management"
+      - "alert_system"
+      - "condition_handling"
+
+  - name: "Workflow Monitor"
+    id: 27
+    category: "workflow"
+    hints:
+      - "workflow monitor"
+      - "job monitoring"
+      - "dashboard"
+      - "ETL monitoring"
+      - "process tracking"
+      - "execution status"
+    report_fields:
+      - "monitoring_scope"
+      - "dashboard_features"
+      - "reporting_capabilities"
+      - "alerting_system"
+
+  - name: "Recovery and Restart System"
+    id: 28
+    category: "workflow"
+    hints:
+      - "recovery system"
+      - "restart capability"
+      - "job resume"
+      - "rollback"
+      - "checkpoint"
+      - "failure recovery"
+    report_fields:
+      - "recovery_strategy"
+      - "checkpoint_mechanism"
+      - "rollback_capabilities"
+      - "restart_granularity"
+
+  - name: "Parallelizing/Pipelining System"
+    id: 29
+    category: "workflow"
+    hints:
+      - "parallel processing"
+      - "pipelining"
+      - "multiprocessor"
+      - "grid computing"
+      - "streaming"
+      - "concurrent execution"
+    report_fields:
+      - "parallelization_strategy"
+      - "pipeline_architecture"
+      - "resource_utilization"
+      - "automatic_optimization"
+
+  - name: "Problem Escalation System"
+    id: 30
+    category: "workflow"
+    hints:
+      - "problem escalation"
+      - "error escalation"
+      - "notification hierarchy"
+      - "issue tracking"
+      - "alert escalation"
+      - "incident management"
+    report_fields:
+      - "escalation_rules"
+      - "notification_levels"
+      - "tracking_mechanism"
+      - "resolution_workflow"
+
+  # Development & Deployment (Subsystems 31-33)
+  - name: "Version Control System"
+    id: 31
+    category: "development"
+    hints:
+      - "version control"
+      - "source control"
+      - "ETL versioning"
+      - "metadata versioning"
+      - "check-in check-out"
+      - "code repository"
+      - "git svn"
+    report_fields:
+      - "versioning_strategy"
+      - "metadata_management"
+      - "comparison_capabilities"
+      - "archival_system"
+
+  - name: "Version Migration System"
+    id: 32
+    category: "development"
+    hints:
+      - "version migration"
+      - "environment promotion"
+      - "dev test prod"
+      - "deployment pipeline"
+      - "migration scripts"
+      - "environment management"
+    report_fields:
+      - "migration_process"
+      - "environment_management"
+      - "rollback_capability"
+      - "configuration_management"
+
+  - name: "Lineage and Dependency Analyzer"
+    id: 33
+    category: "development"
+    hints:
+      - "data lineage"
+      - "dependency analysis"
+      - "impact analysis"
+      - "lineage tracking"
+      - "data flow"
+      - "transformation tracking"
+    report_fields:
+      - "lineage_scope"
+      - "dependency_tracking"
+      - "impact_analysis"
+      - "visualization_capabilities"
+
+  # Compliance & Security (Subsystems 34-35)
+  - name: "Compliance Reporter"
+    id: 34
+    category: "compliance"
+    hints:
+      - "compliance reporting"
+      - "regulatory compliance"
+      - "audit trail"
+      - "data governance"
+      - "lineage proof"
+      - "compliance validation"
+    report_fields:
+      - "regulatory_scope"
+      - "audit_capabilities"
+      - "proof_generation"
+      - "compliance_validation"
+
+  - name: "Security System"
+    id: 35
+    category: "compliance"
+    hints:
+      - "security system"
+      - "role-based security"
+      - "access control"
+      - "data security"
+      - "authentication"
+      - "authorization"
+      - "audit logging"
+    report_fields:
+      - "security_model"
+      - "access_controls"
+      - "audit_logging"
+      - "change_tracking"
+
+  # Infrastructure (Subsystems 36-38)
+  - name: "Backup System"
+    id: 36
+    category: "infrastructure"
+    hints:
+      - "backup system"
+      - "data backup"
+      - "metadata backup"
+      - "disaster recovery"
+      - "backup strategy"
+      - "recovery point"
+    report_fields:
+      - "backup_strategy"
+      - "recovery_capabilities"
+      - "retention_policy"
+      - "restore_procedures"
+
+  - name: "Metadata Repository Manager"
+    id: 37
+    category: "infrastructure"
+    hints:
+      - "metadata repository"
+      - "metadata manager"
+      - "transformation logic"
+      - "process metadata"
+      - "technical metadata"
+      - "business metadata"
+    report_fields:
+      - "metadata_scope"
+      - "repository_structure"
+      - "metadata_integration"
+      - "search_capabilities"
+
+  - name: "Project Management System"
+    id: 38
+    category: "infrastructure"
+    hints:
+      - "project management"
+      - "ETL development tracking"
+      - "project tracking"
+      - "development lifecycle"
+      - "requirement tracking"
+      - "resource management"
+    report_fields:
+      - "project_scope"
+      - "tracking_capabilities"
+      - "resource_management"
+      - "development_lifecycle"
