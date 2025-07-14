@@ -19,17 +19,63 @@ This repository contains comprehensive specifications and taxonomies for automat
 
 ```
 ai-code-auditor/
-├── specs/                          # Machine-readable specifications
-│   ├── design-patterns-spec.yaml   # Design pattern detection rules
+├── audit-runner.sh                   # Main audit runner script
+├── specs/                            # Machine-readable specifications
+│   ├── design-patterns-spec.yaml     # Design pattern detection rules
 │   ├── algorithms-data-structures-spec.yaml  # Algorithm and DS specs
-│   ├── datahub-spec.yaml           # DataHub entity and aspect specs
+│   ├── datahub-spec.yaml             # DataHub entity and aspect specs
 │   ├── feasibility-analysis-spec.yaml # Feasibility analysis specifications
 │   ├── security-vulnerabilities-spec.yaml    # Security vulnerability patterns
-│   ├── etl-subsystems-spec.yaml    # ETL subsystems specifications
-│   ├── cloud-architecture-spec.yaml # Cloud architecture patterns
-│   └── repo-discovery-spec.yaml    # Repository discovery specifications
-├── docs/                           # Technical reference documentation
-│   ├── Design-Patterns-Taxonomy.md # Pattern reference guide
+│   ├── etl-subsystems-spec.yaml      # ETL subsystem specifications
+│   ├── cloud-architecture-spec.yaml  # Cloud architecture patterns
+│   └── repo-discovery-spec.yaml      # Repository discovery patterns
+├── docs/                             # Technical reference documentation
+│   ├── Audit-Runner-Documentation.md # Complete audit runner guide
+│   ├── Design-Patterns-Taxonomy.md   # Pattern reference guide
+│   ├── Algorithms-DS-Taxonomy.md     # Algorithm and DS reference
+│   ├── DataHub-Taxonomy-Reference.md # DataHub entity guide
+│   ├── Feasibility-Analysis-Taxonomy.md # Feasibility analysis guide
+│   ├── Security-Vulnerabilities-Taxonomy.md # Security vulnerability guide
+│   ├── ETL-Subsystems-Taxonomy.md    # ETL subsystems reference
+│   ├── Cloud-Architecture-Taxonomy.md # Cloud patterns reference
+│   ├── Repository-Discovery-Taxonomy.md # Repository discovery guide
+│   ├── Prompt-Engineering-Guide.md     # How to craft effective prompts
+│   ├── Prompt-Validation-Examples.md   # Example outputs for verification
+│   ├── Pattern-Cross-Reference.md  # Matrix of relationships across taxonomies
+│   └── Complexity-Guide.md          # Implementation difficulty ratings
+├── guides/                           # User-focused guides
+│   ├── getting-started.md          # Quick start and first audit
+│   ├── audit-types-guide.md        # Deep dive into each audit type
+│   ├── customization-guide.md      # Customizing specs and prompts
+│   ├── integration-guide.md        # CI/CD and workflow integration
+│   ├── best-practices.md           # Proven strategies and recommendations
+│   └── troubleshooting.md          # Common issues and solutions
+├── prompts/                          # AI prompt templates
+│   ├── audit-types/                # Prompts organized by audit type
+│   ├── scenarios/                  # Scenario specific prompts
+│   ├── models/                     # Model optimization prompts
+│   ├── design-patterns-prompt.md     # Design pattern analysis prompts
+│   ├── algorithms-ds-prompt.md       # Algorithm and DS analysis prompts
+│   ├── datahub-prompt.md             # DataHub analysis prompts
+│   ├── feasibility-audit-prompts.md  # Feasibility analysis prompts
+│   ├── security-audit-prompts.md     # Security audit prompt library
+│   ├── etl-subsystems-prompt.md      # ETL subsystem prompts
+│   ├── cloud-audit-prompts.md        # Cloud architecture prompts
+│   └── repo-discovery-prompts.md     # Repository discovery prompts
+├── templates/                        # Report generation templates
+│   └── feasibility-report-template.md # Feasibility analysis report template
+├── workflows/                        # Workflow templates
+│   ├── ci-cd/                     # CI/CD examples
+│   ├── pre-commit/                # Pre-commit hooks
+│   └── scheduled/                 # Scheduled audits
+├── examples/                         # Integration examples
+│   └── integration-examples.sh       # CI/CD and workflow examples
+├── test-audit-runner.sh              # Test suite for audit runner
+├── scripts/                          # Utility scripts
+│   ├── repo-discovery.sh             # Repository discovery utility
+│   ├── relationship_graph.py       # Generate cross-reference graphs
+│   └── search_relationships.py     # Search related items
+└── README.md                         # This file
 │   ├── Algorithms-DS-Taxonomy.md   # Algorithm and DS reference
 │   ├── DataHub-Taxonomy-Reference.md # DataHub entity guide
 │   ├── Feasibility-Analysis-Taxonomy.md # Feasibility analysis guide
@@ -70,20 +116,36 @@ ai-code-auditor/
 │   └── repo-discovery-prompts.md   # Repository discovery prompts
 ├── templates/                      # Report generation templates
 │   └── feasibility-report-template.md # Feasibility analysis report template
-├── workflows/                     # Workflow templates
-│   ├── ci-cd/                     # CI/CD examples
-│   ├── pre-commit/                # Pre-commit hooks
-│   └── scheduled/                 # Scheduled audits
-├── scripts/                        # Utility scripts
-│   ├── repo-discovery.sh           # Repository discovery script
-│   ├── relationship_graph.py       # Generate cross-reference graphs
-│   └── search_relationships.py     # Search related items
-└── README.md                       # This file
 ```
 
 ## Quick Start
 
 **New users**: Start with the [Getting Started Guide](guides/getting-started.md) for a 5-minute walkthrough.
+
+### Using the Audit Runner Script (Recommended)
+
+The easiest way to run audits is using the `audit-runner.sh` script:
+
+```bash
+# Run all audits with default settings
+./audit-runner.sh /path/to/repo
+
+# Run specific audit type
+./audit-runner.sh --type security /path/to/repo
+
+# Generate report in specific format
+./audit-runner.sh --type patterns --format markdown /path/to/repo
+
+# Save report to file
+./audit-runner.sh --type all --output audit-report.json /path/to/repo
+
+# Run with custom configuration
+./audit-runner.sh --config my-config.conf /path/to/repo
+```
+
+For complete documentation, see: [Audit Runner Documentation](docs/Audit-Runner-Documentation.md)
+
+### Using AI Agents Directly
 
 To perform a code audit using an AI agent:
 
@@ -240,14 +302,20 @@ Complexity ratings help users understand implementation difficulty, detection ef
 
 ## Key Features
 
+### Automated Audit Runner
+- **Comprehensive Script**: `audit-runner.sh` provides a complete audit automation solution
+- **Multiple Output Formats**: Generate reports in JSON, Markdown, HTML, and CSV formats
+- **Configurable Execution**: Support for individual audits, combined audits, and custom profiles
+- **CI/CD Integration**: Built-in support for continuous integration and deployment pipelines
+- **Configuration Management**: Flexible configuration via files, environment variables, and CLI options
+
 ### Pattern Detection
 - **Hint-based matching**: Uses keywords and code signatures for pattern identification
 - **Quality assessment**: Evaluates implementation quality and best practices
 - **Complexity ratings**: Standardized implementation, detection, and performance levels
 - **Feasibility evaluation**: Assesses migration readiness, refactoring opportunities, and integration complexity
-- **Comprehensive coverage**: Supports 25+ design patterns, major algorithms, DataHub metadata, and feasibility analysis
+- **Comprehensive coverage**: Supports 25+ design patterns, major algorithms, DataHub metadata, feasibility analysis, and security vulnerabilities
 - **Security analysis**: Detects OWASP Top 10 vulnerabilities with severity ratings
-- **Comprehensive coverage**: Supports 25+ design patterns, major algorithms, DataHub metadata, and security vulnerabilities
 - **Comprehensive coverage**: Supports 25+ design patterns, major algorithms, DataHub metadata, and 38 ETL subsystems
 
 ### Reporting
