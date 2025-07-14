@@ -1,0 +1,85 @@
+name: Validate Specifications
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'specs/**/*.yaml'
+      - 'validate-specs.py'
+      - '.github/workflows/validate-specs.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'specs/**/*.yaml'
+      - 'validate-specs.py'
+      - '.github/workflows/validate-specs.yml'
+
+jobs:
+  validate-specs:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyyaml jsonschema
+    
+    - name: Make validation script executable
+      run: chmod +x validate-specs.py
+    
+    - name: Run specification validation
+      run: |
+        echo "Running specification validation..."
+        python3 validate-specs.py --all --strict
+    
+    - name: Run tests for validator
+      run: |
+        echo "Running validator tests..."
+        python3 -m unittest test_validate_specs.py -v
+    
+    - name: Check for specification changes
+      id: spec_changes
+      run: |
+        if git diff --name-only origin/main...HEAD | grep -q '^specs/.*\.yaml$'; then
+          echo "spec_changes=true" >> $GITHUB_OUTPUT
+        else
+          echo "spec_changes=false" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Generate validation report
+      if: steps.spec_changes.outputs.spec_changes == 'true'
+      run: |
+        echo "## Specification Validation Report" > validation_report.md
+        echo "" >> validation_report.md
+        echo "### Changed Files:" >> validation_report.md
+        git diff --name-only origin/main...HEAD | grep '^specs/.*\.yaml$' | sed 's/^/- /' >> validation_report.md
+        echo "" >> validation_report.md
+        echo "### Validation Results:" >> validation_report.md
+        if python3 validate-specs.py --all --strict > validation_output.txt 2>&1; then
+          echo "✅ All specifications are valid!" >> validation_report.md
+        else
+          echo "❌ Validation failed:" >> validation_report.md
+          echo '```' >> validation_report.md
+          cat validation_output.txt >> validation_report.md
+          echo '```' >> validation_report.md
+        fi
+        
+        echo "### Test Results:" >> validation_report.md
+        echo '```' >> validation_report.md
+        python3 -m unittest test_validate_specs.py -v >> validation_report.md 2>&1
+        echo '```' >> validation_report.md
+    
+    - name: Upload validation report
+      if: steps.spec_changes.outputs.spec_changes == 'true'
+      uses: actions/upload-artifact@v3
+      with:
+        name: validation-report
+        path: validation_report.md
