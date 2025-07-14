@@ -11,6 +11,7 @@ This repository contains comprehensive specifications and taxonomies for automat
 - **Design Patterns**: 25+ GoF and architectural patterns including Singleton, Factory, Observer, MVC, and more
 - **Algorithms & Data Structures**: Sorting algorithms, search algorithms, trees, graphs, hash tables, and complexity analysis
 - **DataHub Entities**: Datasets, ML features, models, lineage, governance aspects, and metadata patterns
+- **Feasibility Analysis**: Migration readiness, refactoring assessment, integration analysis, technical debt evaluation, and resource planning
 - **Security Vulnerabilities**: OWASP Top 10 vulnerabilities, cryptographic failures, injection attacks, and security misconfigurations
 - **ETL Subsystems**: 38 data warehouse subsystems including extraction, transformation, loading, quality management, and workflow orchestration
 
@@ -22,11 +23,20 @@ ai-code-auditor/
 │   ├── design-patterns-spec.yaml   # Design pattern detection rules
 │   ├── algorithms-data-structures-spec.yaml  # Algorithm and DS specs
 │   ├── datahub-spec.yaml           # DataHub entity and aspect specs
+│   └── feasibility-analysis-spec.yaml # Feasibility analysis specifications
 │   └── security-vulnerabilities-spec.yaml    # Security vulnerability patterns
 ├── docs/                           # Human-readable documentation
 │   ├── Design-Patterns-Taxonomy.md # Pattern reference guide
 │   ├── Algorithms-DS-Taxonomy.md   # Algorithm and DS reference
 │   ├── DataHub-Taxonomy-Reference.md # DataHub entity guide
+│   └── Feasibility-Analysis-Taxonomy.md # Feasibility analysis guide
+├── prompts/                        # Ready-made AI agent prompts
+│   ├── design-patterns-prompt.md   # Design pattern analysis prompts
+│   ├── algorithms-ds-prompt.md     # Algorithm and DS analysis prompts
+│   ├── datahub-prompt.md          # DataHub analysis prompts
+│   └── feasibility-audit-prompts.md # Feasibility analysis prompts
+├── templates/                      # Report generation templates
+│   └── feasibility-report-template.md # Feasibility analysis report template
 │   └── Security-Vulnerabilities-Taxonomy.md  # Security vulnerability guide
 ├── prompts/                        # AI prompt templates
 │   └── security-audit-prompts.md   # Security audit prompt library
@@ -45,6 +55,7 @@ To perform a code audit using an AI agent:
    - Design patterns only: `specs/design-patterns-spec.yaml`
    - Algorithms/DS only: `specs/algorithms-data-structures-spec.yaml`
    - DataHub entities only: `specs/datahub-spec.yaml`
+   - Feasibility analysis only: `specs/feasibility-analysis-spec.yaml`
    - Security vulnerabilities only: `specs/security-vulnerabilities-spec.yaml`
    - All patterns: Use all spec files
    - ETL subsystems only: `specs/etl-subsystems-spec.yaml`
@@ -64,8 +75,7 @@ Focus on detecting design patterns and provide a detailed report including:
 
 ### Prompt Library
 
-Ready-made prompt templates are available in the [`prompts/`](prompts/) directory. Copy the appropriate file and replace `[CODE_PATH]` with the path to your codebase or metadata repository. Templates include design pattern scans, algorithm and data structure analysis, DataHub metadata audits, security vulnerability assessments, and ETL subsystem checks.
-
+Ready-made prompt templates are available in the [`prompts/`](prompts/) directory. Copy the appropriate file and replace `[CODE_PATH]` with the path to your codebase or metadata repository. Templates include design pattern scans, algorithm and data structure analysis, DataHub metadata audits, ETL subsystem checks, and comprehensive feasibility analysis.
 ## Specification Schema
 
 Each YAML specification follows a consistent schema:
@@ -100,6 +110,16 @@ datahub_entities:
     report_fields: ["metadata_field1", "metadata_field2"]
 ```
 
+### Feasibility Analysis
+```yaml
+feasibility_analysis:
+  - name: "AnalysisName"
+    category: "migration|refactoring|integration|technical_debt|resources"
+    analysis_type: "specific_analysis_type"
+    hints: ["keyword1", "keyword2", "indicator"]
+    report_fields: ["assessment_field1", "assessment_field2"]
+```    
+   
 ### Security Vulnerabilities
 ```yaml
 vulnerabilities:
@@ -128,6 +148,7 @@ The `docs/` folder contains human-readable references:
 - **Design-Patterns-Taxonomy.md**: Comprehensive guide to all supported design patterns with complexity ratings and use cases
 - **Algorithms-DS-Taxonomy.md**: Reference for algorithms and data structures with time/space complexity analysis
 - **DataHub-Taxonomy-Reference.md**: Complete guide to DataHub entities, aspects, and governance patterns
+- **Feasibility-Analysis-Taxonomy.md**: Comprehensive guide to feasibility analysis including migration assessment, refactoring evaluation, and resource planning
 - **Security-Vulnerabilities-Taxonomy.md**: Complete guide to security vulnerabilities based on OWASP Top 10 2021
 - **ETL-Subsystems-Taxonomy.md**: Reference for 38 ETL subsystems with detection patterns and implementation guidance
 
@@ -137,6 +158,8 @@ The `docs/` folder contains human-readable references:
 - **Hint-based matching**: Uses keywords and code signatures for pattern identification
 - **Quality assessment**: Evaluates implementation quality and best practices
 - **Complexity analysis**: Provides time/space complexity information for algorithms
+- **Feasibility evaluation**: Assesses migration readiness, refactoring opportunities, and integration complexity
+- **Comprehensive coverage**: Supports 25+ design patterns, major algorithms, DataHub metadata, and feasibility analysis
 - **Security analysis**: Detects OWASP Top 10 vulnerabilities with severity ratings
 - **Comprehensive coverage**: Supports 25+ design patterns, major algorithms, DataHub metadata, and security vulnerabilities
 - **Comprehensive coverage**: Supports 25+ design patterns, major algorithms, DataHub metadata, and 38 ETL subsystems
@@ -154,6 +177,7 @@ The `docs/` folder contains human-readable references:
 - **Architecture Analysis**: Understand system design and architectural patterns
 - **Technical Debt Assessment**: Identify anti-patterns and improvement opportunities
 - **DataHub Governance**: Audit metadata completeness and governance practices
+- **Feasibility Assessment**: Evaluate migration readiness, refactoring opportunities, and integration complexity
 - **Educational Analysis**: Learn about patterns and algorithms in existing codebases
 - **Migration Planning**: Understand current patterns before refactoring
 
