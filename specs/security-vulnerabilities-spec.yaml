@@ -1,0 +1,466 @@
+# Security Vulnerabilities Detection Specification
+# For use with AI agents to identify security issues in codebases
+
+vulnerabilities:
+  # SQL Injection
+  - name: "SQL Injection"
+    category: "Injection"
+    owasp_category: "A03:2021 – Injection"
+    severity: "Critical"
+    description: "Direct concatenation of user input into SQL queries"
+    detection_hints:
+      - "query concatenation with +"
+      - "string interpolation in SQL"
+      - "execute() with string formatting"
+      - "raw SQL with user input"
+      - "dynamic query building"
+    patterns:
+      - "query = \"SELECT * FROM users WHERE id = \" + userId"
+      - "cursor.execute(f\"SELECT * FROM {table_name}\")"
+      - "db.Query(`SELECT * FROM users WHERE name = '` + name + `'`)"
+    safe_alternatives:
+      - "Parameterized queries"
+      - "Prepared statements"
+      - "Stored procedures"
+      - "ORM query builders"
+    report_fields:
+      - "location"
+      - "vulnerable_code"
+      - "user_input_source"
+      - "database_operation"
+      - "suggested_fix"
+
+  # Cross-Site Scripting (XSS)
+  - name: "Cross-Site Scripting (XSS)"
+    category: "Injection"
+    owasp_category: "A03:2021 – Injection"
+    severity: "High"
+    description: "Unescaped user input rendered in HTML"
+    detection_hints:
+      - "innerHTML with user data"
+      - "document.write with input"
+      - "v-html in Vue"
+      - "dangerouslySetInnerHTML in React"
+      - "raw HTML templating"
+    patterns:
+      - "element.innerHTML = userInput"
+      - "document.write(request.getParameter"
+      - "<div v-html=\"userContent\">"
+      - "dangerouslySetInnerHTML={{__html: userData}}"
+    safe_alternatives:
+      - "textContent/innerText"
+      - "HTML encoding functions"
+      - "Template auto-escaping"
+      - "Content Security Policy"
+    report_fields:
+      - "location"
+      - "xss_type"
+      - "input_source"
+      - "output_context"
+      - "encoding_recommendation"
+
+  # CSRF
+  - name: "Cross-Site Request Forgery (CSRF)"
+    category: "Request Forgery"
+    owasp_category: "A01:2021 – Broken Access Control"
+    severity: "High"
+    description: "State-changing operations without CSRF protection"
+    detection_hints:
+      - "POST/PUT/DELETE without token"
+      - "missing CSRF middleware"
+      - "disabled CSRF protection"
+      - "GET requests with side effects"
+    patterns:
+      - "@csrf_exempt"
+      - "csrf: false"
+      - "app.post('/api' without csrf"
+      - "GET request modifying data"
+    safe_alternatives:
+      - "CSRF tokens"
+      - "SameSite cookies"
+      - "Double submit cookies"
+      - "Custom request headers"
+    report_fields:
+      - "location"
+      - "http_method"
+      - "operation_type"
+      - "protection_status"
+      - "implementation_guide"
+
+  # Authentication Issues
+  - name: "Weak Authentication"
+    category: "Authentication"
+    owasp_category: "A07:2021 – Identification and Authentication Failures"
+    severity: "High"
+    description: "Weak or missing authentication mechanisms"
+    detection_hints:
+      - "hardcoded credentials"
+      - "weak password requirements"
+      - "missing rate limiting"
+      - "session fixation"
+      - "predictable tokens"
+    patterns:
+      - "password = \"admin\""
+      - "if password.length < 4"
+      - "session_id = user_id"
+      - "token = md5(username)"
+    safe_alternatives:
+      - "Strong password policies"
+      - "Multi-factor authentication"
+      - "Secure session management"
+      - "OAuth/SAML integration"
+    report_fields:
+      - "location"
+      - "weakness_type"
+      - "current_implementation"
+      - "risk_level"
+      - "remediation_steps"
+
+  # Authorization Flaws
+  - name: "Broken Authorization"
+    category: "Authorization"
+    owasp_category: "A01:2021 – Broken Access Control"
+    severity: "High"
+    description: "Missing or inadequate authorization checks"
+    detection_hints:
+      - "missing permission checks"
+      - "role validation bypass"
+      - "direct object references"
+      - "path traversal"
+      - "privilege escalation"
+    patterns:
+      - "// TODO: Add authorization"
+      - "if (user != null) // No role check"
+      - "file = request.getParameter('file')"
+      - "../../../etc/passwd"
+    safe_alternatives:
+      - "Role-based access control"
+      - "Attribute-based access control"
+      - "Principle of least privilege"
+      - "Centralized authorization"
+    report_fields:
+      - "location"
+      - "resource_type"
+      - "current_check"
+      - "missing_validation"
+      - "implementation_pattern"
+
+  # Insecure Deserialization
+  - name: "Insecure Deserialization"
+    category: "Deserialization"
+    owasp_category: "A08:2021 – Software and Data Integrity Failures"
+    severity: "Critical"
+    description: "Deserializing untrusted data without validation"
+    detection_hints:
+      - "pickle.loads"
+      - "unserialize()"
+      - "ObjectInputStream"
+      - "JSON.parse without validation"
+      - "eval() usage"
+    patterns:
+      - "pickle.loads(user_data)"
+      - "unserialize($_GET['data'])"
+      - "objectInputStream.readObject()"
+      - "eval(request.body)"
+    safe_alternatives:
+      - "JSON with schema validation"
+      - "Whitelisted classes only"
+      - "Signed/encrypted payloads"
+      - "Input validation"
+    report_fields:
+      - "location"
+      - "deserialization_method"
+      - "data_source"
+      - "validation_status"
+      - "safe_alternative"
+
+  # XXE Injection
+  - name: "XML External Entity (XXE)"
+    category: "Injection"
+    owasp_category: "A05:2021 – Security Misconfiguration"
+    severity: "High"
+    description: "XML parsing with external entity processing enabled"
+    detection_hints:
+      - "DOCTYPE in XML"
+      - "external entity references"
+      - "XMLReader without security"
+      - "DocumentBuilder defaults"
+    patterns:
+      - "factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, false)"
+      - "parser.setResolveExternalEntities(true)"
+      - "<!DOCTYPE foo [<!ENTITY"
+      - "SYSTEM \"file:///"
+    safe_alternatives:
+      - "Disable external entities"
+      - "Use JSON instead of XML"
+      - "XML schema validation"
+      - "Safe parser configuration"
+    report_fields:
+      - "location"
+      - "parser_type"
+      - "configuration"
+      - "external_entity_setting"
+      - "secure_configuration"
+
+  # SSRF
+  - name: "Server-Side Request Forgery (SSRF)"
+    category: "Request Forgery"
+    owasp_category: "A10:2021 – Server-Side Request Forgery"
+    severity: "High"
+    description: "Making requests to user-controlled URLs"
+    detection_hints:
+      - "requests.get(user_url)"
+      - "fetch with user input"
+      - "curl with dynamic URL"
+      - "file_get_contents URL"
+      - "urllib with user data"
+    patterns:
+      - "requests.get(request.args['url'])"
+      - "fetch(userProvidedUrl)"
+      - "curl_setopt($ch, CURLOPT_URL, $_GET['url'])"
+      - "urllib.urlopen(user_input)"
+    safe_alternatives:
+      - "URL allowlisting"
+      - "URL validation"
+      - "Disable redirects"
+      - "Network segmentation"
+    report_fields:
+      - "location"
+      - "request_method"
+      - "url_source"
+      - "validation_present"
+      - "recommended_controls"
+
+  # Weak Cryptography
+  - name: "Weak Cryptography"
+    category: "Cryptographic Failures"
+    owasp_category: "A02:2021 – Cryptographic Failures"
+    severity: "High"
+    description: "Use of weak or broken cryptographic algorithms"
+    detection_hints:
+      - "MD5"
+      - "SHA1"
+      - "DES"
+      - "ECB mode"
+      - "custom crypto"
+      - "math.random for security"
+    patterns:
+      - "hashlib.md5()"
+      - "SHA1("
+      - "DES.new()"
+      - "AES.MODE_ECB"
+      - "Math.random() * 1000000"
+    safe_alternatives:
+      - "SHA-256 or higher"
+      - "bcrypt/scrypt/argon2"
+      - "AES-GCM"
+      - "Secure random generators"
+    report_fields:
+      - "location"
+      - "algorithm_used"
+      - "purpose"
+      - "key_size"
+      - "recommended_algorithm"
+
+  # Hardcoded Secrets
+  - name: "Hardcoded Secrets"
+    category: "Sensitive Data Exposure"
+    owasp_category: "A02:2021 – Cryptographic Failures"
+    severity: "Critical"
+    description: "Credentials or keys hardcoded in source code"
+    detection_hints:
+      - "api_key ="
+      - "password ="
+      - "private_key ="
+      - "secret ="
+      - "token ="
+      - "aws_access_key"
+    patterns:
+      - "api_key = \"sk_live_\""
+      - "password = \"admin123\""
+      - "private_key = \"-----BEGIN RSA\""
+      - "database_url = \"postgres://user:pass@\""
+    safe_alternatives:
+      - "Environment variables"
+      - "Secret management services"
+      - "Configuration files (gitignored)"
+      - "Key vaults"
+    report_fields:
+      - "location"
+      - "secret_type"
+      - "exposure_risk"
+      - "value_pattern"
+      - "secure_storage_method"
+
+  # Insecure Random
+  - name: "Insecure Randomness"
+    category: "Cryptographic Failures"
+    owasp_category: "A02:2021 – Cryptographic Failures"
+    severity: "Medium"
+    description: "Using predictable random number generation for security"
+    detection_hints:
+      - "Math.random"
+      - "rand()"
+      - "Random() for tokens"
+      - "time-based seeds"
+      - "predictable patterns"
+    patterns:
+      - "token = Math.random().toString()"
+      - "session_id = rand(1, 100000)"
+      - "salt = str(time.time())"
+      - "Random().nextInt() // for security"
+    safe_alternatives:
+      - "crypto.randomBytes()"
+      - "secrets module"
+      - "SecureRandom"
+      - "/dev/urandom"
+    report_fields:
+      - "location"
+      - "random_method"
+      - "security_context"
+      - "predictability_risk"
+      - "secure_alternative"
+
+  # Certificate Validation
+  - name: "Improper Certificate Validation"
+    category: "Cryptographic Failures"
+    owasp_category: "A02:2021 – Cryptographic Failures"
+    severity: "High"
+    description: "Disabled or improper TLS/SSL certificate validation"
+    detection_hints:
+      - "verify=False"
+      - "rejectUnauthorized: false"
+      - "CURLOPT_SSL_VERIFYPEER, 0"
+      - "InsecureSkipVerify"
+      - "trustAllCerts"
+    patterns:
+      - "requests.get(url, verify=False)"
+      - "process.env[\"NODE_TLS_REJECT_UNAUTHORIZED\"] = 0"
+      - "curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false)"
+      - "TLSClientConfig{InsecureSkipVerify: true}"
+    safe_alternatives:
+      - "Proper certificate validation"
+      - "Certificate pinning"
+      - "CA bundle configuration"
+      - "Mutual TLS"
+    report_fields:
+      - "location"
+      - "protocol"
+      - "validation_disabled"
+      - "context"
+      - "security_impact"
+
+  # Debug Mode
+  - name: "Debug Mode in Production"
+    category: "Security Misconfiguration"
+    owasp_category: "A05:2021 – Security Misconfiguration"
+    severity: "Medium"
+    description: "Debug mode or verbose errors exposed in production"
+    detection_hints:
+      - "DEBUG = True"
+      - "display_errors = On"
+      - "development mode"
+      - "stack traces exposed"
+      - "verbose logging"
+    patterns:
+      - "app.debug = True"
+      - "ini_set('display_errors', 1)"
+      - "NODE_ENV !== 'production'"
+      - "<customErrors mode=\"Off\""
+    safe_alternatives:
+      - "Environment-based config"
+      - "Centralized logging"
+      - "Generic error pages"
+      - "Monitoring systems"
+    report_fields:
+      - "location"
+      - "debug_setting"
+      - "information_exposed"
+      - "environment_check"
+      - "production_config"
+
+  # Security Headers
+  - name: "Missing Security Headers"
+    category: "Security Misconfiguration"
+    owasp_category: "A05:2021 – Security Misconfiguration"
+    severity: "Medium"
+    description: "Missing HTTP security headers"
+    detection_hints:
+      - "missing CSP"
+      - "no X-Frame-Options"
+      - "no HSTS"
+      - "missing X-Content-Type-Options"
+      - "no Referrer-Policy"
+    patterns:
+      - "// No Content-Security-Policy"
+      - "headers without X-Frame-Options"
+      - "missing Strict-Transport-Security"
+      - "app.use(helmet()) // commented out"
+    safe_alternatives:
+      - "helmet.js for Node"
+      - "secure headers middleware"
+      - "Web server configuration"
+      - "CDN security headers"
+    report_fields:
+      - "location"
+      - "missing_headers"
+      - "current_headers"
+      - "risk_assessment"
+      - "implementation_guide"
+
+  # Outdated Dependencies
+  - name: "Vulnerable Dependencies"
+    category: "Vulnerable Components"
+    owasp_category: "A06:2021 – Vulnerable and Outdated Components"
+    severity: "Varies"
+    description: "Using components with known vulnerabilities"
+    detection_hints:
+      - "outdated versions"
+      - "CVE references"
+      - "security advisories"
+      - "deprecated packages"
+      - "unmaintained libraries"
+    patterns:
+      - "\"lodash\": \"^2.0.0\""
+      - "implementation 'log4j:log4j:2.14.0'"
+      - "<version>1.2.17</version> <!-- vulnerable -->"
+      - "require 'nokogiri', '< 1.10.4'"
+    safe_alternatives:
+      - "Regular updates"
+      - "Dependency scanning"
+      - "Automated PRs"
+      - "Version pinning"
+    report_fields:
+      - "location"
+      - "package_name"
+      - "current_version"
+      - "vulnerabilities"
+      - "recommended_version"
+
+# Severity levels for prioritization
+severity_levels:
+  - level: "Critical"
+    description: "Immediate action required, high impact and easily exploitable"
+    response_time: "Immediate"
+  - level: "High"
+    description: "Should be fixed soon, significant impact possible"
+    response_time: "Within sprint"
+  - level: "Medium"
+    description: "Should be addressed, moderate impact"
+    response_time: "Within release"
+  - level: "Low"
+    description: "Should be fixed when convenient"
+    response_time: "Backlog"
+
+# OWASP Top 10 2021 Mapping
+owasp_top_10_2021:
+  - "A01:2021 – Broken Access Control"
+  - "A02:2021 – Cryptographic Failures"
+  - "A03:2021 – Injection"
+  - "A04:2021 – Insecure Design"
+  - "A05:2021 – Security Misconfiguration"
+  - "A06:2021 – Vulnerable and Outdated Components"
+  - "A07:2021 – Identification and Authentication Failures"
+  - "A08:2021 – Software and Data Integrity Failures"
+  - "A09:2021 – Security Logging and Monitoring Failures"
+  - "A10:2021 – Server-Side Request Forgery"

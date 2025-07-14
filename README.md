@@ -11,6 +11,7 @@ This repository contains comprehensive specifications and taxonomies for automat
 - **Design Patterns**: 25+ GoF and architectural patterns including Singleton, Factory, Observer, MVC, and more
 - **Algorithms & Data Structures**: Sorting algorithms, search algorithms, trees, graphs, hash tables, and complexity analysis
 - **DataHub Entities**: Datasets, ML features, models, lineage, governance aspects, and metadata patterns
+- **Security Vulnerabilities**: OWASP Top 10 vulnerabilities, cryptographic failures, injection attacks, and security misconfigurations
 
 ## Repository Structure
 
@@ -19,11 +20,15 @@ ai-code-auditor/
 ├── specs/                          # Machine-readable specifications
 │   ├── design-patterns-spec.yaml   # Design pattern detection rules
 │   ├── algorithms-data-structures-spec.yaml  # Algorithm and DS specs
-│   └── datahub-spec.yaml           # DataHub entity and aspect specs
+│   ├── datahub-spec.yaml           # DataHub entity and aspect specs
+│   └── security-vulnerabilities-spec.yaml    # Security vulnerability patterns
 ├── docs/                           # Human-readable documentation
 │   ├── Design-Patterns-Taxonomy.md # Pattern reference guide
 │   ├── Algorithms-DS-Taxonomy.md   # Algorithm and DS reference
-│   └── DataHub-Taxonomy-Reference.md # DataHub entity guide
+│   ├── DataHub-Taxonomy-Reference.md # DataHub entity guide
+│   └── Security-Vulnerabilities-Taxonomy.md  # Security vulnerability guide
+├── prompts/                        # AI prompt templates
+│   └── security-audit-prompts.md   # Security audit prompt library
 └── README.md                       # This file
 ```
 
@@ -39,7 +44,8 @@ To perform a code audit using an AI agent:
    - Design patterns only: `specs/design-patterns-spec.yaml`
    - Algorithms/DS only: `specs/algorithms-data-structures-spec.yaml`
    - DataHub entities only: `specs/datahub-spec.yaml`
-   - All patterns: Use all three spec files
+   - Security vulnerabilities only: `specs/security-vulnerabilities-spec.yaml`
+   - All patterns: Use all spec files
 
 4. **Review results** - The AI agent will generate reports based on the `report_fields` specified in each pattern.
 
@@ -55,7 +61,7 @@ Focus on detecting design patterns and provide a detailed report including:
 
 ### Prompt Library
 
-Ready-made prompt templates are available in the [`prompts/`](prompts/) directory. Copy the appropriate file and replace `[CODE_PATH]` with the path to your codebase or metadata repository. Templates include design pattern scans, algorithm and data structure analysis, DataHub metadata audits, and ETL subsystem checks.
+Ready-made prompt templates are available in the [`prompts/`](prompts/) directory. Copy the appropriate file and replace `[CODE_PATH]` with the path to your codebase or metadata repository. Templates include design pattern scans, algorithm and data structure analysis, DataHub metadata audits, security vulnerability assessments, and ETL subsystem checks.
 
 ## Specification Schema
 
@@ -91,6 +97,17 @@ datahub_entities:
     report_fields: ["metadata_field1", "metadata_field2"]
 ```
 
+### Security Vulnerabilities
+```yaml
+vulnerabilities:
+  - name: "VulnerabilityName"
+    category: "injection|authentication|authorization"
+    owasp_category: "A01:2021 – Category Name"
+    severity: "Critical|High|Medium|Low"
+    detection_hints: ["pattern1", "pattern2"]
+    report_fields: ["location", "severity", "remediation"]
+```
+
 ## Documentation
 
 The `docs/` folder contains human-readable references:
@@ -98,6 +115,7 @@ The `docs/` folder contains human-readable references:
 - **Design-Patterns-Taxonomy.md**: Comprehensive guide to all supported design patterns with complexity ratings and use cases
 - **Algorithms-DS-Taxonomy.md**: Reference for algorithms and data structures with time/space complexity analysis
 - **DataHub-Taxonomy-Reference.md**: Complete guide to DataHub entities, aspects, and governance patterns
+- **Security-Vulnerabilities-Taxonomy.md**: Complete guide to security vulnerabilities based on OWASP Top 10 2021
 
 ## Key Features
 
@@ -105,7 +123,8 @@ The `docs/` folder contains human-readable references:
 - **Hint-based matching**: Uses keywords and code signatures for pattern identification
 - **Quality assessment**: Evaluates implementation quality and best practices
 - **Complexity analysis**: Provides time/space complexity information for algorithms
-- **Comprehensive coverage**: Supports 25+ design patterns, major algorithms, and DataHub metadata
+- **Security analysis**: Detects OWASP Top 10 vulnerabilities with severity ratings
+- **Comprehensive coverage**: Supports 25+ design patterns, major algorithms, DataHub metadata, and security vulnerabilities
 
 ### Reporting
 - **Structured output**: Consistent reporting format across all pattern types
@@ -116,6 +135,7 @@ The `docs/` folder contains human-readable references:
 ## Use Cases
 
 - **Code Review Automation**: Automatically identify patterns and assess code quality
+- **Security Vulnerability Assessment**: Detect OWASP Top 10 vulnerabilities and security misconfigurations
 - **Architecture Analysis**: Understand system design and architectural patterns
 - **Technical Debt Assessment**: Identify anti-patterns and improvement opportunities
 - **DataHub Governance**: Audit metadata completeness and governance practices
