@@ -1,0 +1,30 @@
+{
+  "repository_path": "/home/runner/work/ai-code-auditor/ai-code-auditor",
+  "audit_timestamp": "2025-07-14T05:06:22Z",
+  "audit_type": "security",
+  "output_format": "json",
+  "configuration": {
+    "parallel_jobs": 1,
+    "verbose": false,
+    "ignore_patterns": ["*.test.*","*.spec.*","node_modules","dist","build","target"],,
+    "include_patterns": ["*.java","*.js","*.ts","*.py","*.go","*.rs","*.cpp","*.c","*.cs","*.php","*.rb"],,
+    "is_git_repo": true
+  },
+  "audits": [
+{
+    "audit_type": "security",
+    "specification": "security-vulnerabilities-spec.yaml",
+    "repository_path": "/home/runner/work/ai-code-auditor/ai-code-auditor",
+    "timestamp": "2025-07-14T05:06:22Z",
+    "status": "completed",
+    "patterns_found": [],
+    "summary": {
+        "total_files_analyzed": 0,
+        "patterns_detected": 0,
+        "issues_found": 0,
+        "recommendations": 0
+    }
+}
+
+  ]
+}
