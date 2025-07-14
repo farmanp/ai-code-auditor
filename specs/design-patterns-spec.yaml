@@ -2,6 +2,9 @@ patterns:
   # Creational Patterns
   - name: "Singleton"
     category: "creational"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "private constructor"
       - "static instance"
@@ -12,9 +15,15 @@ patterns:
       - "thread_safety"
       - "lazy_initialization"
       - "enum_implementation"
+    related:
+      security:
+        - "Thread Safety"
 
   - name: "Factory Method"
     category: "creational"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "createProduct()"
       - "abstract factory"
@@ -24,9 +33,18 @@ patterns:
       - "product_types"
       - "creator_hierarchy"
       - "parameter_handling"
+    related:
+      datahub:
+        - "Dataset"
+        - "DataJob"
+      security:
+        - "Input Validation"
 
   - name: "Abstract Factory"
     category: "creational"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "family of products"
       - "createProductA()"
@@ -39,6 +57,9 @@ patterns:
 
   - name: "Builder"
     category: "creational"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "build()"
       - "fluent interface"
@@ -52,6 +73,9 @@ patterns:
 
   - name: "Prototype"
     category: "creational"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "clone()"
       - "Cloneable"
@@ -66,6 +90,9 @@ patterns:
   # Structural Patterns
   - name: "Adapter"
     category: "structural"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "adaptee"
       - "target interface"
@@ -79,6 +106,9 @@ patterns:
 
   - name: "Bridge"
     category: "structural"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "abstraction"
       - "implementor"
@@ -92,6 +122,9 @@ patterns:
 
   - name: "Composite"
     category: "structural"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "tree structure"
       - "leaf"
@@ -105,6 +138,9 @@ patterns:
 
   - name: "Decorator"
     category: "structural"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "wrap"
       - "enhance"
@@ -118,6 +154,9 @@ patterns:
 
   - name: "Facade"
     category: "structural"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "simplified interface"
       - "subsystem"
@@ -127,9 +166,15 @@ patterns:
       - "subsystem_complexity"
       - "interface_design"
       - "coupling_reduction"
+    related:
+      cloud:
+        - "Microservices"
 
   - name: "Flyweight"
     category: "structural"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "intrinsic state"
       - "extrinsic state"
@@ -143,6 +188,9 @@ patterns:
 
   - name: "Proxy"
     category: "structural"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "surrogate"
       - "placeholder"
@@ -153,10 +201,17 @@ patterns:
       - "proxy_type"
       - "lazy_loading"
       - "access_control_logic"
+    related:
+      security:
+        - "Weak Authentication"
+        - "Broken Authorization"
 
   # Behavioral Patterns
   - name: "Observer"
     category: "behavioral"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "subject"
       - "observer"
@@ -167,9 +222,16 @@ patterns:
       - "notification_strategy"
       - "observer_management"
       - "push_vs_pull"
+    related:
+      datahub:
+        - "DataFlow"
+        - "DataJob"
 
   - name: "Strategy"
     category: "behavioral"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "algorithm family"
       - "context"
@@ -180,9 +242,17 @@ patterns:
       - "algorithm_variants"
       - "selection_mechanism"
       - "context_coupling"
+    related:
+      algorithms:
+        - "Merge Sort"
+        - "Quick Sort"
+        - "Heap Sort"
 
   - name: "Command"
     category: "behavioral"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "execute()"
       - "undo()"
@@ -196,6 +266,9 @@ patterns:
 
   - name: "State"
     category: "behavioral"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "state machine"
       - "context"
@@ -209,6 +282,9 @@ patterns:
 
   - name: "Template Method"
     category: "behavioral"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "algorithm skeleton"
       - "abstract class"
@@ -222,6 +298,9 @@ patterns:
 
   - name: "Chain of Responsibility"
     category: "behavioral"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "handler chain"
       - "successor"
@@ -235,6 +314,9 @@ patterns:
 
   - name: "Mediator"
     category: "behavioral"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "mediator interface"
       - "concrete mediator"
@@ -248,6 +330,9 @@ patterns:
 
   - name: "Memento"
     category: "behavioral"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "originator"
       - "memento"
@@ -261,6 +346,9 @@ patterns:
 
   - name: "Iterator"
     category: "behavioral"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "hasNext()"
       - "next()"
@@ -271,9 +359,16 @@ patterns:
       - "traversal_strategy"
       - "multiple_iterators"
       - "modification_handling"
+    related:
+      algorithms:
+        - "Depth-First Search"
+        - "Breadth-First Search"
 
   - name: "Visitor"
     category: "behavioral"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "accept()"
       - "visit()"
@@ -284,10 +379,16 @@ patterns:
       - "operation_externalization"
       - "element_hierarchy"
       - "visitor_extensibility"
+    related:
+      algorithms:
+        - "Tree Traversal"
 
   # Architectural Patterns
   - name: "Model-View-Controller (MVC)"
     category: "architectural"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "model"
       - "view"
@@ -301,6 +402,9 @@ patterns:
 
   - name: "Model-View-Presenter (MVP)"
     category: "architectural"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "presenter"
       - "passive view"
@@ -313,6 +417,9 @@ patterns:
 
   - name: "Model-View-ViewModel (MVVM)"
     category: "architectural"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "view model"
       - "data binding"
@@ -325,6 +432,9 @@ patterns:
 
   - name: "Repository"
     category: "architectural"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "data access"
       - "domain objects"
@@ -335,9 +445,15 @@ patterns:
       - "query_capabilities"
       - "caching_strategy"
       - "unit_of_work_integration"
+    related:
+      datahub:
+        - "Dataset"
 
   - name: "Dependency Injection"
     category: "architectural"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "IoC container"
       - "constructor injection"
@@ -348,3 +464,6 @@ patterns:
       - "injection_type"
       - "lifecycle_management"
       - "container_usage"
+    related:
+      cloud:
+        - "Containers"

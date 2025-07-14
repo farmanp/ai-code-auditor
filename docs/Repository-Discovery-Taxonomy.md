@@ -2,6 +2,8 @@
 
 This document provides a comprehensive reference for repository discovery patterns that can be detected by the AI code auditor to understand any codebase structure, practices, and characteristics.
 
+See the [Complexity Rating Guide](Complexity-Guide.md) for definitions of implementation, detection, and performance complexity used throughout the specs.
+
 ## Overview
 
 Repository discovery provides a systematic approach to analyzing codebases across five key dimensions:
@@ -296,3 +298,8 @@ Patterns that reveal human factors and maintenance characteristics.
 5. **Team Performance**: Contribution patterns and collaboration metrics
 
 This taxonomy provides a comprehensive framework for understanding any codebase through systematic discovery and analysis, enabling informed decision-making about development practices, team processes, and technical improvements.
+
+## Related Patterns
+
+- Discovery results highlight existing **Design Patterns** in a repository.
+- Findings feed into feasibility and security analyses.

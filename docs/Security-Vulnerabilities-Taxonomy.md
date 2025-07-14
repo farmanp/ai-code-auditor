@@ -2,6 +2,8 @@
 
 This document provides a comprehensive reference for security vulnerability detection patterns used by AI agents to identify potential security issues in codebases.
 
+See the [Complexity Rating Guide](Complexity-Guide.md) for details on implementation difficulty, detection complexity, and performance impact levels mentioned here.
+
 ## Overview
 
 The Security Vulnerabilities Taxonomy is designed to help AI agents systematically identify common security flaws based on the OWASP Top 10 2021 and industry best practices. Each vulnerability type includes detection patterns, severity levels, and remediation guidance.
@@ -494,3 +496,9 @@ The Security Vulnerabilities Taxonomy is designed to help AI agents systematical
 - [CWE (Common Weakness Enumeration)](https://cwe.mitre.org/)
 - [NIST Cybersecurity Framework](https://www.nist.gov/cybersecurity/framework)
 - [SANS Top 25 Software Errors](https://www.sans.org/top25-software-errors/)
+
+## Related Patterns
+
+- **Singleton** implementations must consider thread safety.
+- **Factory Method** patterns should include input validation to mitigate injection flaws.
+- **Proxy** patterns help enforce authentication and authorization.

@@ -1,0 +1,24 @@
+trigger:
+  branches:
+    include:
+      - '*'
+
+pr:
+  branches:
+    include:
+      - '*'
+
+jobs:
+- job: Audit
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+    - script: |
+        ./workflows/pre-commit/quick-audit.sh "$(System.DefaultWorkingDirectory)"
+      displayName: 'Run quick audit'
+    - script: |
+        if [ -n "$SLACK_WEBHOOK" ]; then
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"Azure audit completed for $(Build.Repository.Name)"}' "$SLACK_WEBHOOK"
+        fi
+      displayName: 'Notify Slack'
+      condition: always()

@@ -3,6 +3,9 @@ etl_subsystems:
   - name: "Extract System"
     id: 1
     category: "data_acquisition"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "source data adapter"
       - "job scheduler"
@@ -22,6 +25,9 @@ etl_subsystems:
   - name: "Change Data Capture System"
     id: 2
     category: "data_acquisition"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "change data capture"
       - "CDC"
@@ -41,6 +47,9 @@ etl_subsystems:
   - name: "Data Profiling System"
     id: 3
     category: "data_quality"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "data profiling"
       - "column analysis"
@@ -59,6 +68,9 @@ etl_subsystems:
   - name: "Data Cleansing System"
     id: 4
     category: "data_quality"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "data cleansing"
       - "data cleaning"
@@ -80,6 +92,9 @@ etl_subsystems:
   - name: "Data Conformer"
     id: 5
     category: "data_quality"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "conformed dimension"
       - "data conformance"
@@ -97,6 +112,9 @@ etl_subsystems:
   - name: "Audit Dimension Assembler"
     id: 6
     category: "data_quality"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "audit dimension"
       - "metadata context"
@@ -113,6 +131,9 @@ etl_subsystems:
   - name: "Quality Screen Handler"
     id: 7
     category: "data_quality"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "quality screen"
       - "data quality check"
@@ -130,6 +151,9 @@ etl_subsystems:
   - name: "Error Event Handler"
     id: 8
     category: "data_quality"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "error event"
       - "error handler"
@@ -149,6 +173,9 @@ etl_subsystems:
   - name: "Surrogate Key Creation System"
     id: 9
     category: "key_management"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "surrogate key"
       - "key generation"
@@ -166,6 +193,9 @@ etl_subsystems:
   - name: "Slowly Changing Dimension Processor"
     id: 10
     category: "dimension_management"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "slowly changing dimension"
       - "SCD"
@@ -183,6 +213,9 @@ etl_subsystems:
   - name: "Late Arriving Dimension Handler"
     id: 11
     category: "dimension_management"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "late arriving"
       - "delayed dimension"
@@ -199,6 +232,9 @@ etl_subsystems:
   - name: "Fixed Hierarchy Dimension Builder"
     id: 12
     category: "dimension_management"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "fixed hierarchy"
       - "dimension hierarchy"
@@ -215,6 +251,9 @@ etl_subsystems:
   - name: "Variable Hierarchy Dimension Builder"
     id: 13
     category: "dimension_management"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "variable hierarchy"
       - "ragged hierarchy"
@@ -231,6 +270,9 @@ etl_subsystems:
   - name: "Multivalued Dimension Bridge Table Builder"
     id: 14
     category: "dimension_management"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "bridge table"
       - "many to many"
@@ -248,6 +290,9 @@ etl_subsystems:
   - name: "Junk Dimension Builder"
     id: 15
     category: "dimension_management"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "junk dimension"
       - "miscellaneous flags"
@@ -265,6 +310,9 @@ etl_subsystems:
   - name: "Transaction Grain Fact Table Loader"
     id: 16
     category: "fact_loading"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "transaction grain"
       - "fact table loader"
@@ -281,6 +329,9 @@ etl_subsystems:
   - name: "Periodic Snapshot Grain Fact Table Loader"
     id: 17
     category: "fact_loading"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "periodic snapshot"
       - "snapshot grain"
@@ -297,6 +348,9 @@ etl_subsystems:
   - name: "Accumulating Snapshot Grain Fact Table Loader"
     id: 18
     category: "fact_loading"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "accumulating snapshot"
       - "milestone tracking"
@@ -313,6 +367,9 @@ etl_subsystems:
   - name: "Surrogate Key Pipeline"
     id: 19
     category: "fact_loading"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "surrogate key pipeline"
       - "key substitution"
@@ -329,6 +386,9 @@ etl_subsystems:
   - name: "Late Arriving Fact Handler"
     id: 20
     category: "fact_loading"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "late arriving fact"
       - "delayed facts"
@@ -346,6 +406,9 @@ etl_subsystems:
   - name: "Aggregate Builder"
     id: 21
     category: "performance"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "aggregate"
       - "materialized view"
@@ -362,6 +425,9 @@ etl_subsystems:
   - name: "Multidimensional Cube Builder"
     id: 22
     category: "performance"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "OLAP cube"
       - "multidimensional"
@@ -378,6 +444,9 @@ etl_subsystems:
   - name: "Real-time Partition Builder"
     id: 23
     category: "performance"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "real-time partition"
       - "hot partition"
@@ -395,6 +464,9 @@ etl_subsystems:
   - name: "Dimension Manager System"
     id: 24
     category: "administration"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "dimension manager"
       - "conformed dimension distribution"
@@ -410,6 +482,9 @@ etl_subsystems:
   - name: "Fact Table Provider System"
     id: 25
     category: "administration"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "fact table provider"
       - "dimension subscription"
@@ -426,6 +501,9 @@ etl_subsystems:
   - name: "Job Scheduler"
     id: 26
     category: "workflow"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "job scheduler"
       - "ETL scheduler"
@@ -443,6 +521,9 @@ etl_subsystems:
   - name: "Workflow Monitor"
     id: 27
     category: "workflow"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "workflow monitor"
       - "job monitoring"
@@ -459,6 +540,9 @@ etl_subsystems:
   - name: "Recovery and Restart System"
     id: 28
     category: "workflow"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "recovery system"
       - "restart capability"
@@ -475,6 +559,9 @@ etl_subsystems:
   - name: "Parallelizing/Pipelining System"
     id: 29
     category: "workflow"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "parallel processing"
       - "pipelining"
@@ -491,6 +578,9 @@ etl_subsystems:
   - name: "Problem Escalation System"
     id: 30
     category: "workflow"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "problem escalation"
       - "error escalation"
@@ -508,6 +598,9 @@ etl_subsystems:
   - name: "Version Control System"
     id: 31
     category: "development"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "version control"
       - "source control"
@@ -525,6 +618,9 @@ etl_subsystems:
   - name: "Version Migration System"
     id: 32
     category: "development"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "version migration"
       - "environment promotion"
@@ -541,6 +637,9 @@ etl_subsystems:
   - name: "Lineage and Dependency Analyzer"
     id: 33
     category: "development"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "data lineage"
       - "dependency analysis"
@@ -558,6 +657,9 @@ etl_subsystems:
   - name: "Compliance Reporter"
     id: 34
     category: "compliance"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "compliance reporting"
       - "regulatory compliance"
@@ -574,6 +676,9 @@ etl_subsystems:
   - name: "Security System"
     id: 35
     category: "compliance"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "security system"
       - "role-based security"
@@ -592,6 +697,9 @@ etl_subsystems:
   - name: "Backup System"
     id: 36
     category: "infrastructure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "backup system"
       - "data backup"
@@ -608,6 +716,9 @@ etl_subsystems:
   - name: "Metadata Repository Manager"
     id: 37
     category: "infrastructure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "metadata repository"
       - "metadata manager"
@@ -624,6 +735,9 @@ etl_subsystems:
   - name: "Project Management System"
     id: 38
     category: "infrastructure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "project management"
       - "ETL development tracking"
