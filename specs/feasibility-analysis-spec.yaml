@@ -2,6 +2,9 @@ feasibility_analysis:
   # Migration Feasibility
   - name: "Language Version Compatibility"
     category: "migration"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "compatibility"
     hints:
       - "version requirements"
@@ -18,6 +21,9 @@ feasibility_analysis:
 
   - name: "Framework Migration"
     category: "migration"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "framework"
     hints:
       - "framework version"
@@ -34,6 +40,9 @@ feasibility_analysis:
 
   - name: "Database Migration"
     category: "migration"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "database"
     hints:
       - "schema compatibility"
@@ -50,6 +59,9 @@ feasibility_analysis:
 
   - name: "API Compatibility"
     category: "migration"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "api"
     hints:
       - "API version"
@@ -66,6 +78,9 @@ feasibility_analysis:
 
   - name: "Dependency Conflicts"
     category: "migration"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "dependencies"
     hints:
       - "dependency version"
@@ -83,6 +98,9 @@ feasibility_analysis:
   # Refactoring Assessment
   - name: "Code Smell Detection"
     category: "refactoring"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "code_quality"
     hints:
       - "long methods"
@@ -99,6 +117,9 @@ feasibility_analysis:
 
   - name: "Coupling Analysis"
     category: "refactoring"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "architecture"
     hints:
       - "tight coupling"
@@ -115,6 +136,9 @@ feasibility_analysis:
 
   - name: "Code Duplication"
     category: "refactoring"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "duplication"
     hints:
       - "duplicate blocks"
@@ -131,6 +155,9 @@ feasibility_analysis:
 
   - name: "Testability Assessment"
     category: "refactoring"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "testing"
     hints:
       - "test coverage"
@@ -147,6 +174,9 @@ feasibility_analysis:
 
   - name: "Breaking Change Impact"
     category: "refactoring"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "impact"
     hints:
       - "public interfaces"
@@ -164,6 +194,9 @@ feasibility_analysis:
   # Integration Analysis
   - name: "API Surface Analysis"
     category: "integration"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "api_surface"
     hints:
       - "public endpoints"
@@ -180,6 +213,9 @@ feasibility_analysis:
 
   - name: "Data Model Compatibility"
     category: "integration"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "data_model"
     hints:
       - "data schemas"
@@ -196,6 +232,9 @@ feasibility_analysis:
 
   - name: "Authentication Integration"
     category: "integration"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "authentication"
     hints:
       - "auth protocols"
@@ -212,6 +251,9 @@ feasibility_analysis:
 
   - name: "Communication Protocols"
     category: "integration"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "protocols"
     hints:
       - "HTTP/REST"
@@ -228,6 +270,9 @@ feasibility_analysis:
 
   - name: "Service Boundaries"
     category: "integration"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "boundaries"
     hints:
       - "microservices"
@@ -245,6 +290,9 @@ feasibility_analysis:
   # Technical Debt Evaluation
   - name: "Deprecated API Usage"
     category: "technical_debt"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "deprecation"
     hints:
       - "deprecated methods"
@@ -261,6 +309,9 @@ feasibility_analysis:
 
   - name: "Outdated Patterns"
     category: "technical_debt"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "patterns"
     hints:
       - "anti-patterns"
@@ -277,6 +328,9 @@ feasibility_analysis:
 
   - name: "Security Debt"
     category: "technical_debt"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "security"
     hints:
       - "security vulnerabilities"
@@ -293,6 +347,9 @@ feasibility_analysis:
 
   - name: "Performance Bottlenecks"
     category: "technical_debt"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "performance"
     hints:
       - "slow queries"
@@ -309,6 +366,9 @@ feasibility_analysis:
 
   - name: "Maintenance Burden"
     category: "technical_debt"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "maintenance"
     hints:
       - "complex code"
@@ -326,6 +386,9 @@ feasibility_analysis:
   # Resource Requirements
   - name: "Skill Requirements"
     category: "resources"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "skills"
     hints:
       - "technical skills"
@@ -342,6 +405,9 @@ feasibility_analysis:
 
   - name: "Time Estimation"
     category: "resources"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "time"
     hints:
       - "complexity factors"
@@ -358,6 +424,9 @@ feasibility_analysis:
 
   - name: "Risk Assessment"
     category: "resources"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "risk"
     hints:
       - "technical risks"
@@ -374,6 +443,9 @@ feasibility_analysis:
 
   - name: "Cost Implications"
     category: "resources"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "cost"
     hints:
       - "development costs"
@@ -390,6 +462,9 @@ feasibility_analysis:
 
   - name: "Decision Framework"
     category: "resources"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     analysis_type: "decision"
     hints:
       - "decision criteria"
