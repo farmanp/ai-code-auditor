@@ -347,4 +347,4 @@ patterns:
     report_fields:
       - "injection_type"
       - "lifecycle_management"
-      - "container_usage"
+      - "container_usage"test: change
