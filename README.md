@@ -51,6 +51,7 @@ ai-code-auditor/
 │   ├── customization-guide.md      # Customizing specs and prompts
 │   ├── integration-guide.md        # CI/CD and workflow integration
 │   ├── best-practices.md           # Proven strategies and recommendations
+│   ├── scan-with-claude.md         # Claude-specific usage guide
 │   └── troubleshooting.md          # Common issues and solutions
 ├── prompts/                          # AI prompt templates
 │   ├── audit-types/                # Prompts organized by audit type
@@ -59,11 +60,7 @@ ai-code-auditor/
 │   ├── design-patterns-prompt.md     # Design pattern analysis prompts
 │   ├── algorithms-ds-prompt.md       # Algorithm and DS analysis prompts
 │   ├── datahub-prompt.md             # DataHub analysis prompts
-│   ├── feasibility-audit-prompts.md  # Feasibility analysis prompts
-│   ├── security-audit-prompts.md     # Security audit prompt library
-│   ├── etl-subsystems-prompt.md      # ETL subsystem prompts
-│   ├── cloud-audit-prompts.md        # Cloud architecture prompts
-│   └── repo-discovery-prompts.md     # Repository discovery prompts
+│   └── etl-subsystems-prompt.md      # ETL subsystem prompts
 ├── templates/                        # Report generation templates
 │   └── feasibility-report-template.md # Feasibility analysis report template
 ├── workflows/                        # Workflow templates
@@ -79,47 +76,45 @@ ai-code-auditor/
 │   ├── relationship_graph.py       # Generate cross-reference graphs
 │   ├── search_relationships.py     # Search related items
 │   └── run_scan.py                 # Minimal spec-driven scanner example
-└── README.md                         # This file
-│   ├── Algorithms-DS-Taxonomy.md   # Algorithm and DS reference
-│   ├── DataHub-Taxonomy-Reference.md # DataHub entity guide
-│   ├── Feasibility-Analysis-Taxonomy.md # Feasibility analysis guide
-│   ├── Security-Vulnerabilities-Taxonomy.md  # Security vulnerability guide
-│   ├── ETL-Subsystems-Taxonomy.md  # ETL subsystems reference
-│   ├── Cloud-Architecture-Taxonomy.md # Cloud architecture guide
-│   ├── Repository-Discovery-Taxonomy.md # Repository discovery guide
-│   ├── Prompt-Engineering-Guide.md     # How to craft effective prompts
-│   ├── Prompt-Validation-Examples.md   # Example outputs for verification
-│   ├── Pattern-Cross-Reference.md  # Matrix of relationships across taxonomies
-│   └── Complexity-Guide.md          # Implementation difficulty ratings
-├── guides/                         # User-focused guides
-│   ├── getting-started.md          # Quick start and first audit
-│   ├── audit-types-guide.md        # Deep dive into each audit type
-│   ├── customization-guide.md      # Customizing specs and prompts
-│   ├── integration-guide.md        # CI/CD and workflow integration
-│   ├── best-practices.md           # Proven strategies and recommendations
-│   └── troubleshooting.md          # Common issues and solutions
 ├── prompts/                        # AI prompt templates
 │   ├── audit-types/                # Prompts organized by audit type
-│   ├── scenarios/                  # Scenario specific prompts
-│   ├── models/                     # Model optimization prompts
-│   └── Prompt-Validation-Examples.md   # Example outputs for verification
-├── prompts/                        # AI prompt templates
-│   ├── audit-types/                # Prompts organized by audit type
+│   │   ├── feasibility-prompts.md  # Feasibility analysis prompts
+│   │   ├── security-audit-prompts.md # Security audit prompt library
+│   │   ├── cloud-audit-prompts.md  # Cloud architecture analysis prompts
+│   │   └── repo-discovery-prompts.md # Repository discovery prompts
 │   ├── scenarios/                  # Scenario specific prompts
 │   ├── models/                     # Model optimization prompts
 │   ├── design-patterns-prompt.md   # Design pattern analysis prompts
 │   ├── algorithms-ds-prompt.md     # Algorithm and DS analysis prompts
 │   ├── datahub-prompt.md           # DataHub analysis prompts
-│   ├── design-patterns-prompt.md   # Design pattern analysis prompts
-│   ├── algorithms-ds-prompt.md     # Algorithm and DS analysis prompts
-│   ├── datahub-prompt.md          # DataHub analysis prompts
-│   ├── feasibility-audit-prompts.md # Feasibility analysis prompts
-│   ├── security-audit-prompts.md   # Security audit prompt library
-│   ├── etl-subsystems-prompt.md    # ETL subsystems analysis prompts
-│   ├── cloud-audit-prompts.md      # Cloud architecture analysis prompts
-│   └── repo-discovery-prompts.md   # Repository discovery prompts
+│   └── etl-subsystems-prompt.md    # ETL subsystems analysis prompts
 ├── templates/                      # Report generation templates
 │   └── feasibility-report-template.md # Feasibility analysis report template
+└── README.md                         # This file
+```
+
+## Installation
+
+### Prerequisites
+- **Bash** (version 4.0 or later)
+- **Python** (version 3.6 or later) with `pyyaml` module
+- **AI agent/tool** (ChatGPT, Claude, GitHub Copilot, etc.)
+- **Git** (for cloning the repository)
+
+### Quick Installation
+```bash
+# Clone the repository
+git clone https://github.com/farmanp/ai-code-auditor.git
+cd ai-code-auditor
+
+# Make the audit runner executable
+chmod +x audit-runner.sh
+
+# Install Python dependencies (if not already installed)
+pip install -r requirements.txt
+
+# Verify installation
+./audit-runner.sh --help
 ```
 
 ## Quick Start
