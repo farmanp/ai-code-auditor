@@ -19,31 +19,69 @@ This repository contains comprehensive specifications and taxonomies for automat
 
 ```
 ai-code-auditor/
-├── specs/                          # Machine-readable specifications
-│   ├── design-patterns-spec.yaml   # Design pattern detection rules
+├── audit-runner.sh                   # Main audit runner script
+├── specs/                            # Machine-readable specifications
+│   ├── design-patterns-spec.yaml     # Design pattern detection rules
 │   ├── algorithms-data-structures-spec.yaml  # Algorithm and DS specs
-│   ├── datahub-spec.yaml           # DataHub entity and aspect specs
-│   └── feasibility-analysis-spec.yaml # Feasibility analysis specifications
-│   └── security-vulnerabilities-spec.yaml    # Security vulnerability patterns
-├── docs/                           # Human-readable documentation
-│   ├── Design-Patterns-Taxonomy.md # Pattern reference guide
-│   ├── Algorithms-DS-Taxonomy.md   # Algorithm and DS reference
+│   ├── datahub-spec.yaml             # DataHub entity and aspect specs
+│   ├── feasibility-analysis-spec.yaml # Feasibility analysis specifications
+│   ├── security-vulnerabilities-spec.yaml    # Security vulnerability patterns
+│   ├── etl-subsystems-spec.yaml      # ETL subsystem specifications
+│   ├── cloud-architecture-spec.yaml  # Cloud architecture patterns
+│   └── repo-discovery-spec.yaml      # Repository discovery patterns
+├── docs/                             # Human-readable documentation
+│   ├── Audit-Runner-Documentation.md # Complete audit runner guide
+│   ├── Design-Patterns-Taxonomy.md   # Pattern reference guide
+│   ├── Algorithms-DS-Taxonomy.md     # Algorithm and DS reference
 │   ├── DataHub-Taxonomy-Reference.md # DataHub entity guide
-│   └── Feasibility-Analysis-Taxonomy.md # Feasibility analysis guide
-├── prompts/                        # Ready-made AI agent prompts
-│   ├── design-patterns-prompt.md   # Design pattern analysis prompts
-│   ├── algorithms-ds-prompt.md     # Algorithm and DS analysis prompts
-│   ├── datahub-prompt.md          # DataHub analysis prompts
-│   └── feasibility-audit-prompts.md # Feasibility analysis prompts
-├── templates/                      # Report generation templates
+│   ├── Feasibility-Analysis-Taxonomy.md # Feasibility analysis guide
+│   ├── Security-Vulnerabilities-Taxonomy.md # Security vulnerability guide
+│   ├── ETL-Subsystems-Taxonomy.md    # ETL subsystems reference
+│   └── Cloud-Architecture-Taxonomy.md # Cloud patterns reference
+├── prompts/                          # Ready-made AI agent prompts
+│   ├── design-patterns-prompt.md     # Design pattern analysis prompts
+│   ├── algorithms-ds-prompt.md       # Algorithm and DS analysis prompts
+│   ├── datahub-prompt.md             # DataHub analysis prompts
+│   ├── feasibility-audit-prompts.md  # Feasibility analysis prompts
+│   ├── security-audit-prompts.md     # Security audit prompt library
+│   ├── etl-subsystems-prompt.md      # ETL subsystem prompts
+│   └── cloud-audit-prompts.md        # Cloud architecture prompts
+├── templates/                        # Report generation templates
 │   └── feasibility-report-template.md # Feasibility analysis report template
-│   └── Security-Vulnerabilities-Taxonomy.md  # Security vulnerability guide
-├── prompts/                        # AI prompt templates
-│   └── security-audit-prompts.md   # Security audit prompt library
-└── README.md                       # This file
+├── examples/                         # Integration examples
+│   └── integration-examples.sh       # CI/CD and workflow examples
+├── test-audit-runner.sh              # Test suite for audit runner
+├── scripts/                          # Utility scripts
+│   └── repo-discovery.sh             # Repository discovery utility
+└── README.md                         # This file
 ```
 
 ## How to Run a Scan
+
+### Using the Audit Runner Script (Recommended)
+
+The easiest way to run audits is using the `audit-runner.sh` script:
+
+```bash
+# Run all audits with default settings
+./audit-runner.sh /path/to/repo
+
+# Run specific audit type
+./audit-runner.sh --type security /path/to/repo
+
+# Generate report in specific format
+./audit-runner.sh --type patterns --format markdown /path/to/repo
+
+# Save report to file
+./audit-runner.sh --type all --output audit-report.json /path/to/repo
+
+# Run with custom configuration
+./audit-runner.sh --config my-config.conf /path/to/repo
+```
+
+For complete documentation, see: [Audit Runner Documentation](docs/Audit-Runner-Documentation.md)
+
+### Using AI Agents Directly
 
 To perform a code audit using an AI agent:
 
@@ -153,6 +191,13 @@ The `docs/` folder contains human-readable references:
 - **ETL-Subsystems-Taxonomy.md**: Reference for 38 ETL subsystems with detection patterns and implementation guidance
 
 ## Key Features
+
+### Automated Audit Runner
+- **Comprehensive Script**: `audit-runner.sh` provides a complete audit automation solution
+- **Multiple Output Formats**: Generate reports in JSON, Markdown, HTML, and CSV formats
+- **Configurable Execution**: Support for individual audits, combined audits, and custom profiles
+- **CI/CD Integration**: Built-in support for continuous integration and deployment pipelines
+- **Configuration Management**: Flexible configuration via files, environment variables, and CLI options
 
 ### Pattern Detection
 - **Hint-based matching**: Uses keywords and code signatures for pattern identification
