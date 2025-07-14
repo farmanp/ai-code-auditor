@@ -11,6 +11,7 @@ This repository contains comprehensive specifications and taxonomies for automat
 - **Design Patterns**: 25+ GoF and architectural patterns including Singleton, Factory, Observer, MVC, and more
 - **Algorithms & Data Structures**: Sorting algorithms, search algorithms, trees, graphs, hash tables, and complexity analysis
 - **DataHub Entities**: Datasets, ML features, models, lineage, governance aspects, and metadata patterns
+- **ETL Subsystems**: 38 data warehouse subsystems including extraction, transformation, loading, quality management, and workflow orchestration
 
 ## Repository Structure
 
@@ -19,11 +20,13 @@ ai-code-auditor/
 ├── specs/                          # Machine-readable specifications
 │   ├── design-patterns-spec.yaml   # Design pattern detection rules
 │   ├── algorithms-data-structures-spec.yaml  # Algorithm and DS specs
-│   └── datahub-spec.yaml           # DataHub entity and aspect specs
+│   ├── datahub-spec.yaml           # DataHub entity and aspect specs
+│   └── etl-subsystems-spec.yaml    # ETL subsystem detection rules
 ├── docs/                           # Human-readable documentation
 │   ├── Design-Patterns-Taxonomy.md # Pattern reference guide
 │   ├── Algorithms-DS-Taxonomy.md   # Algorithm and DS reference
-│   └── DataHub-Taxonomy-Reference.md # DataHub entity guide
+│   ├── DataHub-Taxonomy-Reference.md # DataHub entity guide
+│   └── ETL-Subsystems-Taxonomy.md  # ETL subsystem reference
 └── README.md                       # This file
 ```
 
@@ -39,7 +42,8 @@ To perform a code audit using an AI agent:
    - Design patterns only: `specs/design-patterns-spec.yaml`
    - Algorithms/DS only: `specs/algorithms-data-structures-spec.yaml`
    - DataHub entities only: `specs/datahub-spec.yaml`
-   - All patterns: Use all three spec files
+   - ETL subsystems only: `specs/etl-subsystems-spec.yaml`
+   - All patterns: Use all four spec files
 
 4. **Review results** - The AI agent will generate reports based on the `report_fields` specified in each pattern.
 
@@ -91,6 +95,16 @@ datahub_entities:
     report_fields: ["metadata_field1", "metadata_field2"]
 ```
 
+### ETL Subsystems
+```yaml
+etl_subsystems:
+  - name: "SubsystemName"
+    id: 1
+    category: "data_acquisition|data_quality|dimension_management|fact_loading|performance|workflow|development|compliance|infrastructure"
+    hints: ["characteristic_keywords", "process_indicators"]
+    report_fields: ["implementation_aspect", "integration_quality"]
+```
+
 ## Documentation
 
 The `docs/` folder contains human-readable references:
@@ -98,6 +112,7 @@ The `docs/` folder contains human-readable references:
 - **Design-Patterns-Taxonomy.md**: Comprehensive guide to all supported design patterns with complexity ratings and use cases
 - **Algorithms-DS-Taxonomy.md**: Reference for algorithms and data structures with time/space complexity analysis
 - **DataHub-Taxonomy-Reference.md**: Complete guide to DataHub entities, aspects, and governance patterns
+- **ETL-Subsystems-Taxonomy.md**: Reference for 38 ETL subsystems with detection patterns and implementation guidance
 
 ## Key Features
 
@@ -105,7 +120,7 @@ The `docs/` folder contains human-readable references:
 - **Hint-based matching**: Uses keywords and code signatures for pattern identification
 - **Quality assessment**: Evaluates implementation quality and best practices
 - **Complexity analysis**: Provides time/space complexity information for algorithms
-- **Comprehensive coverage**: Supports 25+ design patterns, major algorithms, and DataHub metadata
+- **Comprehensive coverage**: Supports 25+ design patterns, major algorithms, DataHub metadata, and 38 ETL subsystems
 
 ### Reporting
 - **Structured output**: Consistent reporting format across all pattern types
