@@ -23,27 +23,46 @@ ai-code-auditor/
 │   ├── design-patterns-spec.yaml   # Design pattern detection rules
 │   ├── algorithms-data-structures-spec.yaml  # Algorithm and DS specs
 │   ├── datahub-spec.yaml           # DataHub entity and aspect specs
-│   └── feasibility-analysis-spec.yaml # Feasibility analysis specifications
-│   └── security-vulnerabilities-spec.yaml    # Security vulnerability patterns
-├── docs/                           # Human-readable documentation
+│   ├── feasibility-analysis-spec.yaml # Feasibility analysis specifications
+│   ├── security-vulnerabilities-spec.yaml    # Security vulnerability patterns
+│   ├── etl-subsystems-spec.yaml    # ETL subsystems specifications
+│   ├── cloud-architecture-spec.yaml # Cloud architecture patterns
+│   └── repo-discovery-spec.yaml    # Repository discovery specifications
+├── docs/                           # Technical reference documentation
 │   ├── Design-Patterns-Taxonomy.md # Pattern reference guide
 │   ├── Algorithms-DS-Taxonomy.md   # Algorithm and DS reference
 │   ├── DataHub-Taxonomy-Reference.md # DataHub entity guide
-│   └── Feasibility-Analysis-Taxonomy.md # Feasibility analysis guide
+│   ├── Feasibility-Analysis-Taxonomy.md # Feasibility analysis guide
+│   ├── Security-Vulnerabilities-Taxonomy.md  # Security vulnerability guide
+│   ├── ETL-Subsystems-Taxonomy.md  # ETL subsystems reference
+│   ├── Cloud-Architecture-Taxonomy.md # Cloud architecture guide
+│   └── Repository-Discovery-Taxonomy.md # Repository discovery guide
+├── guides/                         # User-focused guides
+│   ├── getting-started.md          # Quick start and first audit
+│   ├── audit-types-guide.md        # Deep dive into each audit type
+│   ├── customization-guide.md      # Customizing specs and prompts
+│   ├── integration-guide.md        # CI/CD and workflow integration
+│   ├── best-practices.md           # Proven strategies and recommendations
+│   └── troubleshooting.md          # Common issues and solutions
 ├── prompts/                        # Ready-made AI agent prompts
 │   ├── design-patterns-prompt.md   # Design pattern analysis prompts
 │   ├── algorithms-ds-prompt.md     # Algorithm and DS analysis prompts
 │   ├── datahub-prompt.md          # DataHub analysis prompts
-│   └── feasibility-audit-prompts.md # Feasibility analysis prompts
+│   ├── feasibility-audit-prompts.md # Feasibility analysis prompts
+│   ├── security-audit-prompts.md   # Security audit prompt library
+│   ├── etl-subsystems-prompt.md    # ETL subsystems analysis prompts
+│   ├── cloud-audit-prompts.md      # Cloud architecture analysis prompts
+│   └── repo-discovery-prompts.md   # Repository discovery prompts
 ├── templates/                      # Report generation templates
 │   └── feasibility-report-template.md # Feasibility analysis report template
-│   └── Security-Vulnerabilities-Taxonomy.md  # Security vulnerability guide
-├── prompts/                        # AI prompt templates
-│   └── security-audit-prompts.md   # Security audit prompt library
+├── scripts/                        # Utility scripts
+│   └── repo-discovery.sh           # Repository discovery script
 └── README.md                       # This file
 ```
 
-## How to Run a Scan
+## Quick Start
+
+**New users**: Start with the [Getting Started Guide](guides/getting-started.md) for a 5-minute walkthrough.
 
 To perform a code audit using an AI agent:
 
@@ -57,9 +76,10 @@ To perform a code audit using an AI agent:
    - DataHub entities only: `specs/datahub-spec.yaml`
    - Feasibility analysis only: `specs/feasibility-analysis-spec.yaml`
    - Security vulnerabilities only: `specs/security-vulnerabilities-spec.yaml`
-   - All patterns: Use all spec files
    - ETL subsystems only: `specs/etl-subsystems-spec.yaml`
-   - All patterns: Use all four spec files
+   - Cloud architecture only: `specs/cloud-architecture-spec.yaml`
+   - Repository discovery only: `specs/repo-discovery-spec.yaml`
+   - All patterns: Use all spec files
 
 4. **Review results** - The AI agent will generate reports based on the `report_fields` specified in each pattern.
 
@@ -73,9 +93,18 @@ Focus on detecting design patterns and provide a detailed report including:
 - Recommendations for improvements
 ```
 
+### Comprehensive Guides
+
+- **[Getting Started Guide](guides/getting-started.md)** - First steps, quick wins, and understanding reports
+- **[Audit Types Guide](guides/audit-types-guide.md)** - Deep dive into each audit type and when to use them
+- **[Customization Guide](guides/customization-guide.md)** - Writing custom specifications and extending functionality
+- **[Integration Guide](guides/integration-guide.md)** - CI/CD integration, Git hooks, and team workflows
+- **[Best Practices Guide](guides/best-practices.md)** - Proven strategies for effective usage
+- **[Troubleshooting Guide](guides/troubleshooting.md)** - Common issues and solutions
+
 ### Prompt Library
 
-Ready-made prompt templates are available in the [`prompts/`](prompts/) directory. Copy the appropriate file and replace `[CODE_PATH]` with the path to your codebase or metadata repository. Templates include design pattern scans, algorithm and data structure analysis, DataHub metadata audits, ETL subsystem checks, and comprehensive feasibility analysis.
+Ready-made prompt templates are available in the [`prompts/`](prompts/) directory. Copy the appropriate file and replace `[CODE_PATH]` with the path to your codebase or metadata repository. Templates include design pattern scans, algorithm and data structure analysis, DataHub metadata audits, ETL subsystem checks, security vulnerability scans, cloud architecture analysis, and comprehensive feasibility analysis.
 ## Specification Schema
 
 Each YAML specification follows a consistent schema:
@@ -143,7 +172,16 @@ etl_subsystems:
 
 ## Documentation
 
-The `docs/` folder contains human-readable references:
+### User Guides (Start Here!)
+- **[Getting Started Guide](guides/getting-started.md)** - Your first audit in 5 minutes
+- **[Audit Types Guide](guides/audit-types-guide.md)** - Comprehensive overview of all audit types
+- **[Customization Guide](guides/customization-guide.md)** - Tailor the tool for your organization
+- **[Integration Guide](guides/integration-guide.md)** - CI/CD pipelines and team workflows  
+- **[Best Practices Guide](guides/best-practices.md)** - Proven strategies for success
+- **[Troubleshooting Guide](guides/troubleshooting.md)** - Solutions to common issues
+
+### Technical Reference
+The `docs/` folder contains detailed technical references:
 
 - **Design-Patterns-Taxonomy.md**: Comprehensive guide to all supported design patterns with complexity ratings and use cases
 - **Algorithms-DS-Taxonomy.md**: Reference for algorithms and data structures with time/space complexity analysis
@@ -151,6 +189,8 @@ The `docs/` folder contains human-readable references:
 - **Feasibility-Analysis-Taxonomy.md**: Comprehensive guide to feasibility analysis including migration assessment, refactoring evaluation, and resource planning
 - **Security-Vulnerabilities-Taxonomy.md**: Complete guide to security vulnerabilities based on OWASP Top 10 2021
 - **ETL-Subsystems-Taxonomy.md**: Reference for 38 ETL subsystems with detection patterns and implementation guidance
+- **Cloud-Architecture-Taxonomy.md**: Guide to cloud-native patterns and architecture best practices
+- **Repository-Discovery-Taxonomy.md**: Reference for codebase analysis and technology stack discovery
 
 ## Key Features
 
