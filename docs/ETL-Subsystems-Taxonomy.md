@@ -2,6 +2,8 @@
 
 This document provides a comprehensive reference for the 38 ETL subsystems that can be detected by the AI code auditor, based on Ralph Kimball's data warehouse architecture framework.
 
+See the [Complexity Rating Guide](Complexity-Guide.md) for explanations of implementation, detection, and performance ratings referenced in this taxonomy.
+
 ## Overview
 
 Modern ETL systems are complex ecosystems requiring systematic decomposition into specialized subsystems. This taxonomy identifies 38 distinct subsystems organized into 8 major categories, each with specific responsibilities and detection patterns.
@@ -295,3 +297,8 @@ Each subsystem defines specific report fields that should be included in AI code
 - **No Parallelization**: Single-threaded processing bottlenecks
 - **Missing Aggregates**: Poor query performance without aggregation layer
 - **No Real-time Support**: Batch-only architectures limiting responsiveness
+
+## Related Patterns
+
+- ETL workflows often publish lineage to DataHub using the **Observer** pattern.
+- Repository subsystems map naturally to DataHub **Dataset** entities.

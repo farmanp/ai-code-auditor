@@ -2,6 +2,8 @@
 
 This document provides a comprehensive reference for algorithms and data structures that can be detected by the AI code auditor.
 
+See the [Complexity Rating Guide](Complexity-Guide.md) for the meaning of implementation, detection, and performance ratings.
+
 ## Data Structures
 
 ### Linear Data Structures
@@ -144,3 +146,9 @@ This document provides a comprehensive reference for algorithms and data structu
 - **Early Termination**: Loop optimization conditions
 - **Memory Access**: Cache-friendly patterns
 - **Branch Prediction**: Conditional optimization
+
+## Related Patterns
+
+- Graph traversal algorithms ↔ **Iterator** pattern (see [Design Patterns Taxonomy](Design-Patterns-Taxonomy.md))
+- Sorting algorithm selection ↔ **Strategy** pattern
+- Tree traversal techniques ↔ **Visitor** pattern

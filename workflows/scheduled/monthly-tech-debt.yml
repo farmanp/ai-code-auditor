@@ -1,0 +1,21 @@
+name: Monthly Tech Debt Audit
+
+on:
+  schedule:
+    - cron: '0 6 1 * *'
+
+jobs:
+  tech_debt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run pattern validation
+        run: |
+          ./workflows/pre-commit/pattern-validation.sh "${{ github.workspace }}"
+      - name: Create issue
+        if: always()
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: 'Monthly Tech Debt Report'
+          content-filepath: /tmp/low-quality.json
+          labels: tech-debt

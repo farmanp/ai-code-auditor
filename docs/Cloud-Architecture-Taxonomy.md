@@ -2,6 +2,8 @@
 
 This document catalogs common cloud architecture patterns and services across major providers. The AI code auditor uses these references to detect usage, governance gaps, and cost issues.
 
+See the [Complexity Rating Guide](Complexity-Guide.md) for definitions of implementation, detection, and performance ratings.
+
 ## AWS Patterns
 
 | Pattern | Key Concepts | Cost Optimization | Compliance Focus |
@@ -65,3 +67,9 @@ This document catalogs common cloud architecture patterns and services across ma
 - **Reserved Capacity**: Leverage reserved or committed use discounts for long-running workloads.
 - **Lifecycle Policies**: Use storage lifecycle rules to transition data to cheaper tiers.
 - **Autoscaling**: Configure auto scaling to match demand and avoid overprovisioning.
+
+## Related Patterns
+
+- **Microservices** architectures often employ the **Facade** or **API Gateway** patterns (see [Design Patterns Taxonomy](Design-Patterns-Taxonomy.md)).
+- **Serverless** components align with event-driven design patterns.
+- **Container** deployments benefit from **Dependency Injection** for managing resources.

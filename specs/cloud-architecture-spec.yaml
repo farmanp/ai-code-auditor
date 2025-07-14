@@ -2,6 +2,9 @@ cloud_architecture_patterns:
   # AWS Patterns
   - name: "EC2 Instance"
     category: "aws"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "aws_instance"
       - "ec2"
@@ -14,6 +17,9 @@ cloud_architecture_patterns:
       - "cost_estimation"
   - name: "Lambda Function"
     category: "aws"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "aws_lambda_function"
       - "lambda_handler"
@@ -26,6 +32,9 @@ cloud_architecture_patterns:
       - "cost_estimation"
   - name: "S3 Bucket"
     category: "aws"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "aws_s3_bucket"
       - "bucket policy"
@@ -38,6 +47,9 @@ cloud_architecture_patterns:
       - "cost_estimation"
   - name: "RDS Instance"
     category: "aws"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "aws_db_instance"
       - "rds"
@@ -50,6 +62,9 @@ cloud_architecture_patterns:
       - "cost_estimation"
   - name: "CloudFormation or CDK"
     category: "aws"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "cloudformation"
       - "cdk"
@@ -62,6 +77,9 @@ cloud_architecture_patterns:
       - "cost_estimation"
   - name: "IAM Policy"
     category: "aws"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "aws_iam_policy"
       - "policy document"
@@ -74,6 +92,9 @@ cloud_architecture_patterns:
       - "compliance_check"
   - name: "VPC Configuration"
     category: "aws"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "aws_vpc"
       - "subnet"
@@ -88,6 +109,9 @@ cloud_architecture_patterns:
   # Azure Patterns
   - name: "Azure Function"
     category: "azure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "azurerm_function_app"
       - "func.azurewebsites.net"
@@ -100,6 +124,9 @@ cloud_architecture_patterns:
       - "cost_estimation"
   - name: "Azure App Service"
     category: "azure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "azurerm_app_service"
       - "webapp"
@@ -112,6 +139,9 @@ cloud_architecture_patterns:
       - "cost_estimation"
   - name: "ARM Template"
     category: "azure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "azuredeploy.json"
       - "arm template"
@@ -123,6 +153,9 @@ cloud_architecture_patterns:
       - "cost_estimation"
   - name: "Azure AD Integration"
     category: "azure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "azuread_application"
       - "service principal"
@@ -135,6 +168,9 @@ cloud_architecture_patterns:
       - "compliance_check"
   - name: "Azure Storage"
     category: "azure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "azurerm_storage_account"
       - "blob service"
@@ -149,6 +185,9 @@ cloud_architecture_patterns:
   # GCP Patterns
   - name: "Compute Engine"
     category: "gcp"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "google_compute_instance"
       - "gcloud compute"
@@ -160,6 +199,9 @@ cloud_architecture_patterns:
       - "cost_estimation"
   - name: "Cloud Function"
     category: "gcp"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "google_cloudfunctions_function"
       - "index.js"
@@ -171,6 +213,9 @@ cloud_architecture_patterns:
       - "cost_estimation"
   - name: "Deployment Manager"
     category: "gcp"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "deployment manager"
       - "config.yaml"
@@ -182,6 +227,9 @@ cloud_architecture_patterns:
       - "cost_estimation"
   - name: "GCP IAM Policy"
     category: "gcp"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "gcp_iam_policy"
       - "serviceAccount"
@@ -193,6 +241,9 @@ cloud_architecture_patterns:
       - "compliance_check"
   - name: "Cloud Storage"
     category: "gcp"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "google_storage_bucket"
       - "bucket policy"
@@ -206,6 +257,9 @@ cloud_architecture_patterns:
   # Multi-Cloud & Kubernetes
   - name: "Terraform Module"
     category: "multi-cloud"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "terraform module"
       - "variables.tf"
@@ -217,6 +271,9 @@ cloud_architecture_patterns:
       - "compliance_check"
   - name: "Kubernetes Manifest"
     category: "multi-cloud"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "apiVersion: v1"
       - "kind: Pod"
@@ -228,6 +285,9 @@ cloud_architecture_patterns:
       - "cost_estimation"
   - name: "Helm Chart"
     category: "multi-cloud"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "Chart.yaml"
       - "values.yaml"
@@ -239,6 +299,9 @@ cloud_architecture_patterns:
       - "cost_estimation"
   - name: "Service Mesh"
     category: "multi-cloud"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "istio"
       - "linkerd"
@@ -252,6 +315,9 @@ cloud_architecture_patterns:
   # Cloud-Native Patterns
   - name: "Microservices Architecture"
     category: "cloud-native"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "service registry"
       - "api gateway"
@@ -263,6 +329,9 @@ cloud_architecture_patterns:
       - "cost_estimation"
   - name: "Event-Driven Architecture"
     category: "cloud-native"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "message broker"
       - "event bus"
@@ -274,6 +343,9 @@ cloud_architecture_patterns:
       - "cost_estimation"
   - name: "Serverless Pattern"
     category: "cloud-native"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "faas"
       - "function as a service"
@@ -285,6 +357,9 @@ cloud_architecture_patterns:
       - "cost_estimation"
   - name: "Container Orchestration"
     category: "cloud-native"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "kubernetes"
       - "docker swarm"

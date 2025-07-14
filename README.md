@@ -36,7 +36,11 @@ ai-code-auditor/
 │   ├── Security-Vulnerabilities-Taxonomy.md  # Security vulnerability guide
 │   ├── ETL-Subsystems-Taxonomy.md  # ETL subsystems reference
 │   ├── Cloud-Architecture-Taxonomy.md # Cloud architecture guide
-│   └── Repository-Discovery-Taxonomy.md # Repository discovery guide
+│   ├── Repository-Discovery-Taxonomy.md # Repository discovery guide
+│   ├── Prompt-Engineering-Guide.md     # How to craft effective prompts
+│   ├── Prompt-Validation-Examples.md   # Example outputs for verification
+│   ├── Pattern-Cross-Reference.md  # Matrix of relationships across taxonomies
+│   └── Complexity-Guide.md          # Implementation difficulty ratings
 ├── guides/                         # User-focused guides
 │   ├── getting-started.md          # Quick start and first audit
 │   ├── audit-types-guide.md        # Deep dive into each audit type
@@ -44,7 +48,18 @@ ai-code-auditor/
 │   ├── integration-guide.md        # CI/CD and workflow integration
 │   ├── best-practices.md           # Proven strategies and recommendations
 │   └── troubleshooting.md          # Common issues and solutions
-├── prompts/                        # Ready-made AI agent prompts
+├── prompts/                        # AI prompt templates
+│   ├── audit-types/                # Prompts organized by audit type
+│   ├── scenarios/                  # Scenario specific prompts
+│   ├── models/                     # Model optimization prompts
+│   └── Prompt-Validation-Examples.md   # Example outputs for verification
+├── prompts/                        # AI prompt templates
+│   ├── audit-types/                # Prompts organized by audit type
+│   ├── scenarios/                  # Scenario specific prompts
+│   ├── models/                     # Model optimization prompts
+│   ├── design-patterns-prompt.md   # Design pattern analysis prompts
+│   ├── algorithms-ds-prompt.md     # Algorithm and DS analysis prompts
+│   ├── datahub-prompt.md           # DataHub analysis prompts
 │   ├── design-patterns-prompt.md   # Design pattern analysis prompts
 │   ├── algorithms-ds-prompt.md     # Algorithm and DS analysis prompts
 │   ├── datahub-prompt.md          # DataHub analysis prompts
@@ -55,8 +70,14 @@ ai-code-auditor/
 │   └── repo-discovery-prompts.md   # Repository discovery prompts
 ├── templates/                      # Report generation templates
 │   └── feasibility-report-template.md # Feasibility analysis report template
+├── workflows/                     # Workflow templates
+│   ├── ci-cd/                     # CI/CD examples
+│   ├── pre-commit/                # Pre-commit hooks
+│   └── scheduled/                 # Scheduled audits
 ├── scripts/                        # Utility scripts
-│   └── repo-discovery.sh           # Repository discovery script
+│   ├── repo-discovery.sh           # Repository discovery script
+│   ├── relationship_graph.py       # Generate cross-reference graphs
+│   └── search_relationships.py     # Search related items
 └── README.md                       # This file
 ```
 
@@ -104,7 +125,15 @@ Focus on detecting design patterns and provide a detailed report including:
 
 ### Prompt Library
 
-Ready-made prompt templates are available in the [`prompts/`](prompts/) directory. Copy the appropriate file and replace `[CODE_PATH]` with the path to your codebase or metadata repository. Templates include design pattern scans, algorithm and data structure analysis, DataHub metadata audits, ETL subsystem checks, security vulnerability scans, cloud architecture analysis, and comprehensive feasibility analysis.
+Ready-made prompt templates are available in the [`prompts/`](prompts/) directory. Copy the appropriate file and replace `[CODE_PATH]` with the path to your codebase or metadata repository. The library includes:
+* **Audit-type prompts** under `prompts/audit-types/`
+* **Scenario prompts** under `prompts/scenarios/`
+* **Model optimizations** under `prompts/models/`
+* **Base prompts** for design patterns, algorithms, DataHub, ETL, security, cloud architecture, and feasibility analysis
+
+### Workflow Templates
+
+Reusable examples for CI pipelines, pre-commit hooks, and scheduled tasks live in the [`workflows/`](workflows/) directory. See [Workflow-Customization-Guide](docs/Workflow-Customization-Guide.md) for guidance on adapting them to your environment.
 ## Specification Schema
 
 Each YAML specification follows a consistent schema:
@@ -116,6 +145,11 @@ patterns:
     category: "creational|structural|behavioral|architectural"
     hints: ["keyword1", "keyword2", "signature"]
     report_fields: ["field1", "field2", "quality_metric"]
+    related:
+      algorithms: ["AlgorithmName"]
+      datahub: ["EntityName"]
+      security: ["SecurityConcern"]
+      cloud: ["CloudPattern"]
 ```
 
 ### Algorithms & Data Structures
@@ -128,6 +162,7 @@ algorithms_and_data_structures:
     time_complexity: "O(n)"
     space_complexity: "O(1)"
     report_fields: ["implementation_quality", "optimization"]
+    related_patterns: ["DesignPatternName"]
 ```
 
 ### DataHub Entities
@@ -137,6 +172,7 @@ datahub_entities:
     urn_pattern: "urn:li:entityType:*"
     aspect_name: "primaryAspect"
     report_fields: ["metadata_field1", "metadata_field2"]
+    related_patterns: ["DesignPatternName"]
 ```
 
 ### Feasibility Analysis
@@ -191,13 +227,23 @@ The `docs/` folder contains detailed technical references:
 - **ETL-Subsystems-Taxonomy.md**: Reference for 38 ETL subsystems with detection patterns and implementation guidance
 - **Cloud-Architecture-Taxonomy.md**: Guide to cloud-native patterns and architecture best practices
 - **Repository-Discovery-Taxonomy.md**: Reference for codebase analysis and technology stack discovery
+- **Pattern-Cross-Reference.md**: Matrix of relationships across taxonomies
+- **Complexity-Guide.md**: Implementation difficulty, detection effort, and performance impact ratings
+
+### Visualization and Search
+
+Run `scripts/relationship_graph.py` to generate a Graphviz `.dot` file showing cross-taxonomy links. Use `scripts/search_relationships.py [TERM]` to list related items for a specific term.
+
+### Complexity Ratings
+
+Complexity ratings help users understand implementation difficulty, detection effort, and performance impact of each pattern. Ratings are defined in the [Complexity Rating Guide](docs/Complexity-Guide.md) and applied consistently across all YAML specifications.
 
 ## Key Features
 
 ### Pattern Detection
 - **Hint-based matching**: Uses keywords and code signatures for pattern identification
 - **Quality assessment**: Evaluates implementation quality and best practices
-- **Complexity analysis**: Provides time/space complexity information for algorithms
+- **Complexity ratings**: Standardized implementation, detection, and performance levels
 - **Feasibility evaluation**: Assesses migration readiness, refactoring opportunities, and integration complexity
 - **Comprehensive coverage**: Supports 25+ design patterns, major algorithms, DataHub metadata, and feasibility analysis
 - **Security analysis**: Detects OWASP Top 10 vulnerabilities with severity ratings

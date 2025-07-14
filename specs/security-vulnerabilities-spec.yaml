@@ -5,6 +5,9 @@ vulnerabilities:
   # SQL Injection
   - name: "SQL Injection"
     category: "Injection"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     owasp_category: "A03:2021 – Injection"
     severity: "Critical"
     description: "Direct concatenation of user input into SQL queries"
@@ -33,6 +36,9 @@ vulnerabilities:
   # Cross-Site Scripting (XSS)
   - name: "Cross-Site Scripting (XSS)"
     category: "Injection"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     owasp_category: "A03:2021 – Injection"
     severity: "High"
     description: "Unescaped user input rendered in HTML"
@@ -62,6 +68,9 @@ vulnerabilities:
   # CSRF
   - name: "Cross-Site Request Forgery (CSRF)"
     category: "Request Forgery"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     owasp_category: "A01:2021 – Broken Access Control"
     severity: "High"
     description: "State-changing operations without CSRF protection"
@@ -90,6 +99,9 @@ vulnerabilities:
   # Authentication Issues
   - name: "Weak Authentication"
     category: "Authentication"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     owasp_category: "A07:2021 – Identification and Authentication Failures"
     severity: "High"
     description: "Weak or missing authentication mechanisms"
@@ -119,6 +131,9 @@ vulnerabilities:
   # Authorization Flaws
   - name: "Broken Authorization"
     category: "Authorization"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     owasp_category: "A01:2021 – Broken Access Control"
     severity: "High"
     description: "Missing or inadequate authorization checks"
@@ -148,6 +163,9 @@ vulnerabilities:
   # Insecure Deserialization
   - name: "Insecure Deserialization"
     category: "Deserialization"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     owasp_category: "A08:2021 – Software and Data Integrity Failures"
     severity: "Critical"
     description: "Deserializing untrusted data without validation"
@@ -177,6 +195,9 @@ vulnerabilities:
   # XXE Injection
   - name: "XML External Entity (XXE)"
     category: "Injection"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     owasp_category: "A05:2021 – Security Misconfiguration"
     severity: "High"
     description: "XML parsing with external entity processing enabled"
@@ -205,6 +226,9 @@ vulnerabilities:
   # SSRF
   - name: "Server-Side Request Forgery (SSRF)"
     category: "Request Forgery"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     owasp_category: "A10:2021 – Server-Side Request Forgery"
     severity: "High"
     description: "Making requests to user-controlled URLs"
@@ -234,6 +258,9 @@ vulnerabilities:
   # Weak Cryptography
   - name: "Weak Cryptography"
     category: "Cryptographic Failures"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     owasp_category: "A02:2021 – Cryptographic Failures"
     severity: "High"
     description: "Use of weak or broken cryptographic algorithms"
@@ -265,6 +292,9 @@ vulnerabilities:
   # Hardcoded Secrets
   - name: "Hardcoded Secrets"
     category: "Sensitive Data Exposure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     owasp_category: "A02:2021 – Cryptographic Failures"
     severity: "Critical"
     description: "Credentials or keys hardcoded in source code"
@@ -295,6 +325,9 @@ vulnerabilities:
   # Insecure Random
   - name: "Insecure Randomness"
     category: "Cryptographic Failures"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     owasp_category: "A02:2021 – Cryptographic Failures"
     severity: "Medium"
     description: "Using predictable random number generation for security"
@@ -324,6 +357,9 @@ vulnerabilities:
   # Certificate Validation
   - name: "Improper Certificate Validation"
     category: "Cryptographic Failures"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     owasp_category: "A02:2021 – Cryptographic Failures"
     severity: "High"
     description: "Disabled or improper TLS/SSL certificate validation"
@@ -353,6 +389,9 @@ vulnerabilities:
   # Debug Mode
   - name: "Debug Mode in Production"
     category: "Security Misconfiguration"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     owasp_category: "A05:2021 – Security Misconfiguration"
     severity: "Medium"
     description: "Debug mode or verbose errors exposed in production"
@@ -382,6 +421,9 @@ vulnerabilities:
   # Security Headers
   - name: "Missing Security Headers"
     category: "Security Misconfiguration"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     owasp_category: "A05:2021 – Security Misconfiguration"
     severity: "Medium"
     description: "Missing HTTP security headers"
@@ -411,6 +453,9 @@ vulnerabilities:
   # Outdated Dependencies
   - name: "Vulnerable Dependencies"
     category: "Vulnerable Components"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     owasp_category: "A06:2021 – Vulnerable and Outdated Components"
     severity: "Varies"
     description: "Using components with known vulnerabilities"
