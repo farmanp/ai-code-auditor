@@ -2,6 +2,9 @@ algorithms_and_data_structures:
   # Data Structures
   - name: "Array"
     category: "data_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "array"
       - "list"
@@ -25,6 +28,9 @@ algorithms_and_data_structures:
 
   - name: "Dynamic Array"
     category: "data_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "dynamic_array"
       - "resizable_array"
@@ -47,6 +53,9 @@ algorithms_and_data_structures:
 
   - name: "Linked List"
     category: "data_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "linked_list"
       - "singly_linked_list"
@@ -70,6 +79,9 @@ algorithms_and_data_structures:
 
   - name: "Doubly Linked List"
     category: "data_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "doubly_linked_list"
       - "double_linked_list"
@@ -91,6 +103,9 @@ algorithms_and_data_structures:
 
   - name: "Stack"
     category: "data_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "stack"
       - "lifo"
@@ -113,6 +128,9 @@ algorithms_and_data_structures:
 
   - name: "Queue"
     category: "data_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "queue"
       - "fifo"
@@ -136,6 +154,9 @@ algorithms_and_data_structures:
 
   - name: "Priority Queue"
     category: "data_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "priority_queue"
       - "heap_queue"
@@ -157,6 +178,9 @@ algorithms_and_data_structures:
 
   - name: "Hash Table"
     category: "data_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "hash_table"
       - "hash_map"
@@ -182,6 +206,9 @@ algorithms_and_data_structures:
 
   - name: "Binary Tree"
     category: "data_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "binary_tree"
       - "tree_node"
@@ -204,6 +231,9 @@ algorithms_and_data_structures:
 
   - name: "Binary Search Tree"
     category: "data_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "binary_search_tree"
       - "bst"
@@ -225,6 +255,9 @@ algorithms_and_data_structures:
 
   - name: "AVL Tree"
     category: "data_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "avl_tree"
       - "balanced_tree"
@@ -246,6 +279,9 @@ algorithms_and_data_structures:
 
   - name: "Red-Black Tree"
     category: "data_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "red_black_tree"
       - "rb_tree"
@@ -268,6 +304,9 @@ algorithms_and_data_structures:
 
   - name: "Heap"
     category: "data_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "heap"
       - "binary_heap"
@@ -291,6 +330,9 @@ algorithms_and_data_structures:
 
   - name: "Graph"
     category: "data_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "graph"
       - "adjacency_list"
@@ -317,6 +359,9 @@ algorithms_and_data_structures:
   # Sorting Algorithms
   - name: "Bubble Sort"
     category: "sorting"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "bubble_sort"
       - "exchange_sort"
@@ -337,6 +382,9 @@ algorithms_and_data_structures:
 
   - name: "Selection Sort"
     category: "sorting"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "selection_sort"
     hints:
@@ -356,6 +404,9 @@ algorithms_and_data_structures:
 
   - name: "Insertion Sort"
     category: "sorting"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "insertion_sort"
     hints:
@@ -375,6 +426,9 @@ algorithms_and_data_structures:
 
   - name: "Merge Sort"
     category: "sorting"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "merge_sort"
       - "divide_and_conquer"
@@ -396,6 +450,9 @@ algorithms_and_data_structures:
 
   - name: "Quick Sort"
     category: "sorting"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "quick_sort"
       - "partition_sort"
@@ -417,6 +474,9 @@ algorithms_and_data_structures:
 
   - name: "Heap Sort"
     category: "sorting"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "heap_sort"
     hints:
@@ -437,6 +497,9 @@ algorithms_and_data_structures:
   # Search Algorithms
   - name: "Linear Search"
     category: "searching"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "linear_search"
       - "sequential_search"
@@ -457,6 +520,9 @@ algorithms_and_data_structures:
 
   - name: "Binary Search"
     category: "searching"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "binary_search"
       - "half_interval_search"
@@ -477,6 +543,9 @@ algorithms_and_data_structures:
 
   - name: "Depth-First Search"
     category: "graph_algorithm"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "dfs"
       - "depth_first_search"
@@ -498,6 +567,9 @@ algorithms_and_data_structures:
 
   - name: "Breadth-First Search"
     category: "graph_algorithm"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "bfs"
       - "breadth_first_search"
@@ -520,6 +592,9 @@ algorithms_and_data_structures:
   # Dynamic Programming
   - name: "Fibonacci"
     category: "dynamic_programming"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "fibonacci"
       - "fib"
@@ -541,6 +616,9 @@ algorithms_and_data_structures:
 
   - name: "Longest Common Subsequence"
     category: "dynamic_programming"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "lcs"
       - "longest_common_subsequence"
@@ -562,6 +640,9 @@ algorithms_and_data_structures:
   # String Algorithms
   - name: "KMP String Search"
     category: "string_algorithm"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     paths:
       - "kmp"
       - "knuth_morris_pratt"

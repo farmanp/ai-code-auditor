@@ -2,6 +2,8 @@
 
 This document provides a comprehensive reference for repository discovery patterns that can be detected by the AI code auditor to understand any codebase structure, practices, and characteristics.
 
+See the [Complexity Rating Guide](Complexity-Guide.md) for definitions of implementation, detection, and performance complexity used throughout the specs.
+
 ## Overview
 
 Repository discovery provides a systematic approach to analyzing codebases across five key dimensions:

@@ -3,6 +3,9 @@ datahub_entities:
   - name: "Dataset"
     urn_pattern: "urn:li:dataset:*"
     aspect_name: "datasetProperties"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "platform"
       - "name"
@@ -15,6 +18,9 @@ datahub_entities:
   - name: "DataJob"
     urn_pattern: "urn:li:dataJob:*"
     aspect_name: "dataJobInfo"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "name"
       - "description"
@@ -26,6 +32,9 @@ datahub_entities:
   - name: "DataFlow"
     urn_pattern: "urn:li:dataFlow:*"
     aspect_name: "dataFlowInfo"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "name"
       - "description"
@@ -36,6 +45,9 @@ datahub_entities:
   - name: "Chart"
     urn_pattern: "urn:li:chart:*"
     aspect_name: "chartInfo"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "title"
       - "description"
@@ -48,6 +60,9 @@ datahub_entities:
   - name: "Dashboard"
     urn_pattern: "urn:li:dashboard:*"
     aspect_name: "dashboardInfo"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "title"
       - "description"
@@ -60,6 +75,9 @@ datahub_entities:
   - name: "Container"
     urn_pattern: "urn:li:container:*"
     aspect_name: "containerProperties"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "name"
       - "qualifiedName"
@@ -72,6 +90,9 @@ datahub_entities:
   - name: "MLFeatureTable"
     urn_pattern: "urn:li:mlFeatureTable:*"
     aspect_name: "mlFeatureTableProperties"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "name"
       - "description"
@@ -83,6 +104,9 @@ datahub_entities:
   - name: "MLFeature"
     urn_pattern: "urn:li:mlFeature:*"
     aspect_name: "mlFeatureProperties"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "name"
       - "description"
@@ -94,6 +118,9 @@ datahub_entities:
   - name: "MLModel"
     urn_pattern: "urn:li:mlModel:*"
     aspect_name: "mlModelProperties"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "name"
       - "description"
@@ -105,6 +132,9 @@ datahub_entities:
   - name: "MLModelGroup"
     urn_pattern: "urn:li:mlModelGroup:*"
     aspect_name: "mlModelGroupProperties"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "name"
       - "description"
@@ -115,6 +145,9 @@ datahub_entities:
   - name: "DataProduct"
     urn_pattern: "urn:li:dataProduct:*"
     aspect_name: "dataProductProperties"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "name"
       - "description"
@@ -126,6 +159,9 @@ datahub_entities:
   - name: "GlossaryTerm"
     urn_pattern: "urn:li:glossaryTerm:*"
     aspect_name: "glossaryTermInfo"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "name"
       - "definition"
@@ -137,6 +173,9 @@ datahub_entities:
   - name: "GlossaryNode"
     urn_pattern: "urn:li:glossaryNode:*"
     aspect_name: "glossaryNodeInfo"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "name"
       - "definition"
@@ -147,6 +186,9 @@ datahub_entities:
   - name: "Domain"
     urn_pattern: "urn:li:domain:*"
     aspect_name: "domainProperties"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "name"
       - "description"
@@ -156,6 +198,9 @@ datahub_entities:
   - name: "Tag"
     urn_pattern: "urn:li:tag:*"
     aspect_name: "tagProperties"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "name"
       - "description"
@@ -166,6 +211,9 @@ datahub_entities:
   - name: "SchemaField"
     urn_pattern: "urn:li:schemaField:*"
     aspect_name: "schemaFieldInfo"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "fieldPath"
       - "type"
@@ -178,6 +226,9 @@ datahub_entities:
   - name: "Test"
     urn_pattern: "urn:li:test:*"
     aspect_name: "testInfo"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Minimal
     report_fields:
       - "name"
       - "description"

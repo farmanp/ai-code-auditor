@@ -2,6 +2,8 @@
 
 This document catalogs common cloud architecture patterns and services across major providers. The AI code auditor uses these references to detect usage, governance gaps, and cost issues.
 
+See the [Complexity Rating Guide](Complexity-Guide.md) for definitions of implementation, detection, and performance ratings.
+
 ## AWS Patterns
 
 | Pattern | Key Concepts | Cost Optimization | Compliance Focus |

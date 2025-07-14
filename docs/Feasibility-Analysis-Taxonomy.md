@@ -2,6 +2,8 @@
 
 This document provides a comprehensive reference for conducting feasibility analysis on codebases, helping teams assess migration, refactoring, or integration possibilities.
 
+See the [Complexity Rating Guide](Complexity-Guide.md) for the definitions of the complexity ratings referenced throughout this document.
+
 ## Overview
 
 Feasibility analysis is a critical process for evaluating technical initiatives before implementation. This taxonomy provides structured approaches to assess various aspects of software development projects, from migrations to refactoring efforts.

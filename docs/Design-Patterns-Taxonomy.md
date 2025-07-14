@@ -2,6 +2,8 @@
 
 This document provides a comprehensive reference for design patterns that can be detected by the AI code auditor.
 
+See the [Complexity Rating Guide](Complexity-Guide.md) for definitions of implementation, detection, and performance categories used throughout the specifications.
+
 ## Creational Patterns
 
 Patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation.
@@ -71,9 +73,9 @@ High-level patterns that define the overall structure of applications.
 - **Feature Envy**: Methods that use more features of other classes than their own
 
 ### Detection Complexity Levels
-- **Low**: Patterns with clear structural signatures and naming conventions
-- **Medium**: Patterns requiring analysis of method interactions and relationships
-- **High**: Patterns involving complex behavioral analysis and multiple variants
+- **Simple**: Patterns with clear structural signatures and naming conventions
+- **Moderate**: Patterns requiring analysis of method interactions and relationships
+- **Complex**: Patterns involving behavioral analysis or multiple variants
 
 ## Implementation Quality Metrics
 
