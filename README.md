@@ -1,6 +1,8 @@
 # AI Code Auditor
 
-An AI-driven code auditor using spec-driven scanning to detect design patterns, algorithms, data structures, and DataHub entities in codebases.
+**Spec-driven scanning for AI-assisted code reviews.**
+
+AI Code Auditor pairs YAML specifications with simple scripts or AI models to analyze codebases for common patterns, algorithms and vulnerabilities.
 
 ## Overview
 
@@ -69,12 +71,14 @@ ai-code-auditor/
 │   ├── pre-commit/                # Pre-commit hooks
 │   └── scheduled/                 # Scheduled audits
 ├── examples/                         # Integration examples
-│   └── integration-examples.sh       # CI/CD and workflow examples
+│   ├── integration-examples.sh       # CI/CD and workflow examples
+│   └── sample_repo/                  # Small repository for demo scans
 ├── test-audit-runner.sh              # Test suite for audit runner
 ├── scripts/                          # Utility scripts
 │   ├── repo-discovery.sh             # Repository discovery utility
 │   ├── relationship_graph.py       # Generate cross-reference graphs
-│   └── search_relationships.py     # Search related items
+│   ├── search_relationships.py     # Search related items
+│   └── run_scan.py                 # Minimal spec-driven scanner example
 └── README.md                         # This file
 │   ├── Algorithms-DS-Taxonomy.md   # Algorithm and DS reference
 │   ├── DataHub-Taxonomy-Reference.md # DataHub entity guide
@@ -144,6 +148,16 @@ The easiest way to run audits is using the `audit-runner.sh` script:
 ```
 
 For complete documentation, see: [Audit Runner Documentation](docs/Audit-Runner-Documentation.md)
+
+### Example Scan
+
+To see the spec format in action, try the sample repository:
+
+```bash
+python scripts/run_scan.py specs/design-patterns-spec.yaml examples/sample_repo
+```
+
+The resulting JSON is shown in [reports/example.md](reports/example.md).
 
 ### Using AI Agents Directly
 
@@ -345,13 +359,9 @@ Complexity ratings help users understand implementation difficulty, detection ef
 
 ## Contributing
 
-To add new patterns or improve existing specifications:
-
-1. Update the relevant YAML file in `specs/`
-2. Add documentation to the corresponding file in `docs/`
-3. Ensure the pattern includes appropriate hints and report fields
-4. Test with sample codebases to validate detection accuracy
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to add new
+specs or suggest improvements. Contributions and issues are welcome!
 
 ## License
 
-This project is designed for defensive security and code quality analysis purposes only. Use responsibly for improving code quality and security posture.a
+This project is designed for defensive security and code quality analysis purposes only. Use responsibly for improving code quality and security posture.
