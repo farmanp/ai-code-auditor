@@ -14,6 +14,9 @@ datahub_entities:
       - "tags"
       - "glossaryTerms"
       - "customProperties"
+    related_patterns:
+      - "Repository"
+      - "Factory Method"
 
   - name: "DataJob"
     urn_pattern: "urn:li:dataJob:*"
@@ -28,6 +31,8 @@ datahub_entities:
       - "flowUrn"
       - "customProperties"
       - "externalUrl"
+    related_patterns:
+      - "Observer"
 
   - name: "DataFlow"
     urn_pattern: "urn:li:dataFlow:*"
@@ -40,7 +45,8 @@ datahub_entities:
       - "description"
       - "project"
       - "externalUrl"
-      - "customProperties"
+    related_patterns:
+      - "Observer"
 
   - name: "Chart"
     urn_pattern: "urn:li:chart:*"

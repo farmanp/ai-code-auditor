@@ -447,6 +447,8 @@ algorithms_and_data_structures:
       - "merge_strategy"
       - "memory_optimization"
       - "stability_preservation"
+    related_patterns:
+      - "Strategy"
 
   - name: "Quick Sort"
     category: "sorting"
@@ -471,6 +473,8 @@ algorithms_and_data_structures:
       - "pivot_selection"
       - "partitioning_scheme"
       - "worst_case_handling"
+    related_patterns:
+      - "Strategy"
 
   - name: "Heap Sort"
     category: "sorting"
@@ -493,6 +497,8 @@ algorithms_and_data_structures:
       - "heap_construction"
       - "extraction_process"
       - "memory_efficiency"
+    related_patterns:
+      - "Strategy"
 
   # Search Algorithms
   - name: "Linear Search"
@@ -564,6 +570,8 @@ algorithms_and_data_structures:
       - "implementation_approach"
       - "traversal_order"
       - "cycle_detection"
+    related_patterns:
+      - "Iterator"
 
   - name: "Breadth-First Search"
     category: "graph_algorithm"
@@ -588,6 +596,8 @@ algorithms_and_data_structures:
       - "queue_implementation"
       - "level_tracking"
       - "shortest_path_property"
+    related_patterns:
+      - "Iterator"
 
   # Dynamic Programming
   - name: "Fibonacci"

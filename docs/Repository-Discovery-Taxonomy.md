@@ -298,3 +298,8 @@ Patterns that reveal human factors and maintenance characteristics.
 5. **Team Performance**: Contribution patterns and collaboration metrics
 
 This taxonomy provides a comprehensive framework for understanding any codebase through systematic discovery and analysis, enabling informed decision-making about development practices, team processes, and technical improvements.
+
+## Related Patterns
+
+- Discovery results highlight existing **Design Patterns** in a repository.
+- Findings feed into feasibility and security analyses.

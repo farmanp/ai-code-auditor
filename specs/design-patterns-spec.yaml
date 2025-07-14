@@ -15,6 +15,9 @@ patterns:
       - "thread_safety"
       - "lazy_initialization"
       - "enum_implementation"
+    related:
+      security:
+        - "Thread Safety"
 
   - name: "Factory Method"
     category: "creational"
@@ -30,6 +33,12 @@ patterns:
       - "product_types"
       - "creator_hierarchy"
       - "parameter_handling"
+    related:
+      datahub:
+        - "Dataset"
+        - "DataJob"
+      security:
+        - "Input Validation"
 
   - name: "Abstract Factory"
     category: "creational"
@@ -157,6 +166,9 @@ patterns:
       - "subsystem_complexity"
       - "interface_design"
       - "coupling_reduction"
+    related:
+      cloud:
+        - "Microservices"
 
   - name: "Flyweight"
     category: "structural"
@@ -189,6 +201,10 @@ patterns:
       - "proxy_type"
       - "lazy_loading"
       - "access_control_logic"
+    related:
+      security:
+        - "Weak Authentication"
+        - "Broken Authorization"
 
   # Behavioral Patterns
   - name: "Observer"
@@ -206,6 +222,10 @@ patterns:
       - "notification_strategy"
       - "observer_management"
       - "push_vs_pull"
+    related:
+      datahub:
+        - "DataFlow"
+        - "DataJob"
 
   - name: "Strategy"
     category: "behavioral"
@@ -222,6 +242,11 @@ patterns:
       - "algorithm_variants"
       - "selection_mechanism"
       - "context_coupling"
+    related:
+      algorithms:
+        - "Merge Sort"
+        - "Quick Sort"
+        - "Heap Sort"
 
   - name: "Command"
     category: "behavioral"
@@ -334,6 +359,10 @@ patterns:
       - "traversal_strategy"
       - "multiple_iterators"
       - "modification_handling"
+    related:
+      algorithms:
+        - "Depth-First Search"
+        - "Breadth-First Search"
 
   - name: "Visitor"
     category: "behavioral"
@@ -350,6 +379,9 @@ patterns:
       - "operation_externalization"
       - "element_hierarchy"
       - "visitor_extensibility"
+    related:
+      algorithms:
+        - "Tree Traversal"
 
   # Architectural Patterns
   - name: "Model-View-Controller (MVC)"
@@ -413,6 +445,9 @@ patterns:
       - "query_capabilities"
       - "caching_strategy"
       - "unit_of_work_integration"
+    related:
+      datahub:
+        - "Dataset"
 
   - name: "Dependency Injection"
     category: "architectural"
@@ -429,3 +464,6 @@ patterns:
       - "injection_type"
       - "lifecycle_management"
       - "container_usage"
+    related:
+      cloud:
+        - "Containers"

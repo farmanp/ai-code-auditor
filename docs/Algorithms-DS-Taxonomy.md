@@ -146,3 +146,9 @@ See the [Complexity Rating Guide](Complexity-Guide.md) for the meaning of implem
 - **Early Termination**: Loop optimization conditions
 - **Memory Access**: Cache-friendly patterns
 - **Branch Prediction**: Conditional optimization
+
+## Related Patterns
+
+- Graph traversal algorithms ↔ **Iterator** pattern (see [Design Patterns Taxonomy](Design-Patterns-Taxonomy.md))
+- Sorting algorithm selection ↔ **Strategy** pattern
+- Tree traversal techniques ↔ **Visitor** pattern
