@@ -12,6 +12,7 @@ This repository contains comprehensive specifications and taxonomies for automat
 - **Algorithms & Data Structures**: Sorting algorithms, search algorithms, trees, graphs, hash tables, and complexity analysis
 - **DataHub Entities**: Datasets, ML features, models, lineage, governance aspects, and metadata patterns
 - **Security Vulnerabilities**: OWASP Top 10 vulnerabilities, cryptographic failures, injection attacks, and security misconfigurations
+- **ETL Subsystems**: 38 data warehouse subsystems including extraction, transformation, loading, quality management, and workflow orchestration
 
 ## Repository Structure
 
@@ -46,6 +47,8 @@ To perform a code audit using an AI agent:
    - DataHub entities only: `specs/datahub-spec.yaml`
    - Security vulnerabilities only: `specs/security-vulnerabilities-spec.yaml`
    - All patterns: Use all spec files
+   - ETL subsystems only: `specs/etl-subsystems-spec.yaml`
+   - All patterns: Use all four spec files
 
 4. **Review results** - The AI agent will generate reports based on the `report_fields` specified in each pattern.
 
@@ -105,7 +108,17 @@ vulnerabilities:
     owasp_category: "A01:2021 – Category Name"
     severity: "Critical|High|Medium|Low"
     detection_hints: ["pattern1", "pattern2"]
-    report_fields: ["location", "severity", "remediation"]
+   report_fields: ["location", "severity", "remediation"]
+```
+
+### ETL Subsystems
+```yaml
+etl_subsystems:
+  - name: "SubsystemName"
+    id: 1
+    category: "data_acquisition|data_quality|dimension_management|fact_loading|performance|workflow|development|compliance|infrastructure"
+    hints: ["characteristic_keywords", "process_indicators"]
+    report_fields: ["implementation_aspect", "integration_quality"]
 ```
 
 ## Documentation
@@ -116,6 +129,7 @@ The `docs/` folder contains human-readable references:
 - **Algorithms-DS-Taxonomy.md**: Reference for algorithms and data structures with time/space complexity analysis
 - **DataHub-Taxonomy-Reference.md**: Complete guide to DataHub entities, aspects, and governance patterns
 - **Security-Vulnerabilities-Taxonomy.md**: Complete guide to security vulnerabilities based on OWASP Top 10 2021
+- **ETL-Subsystems-Taxonomy.md**: Reference for 38 ETL subsystems with detection patterns and implementation guidance
 
 ## Key Features
 
@@ -125,6 +139,7 @@ The `docs/` folder contains human-readable references:
 - **Complexity analysis**: Provides time/space complexity information for algorithms
 - **Security analysis**: Detects OWASP Top 10 vulnerabilities with severity ratings
 - **Comprehensive coverage**: Supports 25+ design patterns, major algorithms, DataHub metadata, and security vulnerabilities
+- **Comprehensive coverage**: Supports 25+ design patterns, major algorithms, DataHub metadata, and 38 ETL subsystems
 
 ### Reporting
 - **Structured output**: Consistent reporting format across all pattern types
@@ -161,4 +176,4 @@ To add new patterns or improve existing specifications:
 
 ## License
 
-This project is designed for defensive security and code quality analysis purposes only. Use responsibly for improving code quality and security posture.
+This project is designed for defensive security and code quality analysis purposes only. Use responsibly for improving code quality and security posture.a
