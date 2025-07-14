@@ -91,3 +91,18 @@ High-level patterns that define the overall structure of applications.
 - Strategy: Algorithm extensibility
 - Template Method: Hook method design
 - Visitor: Adding new operations vs. new elements
+
+## Related Patterns
+
+- **Iterator** ↔ Graph traversal algorithms (see [Algorithms & Data Structures Taxonomy](Algorithms-DS-Taxonomy.md))
+- **Strategy** ↔ Sorting algorithm selection
+- **Visitor** ↔ Tree traversal algorithms
+- **Repository** ↔ DataHub datasets (see [DataHub Taxonomy Reference](DataHub-Taxonomy-Reference.md))
+- **Observer** ↔ DataHub lineage tracking
+- **Factory Method** ↔ DataHub entity creation
+- **Singleton** ↔ Thread safety concerns
+- **Factory Method** ↔ Input validation patterns
+- **Proxy** ↔ Authentication/authorization checks
+- **Facade/API Gateway** ↔ Microservices architectures
+- **Event-Driven** ↔ Serverless deployments
+- **Dependency Injection** ↔ Container orchestration

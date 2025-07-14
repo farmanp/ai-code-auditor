@@ -494,3 +494,9 @@ The Security Vulnerabilities Taxonomy is designed to help AI agents systematical
 - [CWE (Common Weakness Enumeration)](https://cwe.mitre.org/)
 - [NIST Cybersecurity Framework](https://www.nist.gov/cybersecurity/framework)
 - [SANS Top 25 Software Errors](https://www.sans.org/top25-software-errors/)
+
+## Related Patterns
+
+- **Singleton** implementations must consider thread safety.
+- **Factory Method** patterns should include input validation to mitigate injection flaws.
+- **Proxy** patterns help enforce authentication and authorization.

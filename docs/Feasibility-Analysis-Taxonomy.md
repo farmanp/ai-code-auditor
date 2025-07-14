@@ -242,3 +242,8 @@ Structured approach to evaluate and compare different options.
 ## Conclusion
 
 Feasibility analysis is essential for successful software development initiatives. By following this taxonomy and using the provided frameworks, teams can make informed decisions about migrations, refactoring, and integration projects. The key is to balance technical feasibility with business value while managing risks and resources effectively.
+
+## Related Patterns
+
+- Refactoring often introduces new **Design Patterns** to improve maintainability.
+- Repository discovery results guide feasibility assessments.

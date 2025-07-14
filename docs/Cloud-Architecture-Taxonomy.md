@@ -65,3 +65,9 @@ This document catalogs common cloud architecture patterns and services across ma
 - **Reserved Capacity**: Leverage reserved or committed use discounts for long-running workloads.
 - **Lifecycle Policies**: Use storage lifecycle rules to transition data to cheaper tiers.
 - **Autoscaling**: Configure auto scaling to match demand and avoid overprovisioning.
+
+## Related Patterns
+
+- **Microservices** architectures often employ the **Facade** or **API Gateway** patterns (see [Design Patterns Taxonomy](Design-Patterns-Taxonomy.md)).
+- **Serverless** components align with event-driven design patterns.
+- **Container** deployments benefit from **Dependency Injection** for managing resources.

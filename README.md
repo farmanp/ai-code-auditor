@@ -87,6 +87,11 @@ patterns:
     category: "creational|structural|behavioral|architectural"
     hints: ["keyword1", "keyword2", "signature"]
     report_fields: ["field1", "field2", "quality_metric"]
+    related:
+      algorithms: ["AlgorithmName"]
+      datahub: ["EntityName"]
+      security: ["SecurityConcern"]
+      cloud: ["CloudPattern"]
 ```
 
 ### Algorithms & Data Structures
@@ -99,6 +104,7 @@ algorithms_and_data_structures:
     time_complexity: "O(n)"
     space_complexity: "O(1)"
     report_fields: ["implementation_quality", "optimization"]
+    related_patterns: ["DesignPatternName"]
 ```
 
 ### DataHub Entities
@@ -108,6 +114,7 @@ datahub_entities:
     urn_pattern: "urn:li:entityType:*"
     aspect_name: "primaryAspect"
     report_fields: ["metadata_field1", "metadata_field2"]
+    related_patterns: ["DesignPatternName"]
 ```
 
 ### Feasibility Analysis
@@ -151,6 +158,11 @@ The `docs/` folder contains human-readable references:
 - **Feasibility-Analysis-Taxonomy.md**: Comprehensive guide to feasibility analysis including migration assessment, refactoring evaluation, and resource planning
 - **Security-Vulnerabilities-Taxonomy.md**: Complete guide to security vulnerabilities based on OWASP Top 10 2021
 - **ETL-Subsystems-Taxonomy.md**: Reference for 38 ETL subsystems with detection patterns and implementation guidance
+- **Pattern-Cross-Reference.md**: Matrix of relationships across taxonomies
+
+### Visualization and Search
+
+Run `scripts/relationship_graph.py` to generate a Graphviz `.dot` file showing cross-taxonomy links. Use `scripts/search_relationships.py [TERM]` to list related items for a specific term.
 
 ## Key Features
 

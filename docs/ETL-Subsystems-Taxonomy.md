@@ -295,3 +295,8 @@ Each subsystem defines specific report fields that should be included in AI code
 - **No Parallelization**: Single-threaded processing bottlenecks
 - **Missing Aggregates**: Poor query performance without aggregation layer
 - **No Real-time Support**: Batch-only architectures limiting responsiveness
+
+## Related Patterns
+
+- ETL workflows often publish lineage to DataHub using the **Observer** pattern.
+- Repository subsystems map naturally to DataHub **Dataset** entities.
