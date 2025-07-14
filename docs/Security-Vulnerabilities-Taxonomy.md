@@ -2,6 +2,8 @@
 
 This document provides a comprehensive reference for security vulnerability detection patterns used by AI agents to identify potential security issues in codebases.
 
+See the [Complexity Rating Guide](Complexity-Guide.md) for details on implementation difficulty, detection complexity, and performance impact levels mentioned here.
+
 ## Overview
 
 The Security Vulnerabilities Taxonomy is designed to help AI agents systematically identify common security flaws based on the OWASP Top 10 2021 and industry best practices. Each vulnerability type includes detection patterns, severity levels, and remediation guidance.

@@ -2,6 +2,8 @@
 
 This document provides a comprehensive reference for DataHub entities and aspects that can be detected by the AI code auditor.
 
+See the [Complexity Rating Guide](Complexity-Guide.md) for explanations of implementation, detection, and performance ratings used in these specifications.
+
 ## Core Platform Entities
 
 ### Data Assets

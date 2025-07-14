@@ -2,6 +2,8 @@
 
 This document provides a comprehensive reference for algorithms and data structures that can be detected by the AI code auditor.
 
+See the [Complexity Rating Guide](Complexity-Guide.md) for the meaning of implementation, detection, and performance ratings.
+
 ## Data Structures
 
 ### Linear Data Structures

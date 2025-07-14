@@ -2,6 +2,9 @@ repository_discovery:
   # Project Structure Analysis
   - name: "Language Detection"
     category: "project_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "*.py files"
       - "*.js files"
@@ -21,6 +24,9 @@ repository_discovery:
 
   - name: "Framework Identification"
     category: "project_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "package.json"
       - "requirements.txt"
@@ -40,6 +46,9 @@ repository_discovery:
 
   - name: "Build System Analysis"
     category: "project_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "Makefile"
       - "CMakeLists.txt"
@@ -59,6 +68,9 @@ repository_discovery:
 
   - name: "Dependency Management"
     category: "project_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "package-lock.json"
       - "yarn.lock"
@@ -76,6 +88,9 @@ repository_discovery:
 
   - name: "Module Organization"
     category: "project_structure"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "src/"
       - "lib/"
@@ -96,6 +111,9 @@ repository_discovery:
   # Documentation Discovery
   - name: "README Analysis"
     category: "documentation"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "README.md"
       - "README.rst"
@@ -110,6 +128,9 @@ repository_discovery:
 
   - name: "API Documentation"
     category: "documentation"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "swagger.yaml"
       - "openapi.yaml"
@@ -129,6 +150,9 @@ repository_discovery:
 
   - name: "Code Comments Density"
     category: "documentation"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "// comments"
       - "/* */ comments"
@@ -145,6 +169,9 @@ repository_discovery:
 
   - name: "Architecture Documentation"
     category: "documentation"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "ARCHITECTURE.md"
       - "DESIGN.md"
@@ -161,6 +188,9 @@ repository_discovery:
 
   - name: "Contributing Guidelines"
     category: "documentation"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "CONTRIBUTING.md"
       - "CONTRIBUTE.md"
@@ -177,6 +207,9 @@ repository_discovery:
   # Development Practices
   - name: "Version Control Patterns"
     category: "development_practices"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - ".gitignore"
       - ".gitmodules"
@@ -193,6 +226,9 @@ repository_discovery:
 
   - name: "Branch Strategies"
     category: "development_practices"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "main branch"
       - "develop branch"
@@ -209,6 +245,9 @@ repository_discovery:
 
   - name: "Commit Message Quality"
     category: "development_practices"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "conventional commits"
       - "semantic commit messages"
@@ -224,6 +263,9 @@ repository_discovery:
 
   - name: "PR/Issue Templates"
     category: "development_practices"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - ".github/PULL_REQUEST_TEMPLATE.md"
       - ".github/ISSUE_TEMPLATE/"
@@ -239,6 +281,9 @@ repository_discovery:
 
   - name: "CI/CD Configuration"
     category: "development_practices"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - ".github/workflows/"
       - ".gitlab-ci.yml"
@@ -257,6 +302,9 @@ repository_discovery:
   # Code Metrics
   - name: "Repository Size and Growth"
     category: "code_metrics"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "git log analysis"
       - "file count tracking"
@@ -272,6 +320,9 @@ repository_discovery:
 
   - name: "File Count by Type"
     category: "code_metrics"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "source files"
       - "test files"
@@ -288,6 +339,9 @@ repository_discovery:
 
   - name: "Lines of Code"
     category: "code_metrics"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "total lines"
       - "code lines"
@@ -303,6 +357,9 @@ repository_discovery:
 
   - name: "Complexity Metrics"
     category: "code_metrics"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "cyclomatic complexity"
       - "cognitive complexity"
@@ -319,6 +376,9 @@ repository_discovery:
 
   - name: "Test Coverage Indicators"
     category: "code_metrics"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "test/ directory"
       - "spec/ directory"
@@ -336,6 +396,9 @@ repository_discovery:
   # Team & Activity Analysis
   - name: "Contributor Patterns"
     category: "team_activity"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "git author analysis"
       - "commit authorship"
@@ -351,6 +414,9 @@ repository_discovery:
 
   - name: "Maintenance Activity"
     category: "team_activity"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "recent commits"
       - "issue resolution"
@@ -367,6 +433,9 @@ repository_discovery:
 
   - name: "Issue Resolution Time"
     category: "team_activity"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "issue creation dates"
       - "issue closing dates"
@@ -382,6 +451,9 @@ repository_discovery:
 
   - name: "Release Frequency"
     category: "team_activity"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "git tags"
       - "release notes"
@@ -398,6 +470,9 @@ repository_discovery:
   # Additional Discovery Patterns
   - name: "Security Configuration"
     category: "security"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "security.md"
       - "dependabot.yml"
@@ -413,6 +488,9 @@ repository_discovery:
 
   - name: "Performance Monitoring"
     category: "monitoring"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "performance tests"
       - "benchmarks"
@@ -428,6 +506,9 @@ repository_discovery:
 
   - name: "Database Schema"
     category: "database"
+    implementation_complexity: Medium
+    detection_complexity: Moderate
+    performance_impact: Moderate
     hints:
       - "migrations/"
       - "schema.sql"

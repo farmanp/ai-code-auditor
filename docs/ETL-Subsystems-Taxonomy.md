@@ -2,6 +2,8 @@
 
 This document provides a comprehensive reference for the 38 ETL subsystems that can be detected by the AI code auditor, based on Ralph Kimball's data warehouse architecture framework.
 
+See the [Complexity Rating Guide](Complexity-Guide.md) for explanations of implementation, detection, and performance ratings referenced in this taxonomy.
+
 ## Overview
 
 Modern ETL systems are complex ecosystems requiring systematic decomposition into specialized subsystems. This taxonomy identifies 38 distinct subsystems organized into 8 major categories, each with specific responsibilities and detection patterns.

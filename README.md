@@ -159,12 +159,16 @@ The `docs/` folder contains human-readable references:
 - **Security-Vulnerabilities-Taxonomy.md**: Complete guide to security vulnerabilities based on OWASP Top 10 2021
 - **ETL-Subsystems-Taxonomy.md**: Reference for 38 ETL subsystems with detection patterns and implementation guidance
 
+### Complexity Ratings
+
+Complexity ratings help users understand implementation difficulty, detection effort, and performance impact of each pattern. Ratings are defined in the new [Complexity Rating Guide](docs/Complexity-Guide.md) and applied consistently across all YAML specifications.
+
 ## Key Features
 
 ### Pattern Detection
 - **Hint-based matching**: Uses keywords and code signatures for pattern identification
 - **Quality assessment**: Evaluates implementation quality and best practices
-- **Complexity analysis**: Provides time/space complexity information for algorithms
+- **Complexity ratings**: Standardized implementation, detection, and performance levels
 - **Feasibility evaluation**: Assesses migration readiness, refactoring opportunities, and integration complexity
 - **Comprehensive coverage**: Supports 25+ design patterns, major algorithms, DataHub metadata, and feasibility analysis
 - **Security analysis**: Detects OWASP Top 10 vulnerabilities with severity ratings
