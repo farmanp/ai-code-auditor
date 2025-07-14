@@ -46,12 +46,16 @@ To perform a code audit using an AI agent:
 ### Example AI Agent Prompt
 
 ```
-Please analyze the codebase at [PATH] using the specifications in the ai-code-auditor/specs/ folder. 
+Please analyze the codebase at [PATH] using the specifications in the ai-code-auditor/specs/ folder.
 Focus on detecting design patterns and provide a detailed report including:
 - Pattern instances found
 - Implementation quality assessment
 - Recommendations for improvements
 ```
+
+### Prompt Library
+
+Ready-made prompt templates are available in the [`prompts/`](prompts/) directory. Copy the appropriate file and replace `[CODE_PATH]` with the path to your codebase or metadata repository. Templates include design pattern scans, algorithm and data structure analysis, DataHub metadata audits, and ETL subsystem checks.
 
 ## Specification Schema
 
