@@ -1,0 +1,405 @@
+feasibility_analysis:
+  # Migration Feasibility
+  - name: "Language Version Compatibility"
+    category: "migration"
+    analysis_type: "compatibility"
+    hints:
+      - "version requirements"
+      - "language features"
+      - "deprecated syntax"
+      - "compatibility matrix"
+      - "migration guides"
+    report_fields:
+      - "current_version"
+      - "target_version"
+      - "breaking_changes"
+      - "feature_gaps"
+      - "migration_effort"
+
+  - name: "Framework Migration"
+    category: "migration"
+    analysis_type: "framework"
+    hints:
+      - "framework version"
+      - "dependency tree"
+      - "migration path"
+      - "breaking changes"
+      - "compatibility layer"
+    report_fields:
+      - "source_framework"
+      - "target_framework"
+      - "migration_complexity"
+      - "compatibility_issues"
+      - "migration_steps"
+
+  - name: "Database Migration"
+    category: "migration"
+    analysis_type: "database"
+    hints:
+      - "schema compatibility"
+      - "data types"
+      - "stored procedures"
+      - "migration scripts"
+      - "data consistency"
+    report_fields:
+      - "source_database"
+      - "target_database"
+      - "schema_complexity"
+      - "data_migration_risk"
+      - "downtime_requirements"
+
+  - name: "API Compatibility"
+    category: "migration"
+    analysis_type: "api"
+    hints:
+      - "API version"
+      - "endpoint changes"
+      - "response format"
+      - "authentication"
+      - "rate limiting"
+    report_fields:
+      - "api_version_compatibility"
+      - "endpoint_changes"
+      - "contract_violations"
+      - "deprecation_timeline"
+      - "migration_strategy"
+
+  - name: "Dependency Conflicts"
+    category: "migration"
+    analysis_type: "dependencies"
+    hints:
+      - "dependency version"
+      - "transitive dependencies"
+      - "version conflicts"
+      - "security vulnerabilities"
+      - "maintenance status"
+    report_fields:
+      - "conflict_analysis"
+      - "security_assessment"
+      - "maintenance_risk"
+      - "resolution_strategy"
+      - "update_priority"
+
+  # Refactoring Assessment
+  - name: "Code Smell Detection"
+    category: "refactoring"
+    analysis_type: "code_quality"
+    hints:
+      - "long methods"
+      - "large classes"
+      - "duplicate code"
+      - "complex conditionals"
+      - "god objects"
+    report_fields:
+      - "smell_severity"
+      - "affected_components"
+      - "refactoring_priority"
+      - "estimated_effort"
+      - "improvement_impact"
+
+  - name: "Coupling Analysis"
+    category: "refactoring"
+    analysis_type: "architecture"
+    hints:
+      - "tight coupling"
+      - "circular dependencies"
+      - "module boundaries"
+      - "interface design"
+      - "dependency injection"
+    report_fields:
+      - "coupling_metrics"
+      - "dependency_graph"
+      - "decoupling_opportunities"
+      - "architectural_improvements"
+      - "refactoring_scope"
+
+  - name: "Code Duplication"
+    category: "refactoring"
+    analysis_type: "duplication"
+    hints:
+      - "duplicate blocks"
+      - "similar methods"
+      - "copy-paste code"
+      - "repeated patterns"
+      - "code clones"
+    report_fields:
+      - "duplication_percentage"
+      - "clone_types"
+      - "consolidation_opportunities"
+      - "extraction_candidates"
+      - "maintenance_burden"
+
+  - name: "Testability Assessment"
+    category: "refactoring"
+    analysis_type: "testing"
+    hints:
+      - "test coverage"
+      - "mocking difficulty"
+      - "static dependencies"
+      - "complex setup"
+      - "legacy code"
+    report_fields:
+      - "testability_score"
+      - "testing_barriers"
+      - "improvement_strategies"
+      - "test_infrastructure_needs"
+      - "coverage_gaps"
+
+  - name: "Breaking Change Impact"
+    category: "refactoring"
+    analysis_type: "impact"
+    hints:
+      - "public interfaces"
+      - "API contracts"
+      - "backward compatibility"
+      - "client dependencies"
+      - "migration requirements"
+    report_fields:
+      - "change_scope"
+      - "affected_clients"
+      - "compatibility_strategy"
+      - "rollout_plan"
+      - "risk_mitigation"
+
+  # Integration Analysis
+  - name: "API Surface Analysis"
+    category: "integration"
+    analysis_type: "api_surface"
+    hints:
+      - "public endpoints"
+      - "request/response schemas"
+      - "authentication methods"
+      - "rate limiting"
+      - "versioning strategy"
+    report_fields:
+      - "api_complexity"
+      - "integration_patterns"
+      - "documentation_quality"
+      - "stability_assessment"
+      - "integration_effort"
+
+  - name: "Data Model Compatibility"
+    category: "integration"
+    analysis_type: "data_model"
+    hints:
+      - "data schemas"
+      - "serialization format"
+      - "field mappings"
+      - "validation rules"
+      - "data transformation"
+    report_fields:
+      - "schema_compatibility"
+      - "transformation_complexity"
+      - "data_quality_issues"
+      - "mapping_strategy"
+      - "validation_requirements"
+
+  - name: "Authentication Integration"
+    category: "integration"
+    analysis_type: "authentication"
+    hints:
+      - "auth protocols"
+      - "token management"
+      - "session handling"
+      - "security requirements"
+      - "identity providers"
+    report_fields:
+      - "auth_complexity"
+      - "protocol_compatibility"
+      - "security_assessment"
+      - "integration_approach"
+      - "compliance_requirements"
+
+  - name: "Communication Protocols"
+    category: "integration"
+    analysis_type: "protocols"
+    hints:
+      - "HTTP/REST"
+      - "GraphQL"
+      - "gRPC"
+      - "message queues"
+      - "real-time protocols"
+    report_fields:
+      - "protocol_analysis"
+      - "performance_characteristics"
+      - "scalability_considerations"
+      - "integration_complexity"
+      - "protocol_migration"
+
+  - name: "Service Boundaries"
+    category: "integration"
+    analysis_type: "boundaries"
+    hints:
+      - "microservices"
+      - "domain boundaries"
+      - "service mesh"
+      - "API gateways"
+      - "data consistency"
+    report_fields:
+      - "boundary_analysis"
+      - "service_coupling"
+      - "integration_patterns"
+      - "consistency_strategy"
+      - "operational_complexity"
+
+  # Technical Debt Evaluation
+  - name: "Deprecated API Usage"
+    category: "technical_debt"
+    analysis_type: "deprecation"
+    hints:
+      - "deprecated methods"
+      - "legacy libraries"
+      - "outdated APIs"
+      - "sunset timeline"
+      - "replacement alternatives"
+    report_fields:
+      - "deprecation_timeline"
+      - "usage_analysis"
+      - "replacement_strategy"
+      - "migration_urgency"
+      - "business_impact"
+
+  - name: "Outdated Patterns"
+    category: "technical_debt"
+    analysis_type: "patterns"
+    hints:
+      - "anti-patterns"
+      - "legacy patterns"
+      - "modern alternatives"
+      - "best practices"
+      - "architectural evolution"
+    report_fields:
+      - "pattern_analysis"
+      - "modernization_opportunities"
+      - "refactoring_benefits"
+      - "migration_complexity"
+      - "performance_impact"
+
+  - name: "Security Debt"
+    category: "technical_debt"
+    analysis_type: "security"
+    hints:
+      - "security vulnerabilities"
+      - "outdated cryptography"
+      - "insecure patterns"
+      - "compliance gaps"
+      - "security best practices"
+    report_fields:
+      - "vulnerability_assessment"
+      - "security_gap_analysis"
+      - "compliance_requirements"
+      - "remediation_priority"
+      - "security_roadmap"
+
+  - name: "Performance Bottlenecks"
+    category: "technical_debt"
+    analysis_type: "performance"
+    hints:
+      - "slow queries"
+      - "memory leaks"
+      - "inefficient algorithms"
+      - "resource contention"
+      - "scalability issues"
+    report_fields:
+      - "bottleneck_analysis"
+      - "performance_metrics"
+      - "optimization_opportunities"
+      - "scalability_constraints"
+      - "performance_roadmap"
+
+  - name: "Maintenance Burden"
+    category: "technical_debt"
+    analysis_type: "maintenance"
+    hints:
+      - "complex code"
+      - "poor documentation"
+      - "fragile tests"
+      - "manual processes"
+      - "technical complexity"
+    report_fields:
+      - "maintenance_complexity"
+      - "documentation_gaps"
+      - "automation_opportunities"
+      - "knowledge_transfer_risk"
+      - "maintenance_strategy"
+
+  # Resource Requirements
+  - name: "Skill Requirements"
+    category: "resources"
+    analysis_type: "skills"
+    hints:
+      - "technical skills"
+      - "domain expertise"
+      - "tool proficiency"
+      - "learning curve"
+      - "team capabilities"
+    report_fields:
+      - "skill_gap_analysis"
+      - "training_requirements"
+      - "expertise_level"
+      - "team_readiness"
+      - "skill_development_plan"
+
+  - name: "Time Estimation"
+    category: "resources"
+    analysis_type: "time"
+    hints:
+      - "complexity factors"
+      - "historical data"
+      - "uncertainty factors"
+      - "dependency chains"
+      - "milestone planning"
+    report_fields:
+      - "effort_estimation"
+      - "timeline_analysis"
+      - "critical_path"
+      - "dependency_impact"
+      - "schedule_risk"
+
+  - name: "Risk Assessment"
+    category: "resources"
+    analysis_type: "risk"
+    hints:
+      - "technical risks"
+      - "business risks"
+      - "operational risks"
+      - "market risks"
+      - "mitigation strategies"
+    report_fields:
+      - "risk_identification"
+      - "risk_probability"
+      - "impact_assessment"
+      - "mitigation_strategies"
+      - "contingency_planning"
+
+  - name: "Cost Implications"
+    category: "resources"
+    analysis_type: "cost"
+    hints:
+      - "development costs"
+      - "infrastructure costs"
+      - "operational costs"
+      - "opportunity costs"
+      - "ROI analysis"
+    report_fields:
+      - "cost_breakdown"
+      - "budget_impact"
+      - "cost_benefit_analysis"
+      - "financial_projections"
+      - "investment_justification"
+
+  - name: "Decision Framework"
+    category: "resources"
+    analysis_type: "decision"
+    hints:
+      - "decision criteria"
+      - "trade-off analysis"
+      - "stakeholder alignment"
+      - "success metrics"
+      - "go/no-go decision"
+    report_fields:
+      - "decision_matrix"
+      - "evaluation_criteria"
+      - "stakeholder_impact"
+      - "success_metrics"
+      - "recommendation"
