@@ -27,12 +27,12 @@ log_test() {
 
 log_pass() {
     echo -e "${GREEN}[PASS]${NC} $1"
-    ((PASSED_TESTS++))
+    ((PASSED_TESTS++)) || true
 }
 
 log_fail() {
     echo -e "${RED}[FAIL]${NC} $1"
-    ((FAILED_TESTS++))
+    ((FAILED_TESTS++)) || true
 }
 
 log_info() {
@@ -44,7 +44,7 @@ run_test() {
     local test_name="$1"
     local test_command="$2"
     
-    ((TOTAL_TESTS++))
+    ((TOTAL_TESTS++)) || true
     log_test "$test_name"
     
     if eval "$test_command" >/dev/null 2>&1; then

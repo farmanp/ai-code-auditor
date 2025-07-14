@@ -52,30 +52,44 @@ declare -A AUDIT_TYPES=(
 
 # Helper functions
 log_info() {
-    [[ "$QUIET" == true ]] && return
+    if [[ "$QUIET" == true ]]; then
+        return 0
+    fi
     echo -e "${BLUE}[INFO]${NC} $1" >&2
+    return 0
 }
 
 log_success() {
-    [[ "$QUIET" == true ]] && return
+    if [[ "$QUIET" == true ]]; then
+        return 0
+    fi
     echo -e "${GREEN}[SUCCESS]${NC} $1" >&2
+    return 0
 }
 
 log_warning() {
     echo -e "${YELLOW}[WARNING]${NC} $1" >&2
+    return 0
 }
 
 log_error() {
     echo -e "${RED}[ERROR]${NC} $1" >&2
+    return 0
 }
 
 log_debug() {
-    [[ "$VERBOSE" == true ]] && echo -e "${CYAN}[DEBUG]${NC} $1" >&2
+    if [[ "$VERBOSE" == true ]]; then
+        echo -e "${CYAN}[DEBUG]${NC} $1" >&2
+    fi
+    return 0
 }
 
 log_progress() {
-    [[ "$QUIET" == true ]] && return
+    if [[ "$QUIET" == true ]]; then
+        return 0
+    fi
     echo -e "${CYAN}[PROGRESS]${NC} $1" >&2
+    return 0
 }
 
 # Help function
