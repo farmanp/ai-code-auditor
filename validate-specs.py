@@ -384,7 +384,8 @@ class SpecValidator:
             self.validate_cross_references(specs_data)
             self.validate_report_fields(specs_data)
         
-        return all_valid
+        # Return False if there are any errors (from individual files or cross-file checks)
+        return all_valid and not self.has_errors()
     
     def print_results(self) -> None:
         """Print validation results."""
