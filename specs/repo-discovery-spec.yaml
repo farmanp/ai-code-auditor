@@ -1,0 +1,442 @@
+repository_discovery:
+  # Project Structure Analysis
+  - name: "Language Detection"
+    category: "project_structure"
+    hints:
+      - "*.py files"
+      - "*.js files"
+      - "*.java files"
+      - "*.cpp files"
+      - "*.go files"
+      - "*.rs files"
+      - "*.ts files"
+      - "*.rb files"
+      - "*.php files"
+      - "*.cs files"
+    report_fields:
+      - "primary_language"
+      - "language_distribution"
+      - "polyglot_complexity"
+      - "lines_of_code_by_language"
+
+  - name: "Framework Identification"
+    category: "project_structure"
+    hints:
+      - "package.json"
+      - "requirements.txt"
+      - "pom.xml"
+      - "Cargo.toml"
+      - "go.mod"
+      - "Gemfile"
+      - "composer.json"
+      - "*.csproj"
+      - "build.gradle"
+      - "Pipfile"
+    report_fields:
+      - "framework_type"
+      - "framework_version"
+      - "framework_maturity"
+      - "migration_complexity"
+
+  - name: "Build System Analysis"
+    category: "project_structure"
+    hints:
+      - "Makefile"
+      - "CMakeLists.txt"
+      - "build.gradle"
+      - "maven"
+      - "webpack.config.js"
+      - "vite.config.js"
+      - "rollup.config.js"
+      - "gulpfile.js"
+      - "Gruntfile.js"
+      - "tsconfig.json"
+    report_fields:
+      - "build_tool"
+      - "build_complexity"
+      - "build_automation_level"
+      - "optimization_configuration"
+
+  - name: "Dependency Management"
+    category: "project_structure"
+    hints:
+      - "package-lock.json"
+      - "yarn.lock"
+      - "requirements.txt"
+      - "Pipfile.lock"
+      - "Cargo.lock"
+      - "go.sum"
+      - "composer.lock"
+      - "packages.config"
+    report_fields:
+      - "dependency_count"
+      - "dependency_freshness"
+      - "vulnerability_exposure"
+      - "license_compliance"
+
+  - name: "Module Organization"
+    category: "project_structure"
+    hints:
+      - "src/"
+      - "lib/"
+      - "components/"
+      - "modules/"
+      - "packages/"
+      - "services/"
+      - "utils/"
+      - "helpers/"
+      - "common/"
+      - "shared/"
+    report_fields:
+      - "directory_structure"
+      - "separation_of_concerns"
+      - "module_coupling"
+      - "naming_conventions"
+
+  # Documentation Discovery
+  - name: "README Analysis"
+    category: "documentation"
+    hints:
+      - "README.md"
+      - "README.rst"
+      - "README.txt"
+      - "readme.md"
+      - "Readme.md"
+    report_fields:
+      - "readme_completeness"
+      - "installation_instructions"
+      - "usage_examples"
+      - "contribution_guidelines"
+
+  - name: "API Documentation"
+    category: "documentation"
+    hints:
+      - "swagger.yaml"
+      - "openapi.yaml"
+      - "docs/"
+      - "documentation/"
+      - "api/"
+      - "*.md in docs"
+      - "docstring coverage"
+      - "JSDoc comments"
+      - "Javadoc comments"
+      - "Python docstrings"
+    report_fields:
+      - "api_documentation_coverage"
+      - "documentation_format"
+      - "documentation_freshness"
+      - "interactive_examples"
+
+  - name: "Code Comments Density"
+    category: "documentation"
+    hints:
+      - "// comments"
+      - "/* */ comments"
+      - "# comments"
+      - "<!-- --> comments"
+      - "docstring patterns"
+      - "inline comments"
+      - "block comments"
+    report_fields:
+      - "comment_ratio"
+      - "comment_quality"
+      - "documentation_coverage"
+      - "outdated_comments"
+
+  - name: "Architecture Documentation"
+    category: "documentation"
+    hints:
+      - "ARCHITECTURE.md"
+      - "DESIGN.md"
+      - "docs/architecture/"
+      - "docs/design/"
+      - "ADR (Architecture Decision Records)"
+      - "RFC documents"
+      - "design patterns documentation"
+    report_fields:
+      - "architecture_documentation_presence"
+      - "decision_record_quality"
+      - "design_rationale"
+      - "system_diagrams"
+
+  - name: "Contributing Guidelines"
+    category: "documentation"
+    hints:
+      - "CONTRIBUTING.md"
+      - "CONTRIBUTE.md"
+      - "docs/contributing/"
+      - "CODE_OF_CONDUCT.md"
+      - "PULL_REQUEST_TEMPLATE.md"
+      - "ISSUE_TEMPLATE.md"
+    report_fields:
+      - "contribution_process_clarity"
+      - "code_style_guidelines"
+      - "review_process"
+      - "community_standards"
+
+  # Development Practices
+  - name: "Version Control Patterns"
+    category: "development_practices"
+    hints:
+      - ".gitignore"
+      - ".gitmodules"
+      - "git hooks"
+      - "commit patterns"
+      - "branch naming"
+      - "tag patterns"
+      - "merge strategies"
+    report_fields:
+      - "gitignore_completeness"
+      - "commit_message_quality"
+      - "branching_strategy"
+      - "release_tagging"
+
+  - name: "Branch Strategies"
+    category: "development_practices"
+    hints:
+      - "main branch"
+      - "develop branch"
+      - "feature branches"
+      - "release branches"
+      - "hotfix branches"
+      - "git flow"
+      - "github flow"
+    report_fields:
+      - "branching_model"
+      - "branch_protection"
+      - "merge_requirements"
+      - "release_process"
+
+  - name: "Commit Message Quality"
+    category: "development_practices"
+    hints:
+      - "conventional commits"
+      - "semantic commit messages"
+      - "commit templates"
+      - "message formatting"
+      - "scope indicators"
+      - "breaking change indicators"
+    report_fields:
+      - "commit_convention_adherence"
+      - "message_clarity"
+      - "scope_consistency"
+      - "breaking_change_documentation"
+
+  - name: "PR/Issue Templates"
+    category: "development_practices"
+    hints:
+      - ".github/PULL_REQUEST_TEMPLATE.md"
+      - ".github/ISSUE_TEMPLATE/"
+      - "pull_request_template.md"
+      - "issue_template.md"
+      - "bug_report.md"
+      - "feature_request.md"
+    report_fields:
+      - "template_completeness"
+      - "required_information"
+      - "automation_integration"
+      - "user_experience"
+
+  - name: "CI/CD Configuration"
+    category: "development_practices"
+    hints:
+      - ".github/workflows/"
+      - ".gitlab-ci.yml"
+      - "Jenkinsfile"
+      - ".travis.yml"
+      - "circle.yml"
+      - "azure-pipelines.yml"
+      - "buildkite.yml"
+      - "drone.yml"
+    report_fields:
+      - "ci_pipeline_coverage"
+      - "deployment_automation"
+      - "testing_integration"
+      - "security_scanning"
+
+  # Code Metrics
+  - name: "Repository Size and Growth"
+    category: "code_metrics"
+    hints:
+      - "git log analysis"
+      - "file count tracking"
+      - "commit frequency"
+      - "repository age"
+      - "growth patterns"
+      - "size trends"
+    report_fields:
+      - "repository_size"
+      - "growth_velocity"
+      - "commit_frequency"
+      - "file_churn_rate"
+
+  - name: "File Count by Type"
+    category: "code_metrics"
+    hints:
+      - "source files"
+      - "test files"
+      - "configuration files"
+      - "documentation files"
+      - "asset files"
+      - "binary files"
+      - "generated files"
+    report_fields:
+      - "file_type_distribution"
+      - "source_to_test_ratio"
+      - "config_file_organization"
+      - "binary_file_presence"
+
+  - name: "Lines of Code"
+    category: "code_metrics"
+    hints:
+      - "total lines"
+      - "code lines"
+      - "comment lines"
+      - "blank lines"
+      - "lines by language"
+      - "complexity per line"
+    report_fields:
+      - "total_lines_of_code"
+      - "comment_to_code_ratio"
+      - "language_distribution"
+      - "code_density"
+
+  - name: "Complexity Metrics"
+    category: "code_metrics"
+    hints:
+      - "cyclomatic complexity"
+      - "cognitive complexity"
+      - "nesting depth"
+      - "function length"
+      - "class size"
+      - "method complexity"
+      - "inheritance depth"
+    report_fields:
+      - "average_complexity"
+      - "complexity_distribution"
+      - "high_complexity_files"
+      - "refactoring_candidates"
+
+  - name: "Test Coverage Indicators"
+    category: "code_metrics"
+    hints:
+      - "test/ directory"
+      - "spec/ directory"
+      - "__tests__/ directory"
+      - "*.test.* files"
+      - "*.spec.* files"
+      - "coverage reports"
+      - "test configuration"
+    report_fields:
+      - "test_file_presence"
+      - "test_to_code_ratio"
+      - "test_framework_usage"
+      - "coverage_configuration"
+
+  # Team & Activity Analysis
+  - name: "Contributor Patterns"
+    category: "team_activity"
+    hints:
+      - "git author analysis"
+      - "commit authorship"
+      - "contributor frequency"
+      - "contribution distribution"
+      - "new contributor onboarding"
+      - "maintainer activity"
+    report_fields:
+      - "contributor_count"
+      - "contribution_distribution"
+      - "core_maintainer_activity"
+      - "new_contributor_integration"
+
+  - name: "Maintenance Activity"
+    category: "team_activity"
+    hints:
+      - "recent commits"
+      - "issue resolution"
+      - "pull request activity"
+      - "dependency updates"
+      - "bug fixes"
+      - "feature development"
+      - "maintenance commits"
+    report_fields:
+      - "maintenance_frequency"
+      - "update_cadence"
+      - "bug_fix_rate"
+      - "feature_development_pace"
+
+  - name: "Issue Resolution Time"
+    category: "team_activity"
+    hints:
+      - "issue creation dates"
+      - "issue closing dates"
+      - "issue labels"
+      - "issue priority"
+      - "resolution patterns"
+      - "escalation handling"
+    report_fields:
+      - "average_resolution_time"
+      - "resolution_time_distribution"
+      - "issue_priority_handling"
+      - "escalation_effectiveness"
+
+  - name: "Release Frequency"
+    category: "team_activity"
+    hints:
+      - "git tags"
+      - "release notes"
+      - "version bumps"
+      - "changelog updates"
+      - "semantic versioning"
+      - "release automation"
+    report_fields:
+      - "release_cadence"
+      - "version_strategy"
+      - "release_note_quality"
+      - "automation_level"
+
+  # Additional Discovery Patterns
+  - name: "Security Configuration"
+    category: "security"
+    hints:
+      - "security.md"
+      - "dependabot.yml"
+      - "security policies"
+      - "vulnerability scanning"
+      - "secret detection"
+      - "security workflows"
+    report_fields:
+      - "security_policy_presence"
+      - "vulnerability_management"
+      - "secret_scanning_setup"
+      - "security_automation"
+
+  - name: "Performance Monitoring"
+    category: "monitoring"
+    hints:
+      - "performance tests"
+      - "benchmarks"
+      - "profiling setup"
+      - "monitoring configuration"
+      - "performance metrics"
+      - "load testing"
+    report_fields:
+      - "performance_test_coverage"
+      - "benchmark_presence"
+      - "monitoring_setup"
+      - "performance_regression_detection"
+
+  - name: "Database Schema"
+    category: "database"
+    hints:
+      - "migrations/"
+      - "schema.sql"
+      - "models/"
+      - "database configuration"
+      - "ORM setup"
+      - "database versioning"
+    report_fields:
+      - "schema_management"
+      - "migration_strategy"
+      - "database_type"
+      - "schema_documentation"
