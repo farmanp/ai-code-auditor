@@ -43,6 +43,10 @@ ai-code-auditor/
 ├── templates/                      # Report generation templates
 │   └── feasibility-report-template.md # Feasibility analysis report template
 │   └── Security-Vulnerabilities-Taxonomy.md  # Security vulnerability guide
+├── workflows/                     # Workflow templates
+│   ├── ci-cd/                     # CI/CD examples
+│   ├── pre-commit/                # Pre-commit hooks
+│   └── scheduled/                 # Scheduled audits
 └── README.md                       # This file
 ```
 
@@ -83,6 +87,10 @@ Ready-made prompt templates are available in the [`prompts/`](prompts/) director
 * **Scenario prompts** under `prompts/scenarios/`
 * **Model optimizations** under `prompts/models/`
 along with the base design pattern, algorithm, DataHub, and ETL prompts.
+
+### Workflow Templates
+
+Reusable examples for CI pipelines, pre-commit hooks, and scheduled tasks live in the [`workflows/`](workflows/) directory. See [Workflow-Customization-Guide](docs/Workflow-Customization-Guide.md) for guidance on adapting them to your environment.
 ## Specification Schema
 
 Each YAML specification follows a consistent schema:

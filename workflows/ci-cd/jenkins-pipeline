@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    stages {
+        stage('Audit') {
+            steps {
+                sh './workflows/pre-commit/quick-audit.sh "$WORKSPACE"'
+            }
+        }
+    }
+    post {
+        always {
+            script {
+                if (env.SLACK_WEBHOOK) {
+                    sh "curl -X POST -H 'Content-type: application/json' --data '{\"text\":\"Jenkins audit completed for $JOB_NAME #$BUILD_NUMBER\"}' $SLACK_WEBHOOK"
+                }
+            }
+        }
+    }
+}

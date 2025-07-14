@@ -1,0 +1,25 @@
+name: Pull Request Audit
+
+on:
+  pull_request:
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run quick audit
+        run: |
+          ./workflows/pre-commit/quick-audit.sh "${{ github.workspace }}"
+      - name: Notify Slack
+        if: always()
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        run: |
+          if [ -n "$SLACK_WEBHOOK" ]; then
+            curl -X POST -H 'Content-type: application/json' \
+              --data '{"text":"Audit completed for ${{ github.repository }} #${{ github.run_number }}"}' "$SLACK_WEBHOOK"
+          fi
