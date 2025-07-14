@@ -38,6 +38,10 @@ ai-code-auditor/
 ├── templates/                      # Report generation templates
 │   └── feasibility-report-template.md # Feasibility analysis report template
 │   └── Security-Vulnerabilities-Taxonomy.md  # Security vulnerability guide
+├── workflows/                     # Workflow templates
+│   ├── ci-cd/                     # CI/CD examples
+│   ├── pre-commit/                # Pre-commit hooks
+│   └── scheduled/                 # Scheduled audits
 ├── prompts/                        # AI prompt templates
 │   └── security-audit-prompts.md   # Security audit prompt library
 └── README.md                       # This file
@@ -76,6 +80,10 @@ Focus on detecting design patterns and provide a detailed report including:
 ### Prompt Library
 
 Ready-made prompt templates are available in the [`prompts/`](prompts/) directory. Copy the appropriate file and replace `[CODE_PATH]` with the path to your codebase or metadata repository. Templates include design pattern scans, algorithm and data structure analysis, DataHub metadata audits, ETL subsystem checks, and comprehensive feasibility analysis.
+
+### Workflow Templates
+
+Reusable examples for CI pipelines, pre-commit hooks, and scheduled tasks live in the [`workflows/`](workflows/) directory. See [Workflow-Customization-Guide](docs/Workflow-Customization-Guide.md) for guidance on adapting them to your environment.
 ## Specification Schema
 
 Each YAML specification follows a consistent schema:
