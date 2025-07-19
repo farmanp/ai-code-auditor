@@ -344,12 +344,61 @@ Complexity ratings help users understand implementation difficulty, detection ef
 - **Educational Analysis**: Learn about patterns and algorithms in existing codebases
 - **Migration Planning**: Understand current patterns before refactoring
 
+## Dashboard Generation
+
+The AI Code Auditor now includes a comprehensive dashboard generator that creates interactive visualizations for your audit results.
+
+### Quick Start
+
+Generate a dashboard from your audit results:
+
+```bash
+# Generate dashboard with default settings
+python3 scripts/dashboard-generator.py
+
+# Generate dashboard in custom directory
+python3 scripts/dashboard-generator.py --output-dir my-dashboard
+
+# View the dashboard
+cd audit-dashboard
+python3 -m http.server 8000
+# Open browser to http://localhost:8000
+```
+
+### Dashboard Features
+
+- **Interactive Visualizations**: Security vulnerability heatmaps, pattern distribution charts, complexity metrics graphs
+- **Multi-Section Analysis**: Overview, Security, Patterns, Cloud Architecture, and Trends sections
+- **Export Capabilities**: JSON data export and PDF report generation
+- **Responsive Design**: Works on desktop, tablet, and mobile devices
+- **Time-Series Tracking**: Trend analysis for technical debt and vulnerability tracking
+- **Search and Filter**: Find specific patterns and vulnerabilities quickly
+
+### Dashboard Structure
+
+```
+audit-dashboard/
+├── index.html              # Main dashboard page
+├── assets/
+│   ├── css/dashboard.css   # Dashboard styles
+│   └── js/dashboard.js     # Interactive functionality
+├── data/
+│   └── audit-results.json  # Audit data
+├── reports/
+│   ├── security.html       # Security analysis report
+│   ├── patterns.html       # Pattern analysis report
+│   └── cloud.html          # Cloud architecture report
+└── DEPLOYMENT.md           # Deployment instructions
+```
+
+For detailed deployment instructions, see the generated `DEPLOYMENT.md` file in your dashboard directory.
+
 ## Next Steps
 
 1. **Extend Specifications**: Add more patterns, algorithms, or domain-specific rules
 2. **Custom Report Fields**: Modify report fields to match your analysis needs
 3. **Integration**: Integrate with CI/CD pipelines for automated code quality checks
-4. **Metrics Dashboard**: Build dashboards to track pattern usage and code quality over time
+4. **Dashboard Customization**: Customize visualizations and add new charts to the dashboard
 5. **Team Training**: Use detection results to identify learning opportunities
 
 ## Contributing

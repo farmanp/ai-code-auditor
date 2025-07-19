@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Auditor Dashboard</title>
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.29.3/index.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>AI Code Auditor Dashboard</h1>
+            <div class="header-info">
+                <span>Repository: sample-repository</span>
+                <span>Generated: 2025-07-14</span>
+            </div>
+        </header>
+        
+        <nav class="dashboard-nav">
+            <button class="nav-btn active" onclick="showSection('overview')">Overview</button>
+            <button class="nav-btn" onclick="showSection('security')">Security</button>
+            <button class="nav-btn" onclick="showSection('patterns')">Patterns</button>
+            <button class="nav-btn" onclick="showSection('cloud')">Cloud</button>
+            <button class="nav-btn" onclick="showSection('trends')">Trends</button>
+        </nav>
+        
+        <main class="dashboard-main">
+            <!-- Overview Section -->
+            <section id="overview" class="section active">
+                <h2>Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Patterns</h3>
+                        <div class="stat-value">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Vulnerabilities</h3>
+                        <div class="stat-value">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Issues</h3>
+                        <div class="stat-value">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Risk Level</h3>
+                        <div class="stat-value risk-medium">MEDIUM</div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <canvas id="overviewChart"></canvas>
+                </div>
+            </section>
+            
+            <!-- Security Section -->
+            <section id="security" class="section">
+                <h2>Security Analysis</h2>
+                <div class="section-content">
+                    <div class="chart-grid">
+                        <div class="chart-container">
+                            <h3>Vulnerability Heatmap</h3>
+                            <canvas id="securityHeatmap"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Severity Distribution</h3>
+                            <canvas id="severityChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="vulnerability-list">
+                        <h3>Top Vulnerabilities</h3>
+                        <div id="vulnerabilityList"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Patterns Section -->
+            <section id="patterns" class="section">
+                <h2>Design Patterns Analysis</h2>
+                <div class="section-content">
+                    <div class="chart-grid">
+                        <div class="chart-container">
+                            <h3>Pattern Distribution</h3>
+                            <canvas id="patternChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Complexity Analysis</h3>
+                            <canvas id="complexityChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="pattern-list">
+                        <h3>Detected Patterns</h3>
+                        <div id="patternList"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Cloud Section -->
+            <section id="cloud" class="section">
+                <h2>Cloud Architecture Analysis</h2>
+                <div class="section-content">
+                    <div class="chart-container">
+                        <h3>Cloud Service Usage</h3>
+                        <canvas id="cloudChart"></canvas>
+                    </div>
+                    <div class="cloud-services">
+                        <h3>Services Detected</h3>
+                        <div id="serviceList"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Trends Section -->
+            <section id="trends" class="section">
+                <h2>Technical Debt Trends</h2>
+                <div class="section-content">
+                    <div class="chart-container">
+                        <h3>Trend Analysis</h3>
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                    <div class="trend-controls">
+                        <button onclick="exportData('json')">Export JSON</button>
+                        <button onclick="exportData('pdf')">Export PDF</button>
+                        <input type="text" id="searchFilter" placeholder="Search..." onkeyup="filterData()">
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script>
+        // Audit data
+        const auditData = {
+  "metadata": {
+    "generated_at": "2025-07-14T05:04:33.735754",
+    "version": "1.0.0",
+    "repository": "sample-repository",
+    "analysis_types": [
+      "design_patterns",
+      "security_vulnerabilities",
+      "algorithms_data_structures",
+      "cloud_architecture",
+      "etl_subsystems",
+      "feasibility_analysis",
+      "datahub",
+      "repo_discovery"
+    ]
+  },
+  "summary": {
+    "total_patterns": 0,
+    "total_vulnerabilities": 0,
+    "total_issues": 0,
+    "risk_level": "medium"
+  },
+  "time_series": [
+    {
+      "date": "2024-01-01",
+      "vulnerabilities": 15,
+      "patterns": 25,
+      "issues": 40
+    },
+    {
+      "date": "2024-01-15",
+      "vulnerabilities": 12,
+      "patterns": 28,
+      "issues": 35
+    },
+    {
+      "date": "2024-02-01",
+      "vulnerabilities": 8,
+      "patterns": 30,
+      "issues": 28
+    }
+  ],
+  "categories": {
+    "patterns": {
+      "total_patterns": 27,
+      "category_distribution": {
+        "creational": 5,
+        "structural": 7,
+        "behavioral": 10,
+        "architectural": 5
+      },
+      "complexity_distribution": {
+        "low": 8,
+        "medium": 12,
+        "high": 5
+      },
+      "patterns": [
+        {
+          "name": "Singleton",
+          "category": "creational",
+          "instances": 2,
+          "quality_score": 85,
+          "files": [
+            "src/pattern_1.py"
+          ]
+        },
+        {
+          "name": "Factory Method",
+          "category": "creational",
+          "instances": 3,
+          "quality_score": 83,
+          "files": [
+            "src/pattern_2.py"
+          ]
+        },
+        {
+          "name": "Abstract Factory",
+          "category": "creational",
+          "instances": 4,
+          "quality_score": 81,
+          "files": [
+            "src/pattern_3.py"
+          ]
+        },
+        {
+          "name": "Builder",
+          "category": "creational",
+          "instances": 5,
+          "quality_score": 79,
+          "files": [
+            "src/pattern_4.py"
+          ]
+        },
+        {
+          "name": "Prototype",
+          "category": "creational",
+          "instances": 6,
+          "quality_score": 77,
+          "files": [
+            "src/pattern_5.py"
+          ]
+        },
+        {
+          "name": "Adapter",
+          "category": "structural",
+          "instances": 7,
+          "quality_score": 75,
+          "files": [
+            "src/pattern_6.py"
+          ]
+        },
+        {
+          "name": "Bridge",
+          "category": "structural",
+          "instances": 8,
+          "quality_score": 73,
+          "files": [
+            "src/pattern_7.py"
+          ]
+        },
+        {
+          "name": "Composite",
+          "category": "structural",
+          "instances": 9,
+          "quality_score": 71,
+          "files": [
+            "src/pattern_8.py"
+          ]
+        },
+        {
+          "name": "Decorator",
+          "category": "structural",
+          "instances": 10,
+          "quality_score": 69,
+          "files": [
+            "src/pattern_9.py"
+          ]
+        },
+        {
+          "name": "Facade",
+          "category": "structural",
+          "instances": 11,
+          "quality_score": 67,
+          "files": [
+            "src/pattern_10.py"
+          ]
+        }
+      ]
+    },
+    "security": {
+      "total_vulnerabilities": 15,
+      "severity_distribution": {
+        "critical": 3,
+        "high": 8,
+        "medium": 15,
+        "low": 12
+      },
+      "category_distribution": {
+        "Injection": 3,
+        "Request Forgery": 2,
+        "Authentication": 1,
+        "Authorization": 1,
+        "Deserialization": 1,
+        "Cryptographic Failures": 3,
+        "Sensitive Data Exposure": 1,
+        "Security Misconfiguration": 2,
+        "Vulnerable Components": 1
+      },
+      "vulnerabilities": [
+        {
+          "name": "SQL Injection",
+          "category": "Injection",
+          "severity": "Critical",
+          "description": "Direct concatenation of user input into SQL queries",
+          "instances": 1,
+          "files_affected": [
+            "src/file_1.py",
+            "src/module_1.py"
+          ]
+        },
+        {
+          "name": "Cross-Site Scripting (XSS)",
+          "category": "Injection",
+          "severity": "High",
+          "description": "Unescaped user input rendered in HTML",
+          "instances": 2,
+          "files_affected": [
+            "src/file_2.py",
+            "src/module_2.py"
+          ]
+        },
+        {
+          "name": "Cross-Site Request Forgery (CSRF)",
+          "category": "Request Forgery",
+          "severity": "High",
+          "description": "State-changing operations without CSRF protection",
+          "instances": 3,
+          "files_affected": [
+            "src/file_3.py",
+            "src/module_3.py"
+          ]
+        },
+        {
+          "name": "Weak Authentication",
+          "category": "Authentication",
+          "severity": "High",
+          "description": "Weak or missing authentication mechanisms",
+          "instances": 4,
+          "files_affected": [
+            "src/file_4.py",
+            "src/module_4.py"
+          ]
+        },
+        {
+          "name": "Broken Authorization",
+          "category": "Authorization",
+          "severity": "High",
+          "description": "Missing or inadequate authorization checks",
+          "instances": 5,
+          "files_affected": [
+            "src/file_5.py",
+            "src/module_5.py"
+          ]
+        },
+        {
+          "name": "Insecure Deserialization",
+          "category": "Deserialization",
+          "severity": "Critical",
+          "description": "Deserializing untrusted data without validation",
+          "instances": 6,
+          "files_affected": [
+            "src/file_6.py",
+            "src/module_6.py"
+          ]
+        },
+        {
+          "name": "XML External Entity (XXE)",
+          "category": "Injection",
+          "severity": "High",
+          "description": "XML parsing with external entity processing enabled",
+          "instances": 7,
+          "files_affected": [
+            "src/file_7.py",
+            "src/module_7.py"
+          ]
+        },
+        {
+          "name": "Server-Side Request Forgery (SSRF)",
+          "category": "Request Forgery",
+          "severity": "High",
+          "description": "Making requests to user-controlled URLs",
+          "instances": 8,
+          "files_affected": [
+            "src/file_8.py",
+            "src/module_8.py"
+          ]
+        },
+        {
+          "name": "Weak Cryptography",
+          "category": "Cryptographic Failures",
+          "severity": "High",
+          "description": "Use of weak or broken cryptographic algorithms",
+          "instances": 9,
+          "files_affected": [
+            "src/file_9.py",
+            "src/module_9.py"
+          ]
+        },
+        {
+          "name": "Hardcoded Secrets",
+          "category": "Sensitive Data Exposure",
+          "severity": "Critical",
+          "description": "Credentials or keys hardcoded in source code",
+          "instances": 10,
+          "files_affected": [
+            "src/file_10.py",
+            "src/module_10.py"
+          ]
+        }
+      ]
+    }
+  }
+};
+    </script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
